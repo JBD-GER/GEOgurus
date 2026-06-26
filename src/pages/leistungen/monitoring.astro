@@ -1,0 +1,158 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const signals = [
+  {
+    title: "Klassische SEO-Sichtbarkeit",
+    text:
+      "Rankings, Impressionen, Klicks, organische Einstiege, Seitenrollen und Veränderungen in wichtigen Themenclustern.",
+  },
+  {
+    title: "KI-Antwortpräsenz",
+    text:
+      "Erwähnungen, Antwortmuster, Quellenumfeld, Wettbewerberpräsenz und Fragen, bei denen Ihre Marke fehlt.",
+  },
+  {
+    title: "Content-Lücken",
+    text:
+      "Unbeantwortete Entscheidungsfragen, schwache Cluster, fehlende Proof-Elemente und Inhalte, die nicht mehr aktuell genug sind.",
+  },
+  {
+    title: "Technische Signale",
+    text:
+      "Indexierung, Crawl-Probleme, strukturierte Daten, Performance, interne Links und Änderungen nach Releases oder Relaunches.",
+  },
+  {
+    title: "Umsetzungsfortschritt",
+    text:
+      "Welche Maßnahmen wurden erledigt, welche hängen, welche verlieren Priorität und welche neuen Chancen entstehen?",
+  },
+  {
+    title: "Team-Enablement",
+    text:
+      "Sparring, Review-Schleifen, Priorisierung und klare nächste Schritte für Marketing, Redaktion, Entwicklung und Führung.",
+  },
+];
+
+const cadence = [
+  {
+    step: "Monatlich",
+    text:
+      "Kompakte Auswertung von Sichtbarkeit, Antwortpräsenz, neuen Lücken und laufenden Maßnahmen.",
+  },
+  {
+    step: "Quartalsweise",
+    text:
+      "Strategischer Blick auf Themencluster, Wettbewerber, Content-Roadmap, technische Risiken und Prioritäten.",
+  },
+  {
+    step: "Bei Releases",
+    text:
+      "Prüfung von technischen Änderungen, Relaunch-Risiken, neuen Seitentypen, Schema-Anpassungen und Indexierung.",
+  },
+  {
+    step: "Bei Marktbewegung",
+    text:
+      "Einordnung neuer KI-Suchfunktionen, Wettbewerberbewegungen, SERP-Veränderungen und relevanter Themenverschiebungen.",
+  },
+];
+
+const outputs = [
+  "Dashboard oder Reporting mit SEO- und GEO-Signalen",
+  "Priorisierte Maßnahmen für den nächsten Umsetzungszyklus",
+  "Liste neuer Themenlücken, Antwortchancen und technischer Risiken",
+  "Review von veröffentlichten Inhalten und strukturierten Daten",
+  "Sparring für Redaktion, Marketing, Entwicklung oder Geschäftsführung",
+  "Entscheidungsvorlagen, wenn Ressourcen neu priorisiert werden müssen",
+];
+---
+
+<PageLayout
+  title="GEO-Monitoring | Sichtbarkeit in Suche und KI-Antworten messen"
+  description="GEO-Monitoring macht Rankings, Erwähnungen, Antwortpräsenz, Themenlücken und Wettbewerbsbewegungen sichtbar und priorisierbar."
+  canonicalPath="/leistungen/monitoring/"
+  eyebrow="Leistung"
+  headline="Sichtbarkeit muss steuerbar werden."
+  intro="Wir beobachten nicht nur klassische Rankings, sondern auch Erwähnungen, Antwortmuster, Themenabdeckung und Fortschritt in der Umsetzung."
+  schema={{
+    "@type": "Service",
+    "@id": "https://geogurus.de/leistungen/monitoring/#service",
+    name: "GEO-Monitoring und Enablement",
+    provider: { "@id": "https://geogurus.de/#organization" },
+    serviceType: "GEO-Monitoring",
+    url: "https://geogurus.de/leistungen/monitoring/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Steuerung</p>
+        <h2>GEO endet nicht nach dem Audit.</h2>
+      </div>
+      <p class="lead" data-reveal>
+        Sichtbarkeit verändert sich: Wettbewerber veröffentlichen neue Inhalte, Suchsysteme testen neue
+        Antwortformate, interne Releases verändern Technik und Zielgruppenfragen verschieben sich. Monitoring
+        hält diese Bewegung sichtbar und übersetzt sie in klare Prioritäten.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Signale</p>
+        <h2>Was wir im Monitoring zusammenführen.</h2>
+      </div>
+      <div class="detail-grid">
+        {signals.map((signal) => (
+          <article class="detail-card" data-reveal>
+            <h2>{signal.title}</h2>
+            <p>{signal.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Rhythmus</p>
+        <h2>Regelmäßig genug, um zu steuern. Schlank genug, um nützlich zu bleiben.</h2>
+        <p class="lead">
+          Wir passen Frequenz und Tiefe an Ihre Ausgangslage an. Wichtig ist nicht mehr Reporting, sondern
+          bessere Entscheidungen.
+        </p>
+      </div>
+      <div class="process-list" data-reveal>
+        {cadence.map((item) => (
+          <div class="process-step">
+            <strong>{item.step}</strong>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Output</p>
+        <h2>Was Ihr Team konkret bekommt.</h2>
+      </div>
+      <div data-reveal>
+        <ul>
+          {outputs.map((item) => <li>{item}</li>)}
+        </ul>
+        <div class="answer-box">
+          <p>
+            Monitoring ist wertvoll, wenn daraus Entscheidungen entstehen: Was wird gebaut, was wird
+            verbessert, was wird gestoppt und was bekommt als Nächstes Budget?
+          </p>
+        </div>
+        <a class="button button-primary" href="/kontakt/">Monitoring anfragen →</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,367 @@
+---
+import "../styles/global.css";
+
+const {
+  title,
+  description,
+  canonicalPath,
+  eyebrow = "GEOgurus",
+  headline,
+  intro,
+  schema,
+} = Astro.props;
+
+const siteUrl = "https://geogurus.de";
+const canonical = `${siteUrl}${canonicalPath}`;
+const socialImage = `${siteUrl}/assets/geogurus-og.svg`;
+
+const navItems = [
+  { href: "/leistungen/", label: "Leistungen" },
+  { href: "/ratgeber/", label: "Ratgeber" },
+  { href: "/methode/", label: "Methode" },
+  { href: "/#proof", label: "Proof" },
+  { href: "/kontakt/", label: "Kontakt" },
+];
+
+const baseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "GEOgurus",
+      legalName: "FLAA Q Holding",
+      url: siteUrl,
+      logo: `${siteUrl}/assets/geogurus-logo.svg`,
+      email: "kontakt@geogurus.de",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Großer Kamp 5a",
+        postalCode: "31633",
+        addressLocality: "Leese",
+        addressCountry: "DE",
+      },
+      description:
+        "Spezialisierte GEO-Agentur mit Ursprung in klassischer SEO und Fokus auf Sichtbarkeit in KI-Suche, generativen Antworten und modernen Discovery-Kanälen.",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: "kontakt@geogurus.de",
+        availableLanguage: ["de"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "GEOgurus",
+      url: siteUrl,
+      publisher: { "@id": `${siteUrl}/#organization` },
+      inLanguage: "de-DE",
+    },
+    ...(schema ? [schema] : []),
+  ],
+};
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="application-name" content="GEOgurus" />
+    <meta name="author" content="GEOgurus" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="de-DE" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#081111" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="GEOgurus" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="GEOgurus - GEO-Agentur für die neue Suchwelt" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+    <header class="site-header is-scrolled" data-header>
+      <nav class="nav container" aria-label="Hauptnavigation">
+        <a class="brand" href="/" aria-label="GEOgurus Startseite">
+          <img class="brand-logo" src="/assets/geogurus-logo.svg" alt="GEOgurus" width="178" height="46" fetchpriority="high" />
+        </a>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-menu" data-menu-button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Navigation öffnen</span>
+        </button>
+
+        <div class="nav-menu" id="nav-menu" data-menu>
+          {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+          <a class="nav-menu-cta" href="/kontakt/">GEO-Audit anfragen</a>
+        </div>
+
+        <a class="nav-cta" href="/kontakt/">GEO-Audit anfragen</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="hero-animation" aria-hidden="true">
+          <canvas class="hero-canvas" data-hero-canvas></canvas>
+          <div class="hero-wave-depth"></div>
+          <div class="hero-scan"></div>
+        </div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="container page-hero-inner" data-reveal>
+          <p class="eyebrow">{eyebrow}</p>
+          <h1>{headline}</h1>
+          <p>{intro}</p>
+        </div>
+      </section>
+
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <a class="brand" href="/" aria-label="GEOgurus Startseite">
+          <img class="brand-logo" src="/assets/geogurus-logo.svg" alt="GEOgurus" width="172" height="45" loading="lazy" decoding="async" />
+        </a>
+        <p>GEO-Agentur für KI-Suche, generative Antworten und klassische SEO-Sichtbarkeit.</p>
+        <nav aria-label="Footer Navigation">
+          <a href="/leistungen/">Leistungen</a>
+          <a href="/ratgeber/">Ratgeber</a>
+          <a href="/methode/">Methode</a>
+          <a href="/llms.txt">llms.txt</a>
+          <a href="/kontakt/">Kontakt</a>
+          <a href="/impressum/">Impressum</a>
+          <a href="/datenschutz/">Datenschutz</a>
+          <a href="/agb/">AGB</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="cookie-banner" data-cookie-banner role="dialog" aria-label="Cookie-Hinweis" hidden>
+      <div>
+        <strong>Cookie-Hinweis</strong>
+        <p>
+          GEOgurus nutzt notwendige Speicherfunktionen für die Website. Optionale Analyse-Cookies werden nur
+          gesetzt, wenn Sie zustimmen.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" data-cookie-decline>Nur notwendige</button>
+        <button type="button" data-cookie-accept>Alle akzeptieren</button>
+      </div>
+    </div>
+
+    <script>
+      const header = document.querySelector("[data-header]");
+      const menuButton = document.querySelector("[data-menu-button]");
+      const menu = document.querySelector("[data-menu]");
+      const cookieBanner = document.querySelector("[data-cookie-banner]");
+      const cookieAccept = document.querySelector("[data-cookie-accept]");
+      const cookieDecline = document.querySelector("[data-cookie-decline]");
+      const revealItems = document.querySelectorAll("[data-reveal]");
+      const heroCanvas = document.querySelector("[data-hero-canvas]");
+      const contactForm = document.querySelector("[data-contact-form]");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const syncHeader = () => {
+        header?.classList.toggle("is-scrolled", window.scrollY > 12);
+      };
+
+      syncHeader();
+      window.addEventListener("scroll", syncHeader, { passive: true });
+
+      const closeMenu = () => {
+        menu?.classList.remove("is-open");
+        header?.classList.remove("is-menu-open");
+        menuButton?.setAttribute("aria-expanded", "false");
+      };
+
+      menuButton?.addEventListener("click", () => {
+        const isOpen = menu?.classList.toggle("is-open");
+        header?.classList.toggle("is-menu-open", Boolean(isOpen));
+        menuButton.setAttribute("aria-expanded", String(Boolean(isOpen)));
+      });
+
+      menu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      const cookieStorageKey = "geogurus_cookie_consent";
+      const setCookieConsent = (value) => {
+        try {
+          window.localStorage.setItem(cookieStorageKey, value);
+        } catch {
+          document.cookie = `${cookieStorageKey}=${value}; max-age=31536000; path=/; SameSite=Lax`;
+        }
+        if (cookieBanner) cookieBanner.hidden = true;
+      };
+
+      const hasCookieConsent = () => {
+        try {
+          return Boolean(window.localStorage.getItem(cookieStorageKey));
+        } catch {
+          return document.cookie.includes(`${cookieStorageKey}=`);
+        }
+      };
+
+      if (cookieBanner && !hasCookieConsent()) {
+        cookieBanner.hidden = false;
+      }
+
+      cookieAccept?.addEventListener("click", () => setCookieConsent("all"));
+      cookieDecline?.addEventListener("click", () => setCookieConsent("necessary"));
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        revealItems.forEach((item) => observer.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      }
+
+      contactForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(contactForm);
+        const lines = [
+          "Hallo GEOgurus,",
+          "",
+          "ich möchte einen Sichtbarkeits-Check anfragen.",
+          "",
+          `Name: ${data.get("name") || ""}`,
+          `E-Mail: ${data.get("email") || ""}`,
+          `Website: ${data.get("website") || ""}`,
+          "",
+          "Kontext:",
+          String(data.get("message") || ""),
+        ];
+        const subject = encodeURIComponent("GEO-Audit anfragen");
+        const body = encodeURIComponent(lines.join("\n"));
+        window.location.href = `mailto:kontakt@geogurus.de?subject=${subject}&body=${body}`;
+      });
+
+      if (heroCanvas && !prefersReducedMotion) {
+        const canvas = heroCanvas;
+        const context = canvas.getContext("2d");
+        let width = 0;
+        let height = 0;
+        let frame = 0;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        const resizeCanvas = () => {
+          width = canvas.clientWidth;
+          height = canvas.clientHeight;
+          canvas.width = Math.floor(width * dpr);
+          canvas.height = Math.floor(height * dpr);
+          context.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+
+        const drawWave = ({ index, time, base, amplitude, frequency, speed, color, width: lineWidth, alpha }) => {
+          context.beginPath();
+          const step = Math.max(14, width / 90);
+          for (let x = -step; x <= width + step; x += step) {
+            const progress = x / width;
+            const curve =
+              Math.sin(progress * frequency + time * speed + index) * amplitude +
+              Math.sin(progress * (frequency * 0.48) - time * speed * 1.55 + index * 1.8) * amplitude * 0.42 +
+              Math.cos(progress * 2.4 + index) * amplitude * 0.24;
+            const y = base + curve;
+            if (x === -step) context.moveTo(x, y);
+            else context.lineTo(x, y);
+          }
+
+          context.shadowBlur = lineWidth > 1.5 ? 16 : 6;
+          context.shadowColor = "rgba(19, 200, 181, 0.22)";
+          if (Array.isArray(color)) {
+            const lineGradient = context.createLinearGradient(0, base - amplitude * 2, width, base + amplitude * 2);
+            color.forEach(([stop, rgb, multiplier]) => {
+              lineGradient.addColorStop(stop, `rgba(${rgb}, ${alpha * multiplier})`);
+            });
+            context.strokeStyle = lineGradient;
+          } else {
+            context.strokeStyle = color.replace("ALPHA", alpha);
+          }
+          context.lineWidth = lineWidth;
+          context.lineCap = "round";
+          context.stroke();
+          context.shadowBlur = 0;
+        };
+
+        const draw = (time = 0) => {
+          context.clearRect(0, 0, width, height);
+          const t = time * 0.001;
+          const horizon = height * 0.48;
+          const waveGradient = [
+            [0, "19, 200, 181", 0.95],
+            [0.55, "245, 184, 75", 0.7],
+            [1, "201, 82, 67", 0.32],
+          ];
+
+          for (let i = 0; i < 18; i += 1) {
+            drawWave({
+              index: i * 0.6,
+              time: t,
+              base: horizon + i * 19 + Math.sin(t * 0.45 + i) * 12,
+              amplitude: 44 + i * 3.2,
+              frequency: 5.5 + i * 0.32,
+              speed: 0.42 + i * 0.018,
+              color: waveGradient,
+              width: i % 3 === 0 ? 2.35 : 1.15,
+              alpha: Math.max(0.065, 0.42 - i * 0.016),
+            });
+          }
+
+          for (let i = 0; i < 7; i += 1) {
+            drawWave({
+              index: i * 1.2,
+              time: t,
+              base: height * (0.24 + i * 0.075) + Math.sin(t * 0.55 + i) * 14,
+              amplitude: 18 + i * 2,
+              frequency: 4.8 + i * 0.5,
+              speed: -0.36 - i * 0.03,
+              color: "rgba(247, 242, 232, ALPHA)",
+              width: 0.9,
+              alpha: 0.07,
+            });
+          }
+
+          frame += 1;
+          requestAnimationFrame(draw);
+        };
+
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas, { passive: true });
+        requestAnimationFrame(draw);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title">
+  <title id="title">Praxispilot</title>
+  <rect width="240" height="72" rx="10" fill="none"/>
+  <g fill="none" stroke="#f7f2e8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="23" y="20" width="34" height="34" rx="9" stroke-width="3.5"/>
+    <path d="M40 28v18M31 37h18" stroke-width="4.5"/>
+    <path d="M58 26l11 10-11 10" stroke-width="3.5" opacity=".76"/>
+  </g>
+  <text x="78" y="36" fill="#f7f2e8" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="850">Praxispilot</text>
+  <text x="80" y="53" fill="#f7f2e8" opacity=".62" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="760" letter-spacing="2">HEALTH OPS</text>
+</svg>

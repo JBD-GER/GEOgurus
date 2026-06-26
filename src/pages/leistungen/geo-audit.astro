@@ -1,0 +1,187 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const snapshot = [
+  {
+    title: "Ziel",
+    text: "Klarheit über Sichtbarkeit, Antwortfähigkeit, technische Blocker und die wirksamsten nächsten Schritte.",
+  },
+  {
+    title: "Dauer",
+    text: "Je nach Website-Umfang kompakt als Erstcheck oder vertieft als strategisches Audit mit Roadmap.",
+  },
+  {
+    title: "Output",
+    text: "Priorisierte Maßnahmen, Befunde, Chancen, Risiken und eine Reihenfolge für Content, Technik und Monitoring.",
+  },
+];
+
+const auditAreas = [
+  {
+    title: "SEO-Fundament",
+    text:
+      "Indexierung, Crawlbarkeit, Seitenstruktur, interne Verlinkung, technische Qualität, Suchintention und bestehende organische Performance.",
+  },
+  {
+    title: "KI-Antwortpräsenz",
+    text:
+      "Wo taucht die Marke in relevanten Antwortmomenten auf, wo dominieren Wettbewerber und welche Fragen bleiben unbeantwortet?",
+  },
+  {
+    title: "Content-Architektur",
+    text:
+      "Themencluster, Leistungsseiten, Ratgeberinhalte, Antwortformate, Proof-Elemente und Lücken im Entscheidungsprozess.",
+  },
+  {
+    title: "Entity- und Proof-Signale",
+    text:
+      "Marke, Personen, Leistungen, Standorte, Belege, Autorenschaft, Aktualität und konsistente Aussagen über externe und interne Signale.",
+  },
+  {
+    title: "Technische GEO-Signale",
+    text:
+      "Schema.org, semantisches HTML, Statuscodes, Sitemaps, robots.txt, llms.txt, Performance und maschinenlesbarer Kontext.",
+  },
+  {
+    title: "Priorisierung",
+    text:
+      "Jeder Befund wird nach Wirkung, Aufwand, Abhängigkeiten und Risiko eingeordnet, damit Umsetzung nicht im Analyseordner endet.",
+  },
+];
+
+const process = [
+  {
+    step: "01 Aufnahme",
+    text:
+      "Wir klären Zielmärkte, Leistungen, Wettbewerb, vorhandene Daten, wichtigste Seiten und die Fragen, bei denen Ihre Marke sichtbar sein muss.",
+  },
+  {
+    step: "02 Analyse",
+    text:
+      "Website, Suchdaten, Content-Struktur, technische Signale, KI-Antwortmuster und Wettbewerber werden systematisch geprüft.",
+  },
+  {
+    step: "03 Bewertung",
+    text:
+      "Befunde werden nicht nur gesammelt, sondern nach Relevanz, Aufwand, Risiko und erwarteter Wirkung eingeordnet.",
+  },
+  {
+    step: "04 Roadmap",
+    text:
+      "Sie erhalten konkrete nächste Schritte für SEO, GEO, Content, Technik, interne Verlinkung und laufende Messung.",
+  },
+];
+
+const deliverables = [
+  "Audit-Zusammenfassung für Entscheider",
+  "Priorisierte Maßnahmenliste nach Wirkung und Aufwand",
+  "Content- und Themenlücken mit konkreten Seitenempfehlungen",
+  "Technische Befunde inklusive GEO-relevanter Signale",
+  "Empfehlung für nächsten Sprint: Content, Technik oder Monitoring",
+  "Optionales Sparring zur Umsetzung mit internem Team oder Dienstleistern",
+];
+---
+
+<PageLayout
+  title="GEO-Audit | Sichtbarkeits-Check für KI-Suche und SEO"
+  description="Das GEOgurus GEO-Audit analysiert klassische SEO-Signale, KI-Antwortpräsenz, Content-Struktur, Entitäten, Technik und konkrete Prioritäten."
+  canonicalPath="/leistungen/geo-audit/"
+  eyebrow="Leistung"
+  headline="GEO-Audit: Klarheit vor Aktionismus."
+  intro="Wir zeigen, wo Ihre Marke heute sichtbar ist, wo sie in KI-Antworten fehlt und welche Hebel die größte Wirkung für SEO und GEO haben."
+  schema={{
+    "@type": "Service",
+    "@id": "https://geogurus.de/leistungen/geo-audit/#service",
+    name: "GEO-Audit",
+    provider: { "@id": "https://geogurus.de/#organization" },
+    serviceType: "Generative Engine Optimization Audit",
+    url: "https://geogurus.de/leistungen/geo-audit/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Nutzen</p>
+        <h2>Sie bekommen eine priorisierte Sichtbarkeits-Roadmap.</h2>
+      </div>
+      <div data-reveal>
+        <p class="lead">
+          Das Audit trennt Vermutung von Realität. Wir betrachten nicht nur Rankings, sondern auch
+          Antwortfähigkeit, Themenautorität, technische Lesbarkeit, Markenentitäten und die Frage, ob Ihre
+          Inhalte als belastbare Quelle funktionieren.
+        </p>
+        <div class="service-snapshot">
+          {snapshot.map((item) => (
+            <section class="snapshot-item">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Prüffelder</p>
+        <h2>Das Audit verbindet SEO-Realität mit GEO-Anforderungen.</h2>
+        <p>
+          Wir prüfen nicht isoliert eine Kennzahl, sondern das Zusammenspiel aus Auffindbarkeit,
+          Verständlichkeit, Quellenwürdigkeit und Umsetzungschance.
+        </p>
+      </div>
+      <div class="detail-grid">
+        {auditAreas.map((area) => (
+          <article class="detail-card" data-reveal>
+            <h2>{area.title}</h2>
+            <p>{area.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Ablauf</p>
+        <h2>Vom Status quo zur umsetzbaren Reihenfolge.</h2>
+        <p class="lead">
+          Das Ergebnis ist bewusst kein ungewichteter Fundus. Jede Empfehlung bekommt Kontext: Warum ist sie
+          wichtig, was hängt daran und was sollte zuerst passieren?
+        </p>
+      </div>
+      <div class="process-list" data-reveal>
+        {process.map((item) => (
+          <div class="process-step">
+            <strong>{item.step}</strong>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Ergebnis</p>
+        <h2>Was Sie nach dem Audit in der Hand haben.</h2>
+      </div>
+      <div data-reveal>
+        <ul>
+          {deliverables.map((item) => <li>{item}</li>)}
+        </ul>
+        <div class="answer-box">
+          <p>
+            Gute Audits helfen nicht nur beim Verstehen. Sie schaffen eine Reihenfolge, mit der Teams
+            Entscheidungen treffen und Umsetzung starten können.
+          </p>
+        </div>
+        <a class="button button-primary" href="/kontakt/">GEO-Audit anfragen →</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

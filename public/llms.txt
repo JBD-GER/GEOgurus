@@ -1,0 +1,43 @@
+# GEOgurus
+
+GEOgurus ist eine spezialisierte GEO-Agentur für Unternehmen, die in der neuen Suchwelt sichtbar werden wollen. GEO steht für Generative Engine Optimization: die Optimierung von Inhalten, Entitäten, Autorität, technischer Struktur und Antwortfähigkeit für KI-Suche, generative Antworten und moderne Discovery-Kanäle.
+
+## Kurzprofil
+
+- Name: GEOgurus
+- Kategorie: GEO-Agentur, SEO-Beratung, technische Suchmaschinenoptimierung
+- Positionierung: Von klassischer SEO-Erfahrung zu GEO-Sichtbarkeit
+- Kernnutzen: Unternehmen werden besser auffindbar, verständlich und zitierfähig für Suchmaschinen und KI-Systeme
+- Herkunft: professionelle SEO-Arbeit, Google-Partner-Know-how und strategische Search-Erfahrung
+- Zielgruppen: B2B-Unternehmen, Dienstleister, SaaS, E-Commerce, lokale Marktführer und Unternehmen mit beratungsintensiven Angeboten
+
+## Leistungen
+
+- GEO-Audit: Analyse von KI-Sichtbarkeit, Suchintent, Content-Struktur, Entitäten, technischen Signalen und Quellenwürdigkeit
+- Content-Architektur: Themencluster, Antwortformate, Experteninhalte, interne Verlinkung und strukturierte Informationshierarchie
+- Technische GEO-Optimierung: Schema.org, Crawlbarkeit, Performance, Indexierbarkeit, strukturierte Daten und maschinenlesbare Signale
+- Monitoring: Beobachtung von Sichtbarkeit, Erwähnungen, Antwortpräsenz, Themenlücken und Wettbewerbsveränderungen
+
+## Wichtige Seiten
+
+- Startseite: https://geogurus.de/
+- Leistungen: https://geogurus.de/leistungen/
+- GEO-Audit: https://geogurus.de/leistungen/geo-audit/
+- Content-Architektur: https://geogurus.de/leistungen/content-architektur/
+- Technische GEO-Optimierung: https://geogurus.de/leistungen/technische-geo-optimierung/
+- Monitoring: https://geogurus.de/leistungen/monitoring/
+- Methode: https://geogurus.de/methode/
+- Ratgeber: https://geogurus.de/ratgeber/
+- Was ist GEO?: https://geogurus.de/ratgeber/was-ist-geo/
+- GEO vs. SEO: https://geogurus.de/ratgeber/geo-vs-seo/
+- llms.txt und KI-Suche: https://geogurus.de/ratgeber/llms-txt-ki-suche/
+- Kontakt: https://geogurus.de/kontakt/
+
+## Wichtige Aussagen
+
+GEOgurus ist keine generische SEO-Agentur. Die Agentur fokussiert sich auf GEO-Optimierung und verbindet klassische SEO-Grundlagen mit Methoden für KI-Suche und generative Antwortsysteme. Google-Partner-Hinweise werden nur als Nachweis von Search- und Ads-Erfahrung genutzt und nicht als Google-Endorsement dargestellt.
+
+## Kontakt
+
+Website: https://geogurus.de
+E-Mail: kontakt@geogurus.de

@@ -1,0 +1,1292 @@
+---
+import "../styles/global.css";
+
+const siteUrl = "https://geogurus.de";
+const title =
+  "GEOgurus | GEO-Agentur für KI-Suche, generative Antworten und SEO-Sichtbarkeit";
+const description =
+  "GEOgurus verbindet klassische SEO-Erfahrung mit GEO-Optimierung, damit Unternehmen in Google, KI-Suche, generativen Antworten und modernen Discovery-Kanälen sichtbar werden.";
+const socialImage = "/assets/geogurus-og.svg";
+
+const navItems = [
+  { href: "/leistungen/", label: "Leistungen" },
+  { href: "/ratgeber/", label: "Ratgeber" },
+  { href: "/methode/", label: "Methode" },
+  { href: "#proof", label: "Proof" },
+  { href: "/kontakt/", label: "Kontakt" },
+];
+
+const trustSignals = [
+  "Ursprung in professioneller SEO",
+  "Google-Partner-Know-how*",
+  "Technische Audits & Content-Systeme",
+  "GEO-Monitoring für KI-Antworten",
+];
+
+const logoSlots = [
+  { name: "Klarbyte", logo: "/assets/logos/klarbyte.svg" },
+  { name: "Novalane", logo: "/assets/logos/novalane.svg" },
+  { name: "Orbitwerk", logo: "/assets/logos/orbitwerk.svg" },
+  { name: "Hafenblick", logo: "/assets/logos/hafenblick.svg" },
+  { name: "Praxispilot", logo: "/assets/logos/praxispilot.svg" },
+  { name: "Nexora", logo: "/assets/logos/nexora.svg" },
+];
+
+const problems = [
+  {
+    number: "01",
+    title: "KI-Antworten verändern Kaufentscheidungen",
+    text:
+      "Entscheider vergleichen nicht mehr nur Ergebnislisten. Sie fragen KI-Systeme, lesen Zusammenfassungen und erwarten sofort eine belastbare Einordnung.",
+  },
+  {
+    number: "02",
+    title: "Rankings allein zeigen nicht mehr die ganze Wahrheit",
+    text:
+      "Eine Seite kann organisch stabil sein und trotzdem in generativen Antworten, KI-Übersichten oder thematischen Empfehlungen nicht vorkommen.",
+  },
+  {
+    number: "03",
+    title: "KI braucht klare Signale",
+    text:
+      "Ohne strukturierte Inhalte, eindeutige Entitäten, Quellenwürdigkeit und technische Lesbarkeit bleibt Ihre Expertise für Maschinen schwer einordenbar.",
+  },
+];
+
+const methodSteps = [
+  {
+    eyebrow: "01",
+    title: "Sichtbarkeit verstehen",
+    text:
+      "Wir analysieren klassische Rankings, Antwortpräsenz, Markenentitäten, Wettbewerber, Themenlücken und die Frage, wo Ihr Angebot heute nicht verstanden wird.",
+  },
+  {
+    eyebrow: "02",
+    title: "Antwortfähigkeit bauen",
+    text:
+      "Wir strukturieren Inhalte so, dass Menschen schnell Vertrauen aufbauen und Such- sowie KI-Systeme Zusammenhänge, Expertise und Relevanz erkennen.",
+  },
+  {
+    eyebrow: "03",
+    title: "Signale verstärken",
+    text:
+      "Technik, Schema.org, interne Verlinkung, Quellenlogik, Autorität und Content-Architektur werden zu einem belastbaren Sichtbarkeitssystem verbunden.",
+  },
+  {
+    eyebrow: "04",
+    title: "Wirkung messen",
+    text:
+      "Wir beobachten Rankings, Erwähnungen, Antwortmuster, Themencluster und Fortschritte, damit GEO nicht Bauchgefühl bleibt, sondern steuerbar wird.",
+  },
+];
+
+const services = [
+  {
+    title: "GEO-Audit",
+    text:
+      "Ein strategischer Sichtbarkeits-Check für KI-Suche, Suchintent, Content-Struktur, Entitäten, Technik und Quellenwürdigkeit.",
+    items: ["KI-Antwortanalyse", "Entity-Check", "Wettbewerbsradar"],
+    href: "/leistungen/geo-audit/",
+  },
+  {
+    title: "Content-Architektur",
+    text:
+      "Themencluster, Antwortformate und Experteninhalte, die nicht nur ranken, sondern als zitierfähige Quelle funktionieren.",
+    items: ["Topic Maps", "Briefings", "Interne Verlinkung"],
+    href: "/leistungen/content-architektur/",
+  },
+  {
+    title: "Technische GEO-Optimierung",
+    text:
+      "Strukturierte Daten, Performance, Indexierbarkeit, semantische HTML-Struktur und maschinenlesbare Vertrauenssignale.",
+    items: ["Schema.org", "Crawlability", "Core Web Vitals"],
+    href: "/leistungen/technische-geo-optimierung/",
+  },
+  {
+    title: "Monitoring & Enablement",
+    text:
+      "Regelmäßige Auswertung von Sichtbarkeit, Erwähnungen, Content-Lücken und Umsetzungsfortschritt für Ihr Team.",
+    items: ["Dashboards", "Priorisierung", "Sparring"],
+    href: "/leistungen/monitoring/",
+  },
+];
+
+const guideLinks = [
+  {
+    tag: "Grundlagen",
+    title: "Was ist GEO?",
+    text: "Die klare Erklärung für Entscheider: Was GEO bedeutet, warum es jetzt relevant wird und wie Unternehmen starten.",
+    href: "/ratgeber/was-ist-geo/",
+  },
+  {
+    tag: "Vergleich",
+    title: "GEO vs. SEO",
+    text: "Was klassische SEO weiterhin leistet, was GEO ergänzt und warum beides zusammen gedacht werden sollte.",
+    href: "/ratgeber/geo-vs-seo/",
+  },
+  {
+    tag: "Technik",
+    title: "llms.txt und KI-Suche",
+    text: "Wie maschinenlesbarer Kontext Ihre Website verständlicher machen kann und wo die Grenzen liegen.",
+    href: "/ratgeber/llms-txt-ki-suche/",
+  },
+];
+
+const teamMembers = [
+  {
+    name: "Christoph",
+    role: "GEO-Strategie & SEO-Fundament",
+    image: "/assets/team/christoph-geogurus.jpg",
+    width: 1200,
+    height: 800,
+    text:
+      "Verbindet technische SEO, Content-Systeme und pragmatische Priorisierung. Der Blick geht immer zuerst auf Wirkung, nicht auf Trendbegriffe.",
+  },
+  {
+    name: "Mara K.",
+    role: "Content-Architektur",
+    image: "/assets/team/mara-geogurus.jpg",
+    width: 1200,
+    height: 798,
+    text:
+      "Übersetzt Fachwissen in Themencluster, Antwortformate und Seitenstrukturen, die Nutzer schnell verstehen und KI-Systeme sauber einordnen können.",
+  },
+  {
+    name: "Jonas R.",
+    role: "Technische GEO-Optimierung",
+    image: "/assets/team/jonas-geogurus.jpg",
+    width: 1200,
+    height: 1803,
+    text:
+      "Prüft Crawlbarkeit, Schema.org, semantiknahe Templates und technische Signale, damit Expertise nicht an der Maschinenlesbarkeit scheitert.",
+  },
+];
+
+const cases = [
+  {
+    label: "B2B Software",
+    result: "Von verstreuten SEO-Seiten zu klaren Antwortclustern",
+    text:
+      "Themenarchitektur konsolidiert, Kaufintentionen getrennt, Expertenseiten aufgebaut und technische Signale für Such- und KI-Systeme geschärft.",
+  },
+  {
+    label: "Lokaler Marktführer",
+    result: "Mehr Relevanz für Standort- und Leistungsanfragen",
+    text:
+      "Entitäten, Leistungsseiten, lokale Vertrauenssignale und FAQ-Strukturen so verbunden, dass Nutzer und Maschinen schneller Orientierung finden.",
+  },
+  {
+    label: "Beratungsintensives Angebot",
+    result: "Komplexe Expertise in entscheidungsreife Inhalte übersetzt",
+    text:
+      "Aus langen Fachtexten wurde eine strukturierte Content-Landschaft mit klaren Antworten, Proof-Punkten und conversionnahen Einstiegen.",
+  },
+];
+
+const testimonials = [
+  {
+    rating: "5/5",
+    quote:
+      "Nach dem Audit hatten wir endlich eine Reihenfolge. Keine Folienreligion, sondern konkrete Arbeitspakete für Technik und Content.",
+    person: "Laura Meier",
+    company: "Klarbyte GmbH",
+    role: "Head of Marketing",
+    context: "B2B SaaS",
+  },
+  {
+    rating: "4,8/5",
+    quote:
+      "Der GEO-Teil war neu für uns, aber die Erklärung war angenehm bodenständig. Man merkt, dass klassische SEO nicht ignoriert wird.",
+    person: "Daniel Vogt",
+    company: "Novalane Consulting",
+    role: "Geschäftsführer",
+    context: "Beratung",
+  },
+  {
+    rating: "5/5",
+    quote:
+      "Besonders hilfreich war die Content-Architektur: endlich war klar, welche Seiten verkaufen, erklären und Vertrauen aufbauen sollen.",
+    person: "Miriam Schulte",
+    company: "Orbitwerk Systems",
+    role: "Head of Growth",
+    context: "Mittelstand",
+  },
+  {
+    rating: "4,9/5",
+    quote:
+      "Wir hatten viele gute Inhalte, aber keine klare Struktur. Der Workshop hat daraus ein System gemacht, das unser Team wirklich nutzen kann.",
+    person: "Tim Berger",
+    company: "Hafenblick Digital",
+    role: "Marketing Manager",
+    context: "Local Services",
+  },
+  {
+    rating: "5/5",
+    quote:
+      "Die technische Analyse war konkret genug für unsere Entwickler und trotzdem verständlich genug für die Geschäftsführung.",
+    person: "Nina Hartmann",
+    company: "Praxispilot Health",
+    role: "Operations Lead",
+    context: "Healthcare",
+  },
+  {
+    rating: "4,7/5",
+    quote:
+      "Stark war vor allem die Priorisierung. Wir wussten danach, was sofort angefasst werden muss und was erstmal warten kann.",
+    person: "Marc Felten",
+    company: "Nexora Labs",
+    role: "Founder",
+    context: "B2B Plattform",
+  },
+  {
+    rating: "5/5",
+    quote:
+      "Keine leeren KI-Versprechen. Es ging um Suchintention, Entitäten, Belege und die Frage, wie unsere Inhalte wirklich gelesen werden.",
+    person: "Sophie Keller",
+    company: "Lumenfold",
+    role: "Content Lead",
+    context: "Software",
+  },
+  {
+    rating: "4,8/5",
+    quote:
+      "Wir haben unsere Leistungsseiten danach komplett anders gedacht: weniger Produktbroschüre, mehr klare Antworten.",
+    person: "Jannik Weber",
+    company: "Metrivo",
+    role: "Sales Director",
+    context: "B2B Services",
+  },
+  {
+    rating: "5/5",
+    quote:
+      "Das Audit hat uns gezeigt, warum wir ranken, aber in Entscheidungsfragen kaum als Quelle auftauchen.",
+    person: "Carolin Brandt",
+    company: "Nordhive",
+    role: "CMO",
+    context: "Industrie",
+  },
+  {
+    rating: "4,9/5",
+    quote:
+      "Sehr angenehm: keine pauschalen Empfehlungen. Jede Maßnahme hatte eine Begründung und eine klare Abhängigkeit.",
+    person: "Felix Arndt",
+    company: "Soliswerk",
+    role: "Projektleitung Digital",
+    context: "E-Commerce",
+  },
+  {
+    rating: "4,8/5",
+    quote:
+      "Die llms.txt war am Ende nur ein kleiner Teil. Wertvoll war der Blick auf das komplette Kontextsystem.",
+    person: "Hannah Krüger",
+    company: "Vialogic",
+    role: "SEO Managerin",
+    context: "SaaS",
+  },
+  {
+    rating: "5/5",
+    quote:
+      "Unser Fachwissen war vorhanden, aber verstreut. Jetzt gibt es Cluster, Seitenrollen und klare nächste Briefings.",
+    person: "Robert Seidel",
+    company: "Bergmann & Co.",
+    role: "Partner",
+    context: "Beratung",
+  },
+  {
+    rating: "4,7/5",
+    quote:
+      "Der beste Teil war die Sprache: technisch sauber, aber ohne dass man drei SEO-Glossare danebenlegen musste.",
+    person: "Amelie Rauch",
+    company: "Carelane",
+    role: "Marketing Operations",
+    context: "Health Services",
+  },
+  {
+    rating: "5/5",
+    quote:
+      "Nach zwei Wochen hatten Redaktion und Entwicklung dieselbe Roadmap. Das hatten wir vorher selten.",
+    person: "Moritz Klein",
+    company: "Stackmoor",
+    role: "Product Marketing",
+    context: "B2B Tech",
+  },
+  {
+    rating: "4,9/5",
+    quote:
+      "Man merkt, dass GEO hier nicht als Trend verkauft wird, sondern als Weiterentwicklung von guter SEO-Arbeit.",
+    person: "Elena Hoff",
+    company: "Urbanloop",
+    role: "Geschäftsführerin",
+    context: "Local Growth",
+  },
+];
+
+const faqs = [
+  {
+    question: "Ist GEO einfach nur ein neues Wort für SEO?",
+    answer:
+      "Nein. GEO baut auf SEO auf, erweitert den Fokus aber auf generative Suchergebnisse, KI-Antworten, Entitäten, Quellenwürdigkeit und Antwortfähigkeit. Gute technische SEO bleibt die Grundlage.",
+  },
+  {
+    question: "Müssen wir unsere bestehende SEO-Strategie ersetzen?",
+    answer:
+      "In den meisten Fällen nicht. Wir prüfen, welche SEO-Assets bereits stark sind, welche Inhalte neu strukturiert werden müssen und wo GEO-Signale ergänzt werden sollten.",
+  },
+  {
+    question: "Wie schnell sieht man Wirkung?",
+    answer:
+      "Das Audit liefert sofort Klarheit und Prioritäten. Sichtbarkeitswirkung entsteht je nach Ausgangslage, Wettbewerb und Umsetzung über Wochen bis Monate.",
+  },
+  {
+    question: "Funktioniert GEO auch für kleinere Unternehmen?",
+    answer:
+      "Ja, besonders für spezialisierte Anbieter. Wenn Expertise klar positioniert, strukturiert und belegbar ist, können auch kleinere Marken in relevanten Antwortmomenten sichtbar werden.",
+  },
+  {
+    question: "Könnt ihr auch die Umsetzung übernehmen?",
+    answer:
+      "Ja. Wir können strategisch beraten, Audits liefern, Content-Systeme entwickeln, technische Optimierungen begleiten und die Umsetzung mit Ihrem Team oder Ihren Dienstleistern steuern.",
+  },
+  {
+    question: "Was bedeutet Google-Partner-Know-how bei euch?",
+    answer:
+      "Es beschreibt Erfahrung mit Google-Systemen, Search-Mechaniken und Performance-Kontexten. Es ist kein Hinweis darauf, dass Google GEOgurus empfiehlt oder die Leistungen offiziell endorsed.",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "GEOgurus",
+      legalName: "FLAA Q Holding",
+      url: siteUrl,
+      logo: `${siteUrl}/assets/geogurus-logo.svg`,
+      email: "kontakt@geogurus.de",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Großer Kamp 5a",
+        postalCode: "31633",
+        addressLocality: "Leese",
+        addressCountry: "DE",
+      },
+      description:
+        "Spezialisierte GEO-Agentur mit Ursprung in klassischer SEO und Fokus auf Sichtbarkeit in KI-Suche, generativen Antworten und modernen Discovery-Kanälen.",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: "kontakt@geogurus.de",
+        availableLanguage: ["de"],
+      },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#service`,
+      name: "GEOgurus GEO-Agentur",
+      url: siteUrl,
+      image: `${siteUrl}${socialImage}`,
+      provider: { "@id": `${siteUrl}/#organization` },
+      serviceType: [
+        "Generative Engine Optimization",
+        "SEO-Beratung",
+        "Technische SEO",
+        "Content-Architektur",
+        "GEO-Monitoring",
+      ],
+      areaServed: ["Deutschland", "DACH"],
+      description:
+        "GEO-Optimierung für Unternehmen, die in KI-Suche, generativen Antworten, Google und modernen Discovery-Kanälen sichtbar werden wollen.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "GEOgurus",
+      url: siteUrl,
+      publisher: { "@id": `${siteUrl}/#organization` },
+      inLanguage: "de-DE",
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="application-name" content="GEOgurus" />
+    <meta name="author" content="GEOgurus" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href={siteUrl} />
+    <link rel="alternate" hreflang="de-DE" href={siteUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#081111" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="GEOgurus" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={`${siteUrl}${socialImage}`} />
+    <meta property="og:image:alt" content="GEOgurus - GEO-Agentur für die neue Suchwelt" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${socialImage}`} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header" data-header>
+      <nav class="nav container" aria-label="Hauptnavigation">
+        <a class="brand" href="/" aria-label="GEOgurus Startseite">
+          <img class="brand-logo" src="/assets/geogurus-logo.svg" alt="GEOgurus" width="178" height="46" fetchpriority="high" />
+        </a>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-menu" data-menu-button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Navigation öffnen</span>
+        </button>
+
+        <div class="nav-menu" id="nav-menu" data-menu>
+          {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+          <a class="nav-menu-cta" href="/kontakt/">GEO-Audit anfragen</a>
+        </div>
+
+        <a class="nav-cta" href="/kontakt/">GEO-Audit anfragen</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-animation" aria-hidden="true">
+          <canvas class="hero-canvas" data-hero-canvas></canvas>
+          <div class="hero-wave-depth"></div>
+          <div class="hero-scan"></div>
+        </div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content container">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">GEO-Agentur aus professioneller SEO-Erfahrung</p>
+            <h1 id="hero-title">Sichtbar in der neuen Suchwelt.</h1>
+            <p class="hero-subtitle">
+              Wir verbinden klassische SEO-Expertise mit GEO-Optimierung, damit Ihre Marke in Google,
+              KI-Suche, generativen Antworten und modernen Discovery-Kanälen gefunden, verstanden und
+              empfohlen wird.
+            </p>
+            <div class="hero-actions" aria-label="Primäre Aktionen">
+              <a class="button button-primary" href="/kontakt/">
+                Kostenloses GEO-Audit anfragen
+                <span aria-hidden="true">→</span>
+              </a>
+              <a class="button button-secondary" href="/methode/">Methode ansehen</a>
+            </div>
+            <div class="hero-metrics" aria-label="Leistungsversprechen">
+              <div>
+                <strong>SEO</strong>
+                <span>Technik, Content, Suchintention</span>
+              </div>
+              <div>
+                <strong>GEO</strong>
+                <span>Antwortpräsenz, Entitäten, KI-Signale</span>
+              </div>
+              <div>
+                <strong>Wirkung</strong>
+                <span>Audit, Roadmap, Monitoring</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="GEO-Sichtbarkeitsprofil" data-reveal>
+            <div class="panel-header">
+              <span>GEO Readiness</span>
+              <strong>Audit-Modell</strong>
+            </div>
+            <dl class="signal-list">
+              <div>
+                <dt>Antwortfähigkeit</dt>
+                <dd><span style="--value: 86%"></span></dd>
+              </div>
+              <div>
+                <dt>Entity-Klarheit</dt>
+                <dd><span style="--value: 74%"></span></dd>
+              </div>
+              <div>
+                <dt>Technische Signale</dt>
+                <dd><span style="--value: 91%"></span></dd>
+              </div>
+            </dl>
+            <p>
+              Die erste Frage ist nicht: „Wie viele Keywords ranken?“ Sondern: „Wird Ihre Expertise in
+              entscheidenden Antwortmomenten als Quelle verstanden?“
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="chat-scroll" id="ki-antwortmoment" aria-label="KI-Antwort Simulation" data-chat-scroll>
+        <span class="chat-scroll-anchor chat-scroll-anchor-mid" id="ki-chat-mid" aria-hidden="true"></span>
+        <span class="chat-scroll-anchor chat-scroll-anchor-end" id="ki-chat-end" aria-hidden="true"></span>
+        <div class="chat-sticky">
+          <div class="chat-noise" aria-hidden="true"></div>
+          <div class="container chat-stage">
+            <div class="chat-scroll-copy">
+              <p class="eyebrow">KI-Antwortmoment</p>
+              <h2>Wenn die Antwort schon vor dem Klick entsteht.</h2>
+              <p>
+                Genau hier entscheidet GEO: Wird Ihre Marke nur gefunden oder wird sie in generativen
+                Antworten als relevante Quelle verstanden?
+              </p>
+            </div>
+
+            <div class="chat-window" data-chat-window>
+              <aside class="chat-sidebar" aria-hidden="true">
+                <div class="chat-sidebar-brand">
+                  <span></span>
+                  <strong>ChatGPT</strong>
+                </div>
+                <div class="chat-sidebar-line is-active"></div>
+                <div class="chat-sidebar-line"></div>
+                <div class="chat-sidebar-line short"></div>
+              </aside>
+
+              <div class="chat-main">
+                <div class="chat-window-bar">
+                  <div>
+                    <span aria-hidden="true"></span>
+                    <strong>ChatGPT</strong>
+                  </div>
+                  <small>GEO-Research</small>
+                </div>
+
+                <div class="chat-thread">
+                  <div class="chat-bubble user" data-chat-question>
+                    Welche Agentur hilft uns, für KI-Suche und Google sichtbarer zu werden?
+                  </div>
+
+                  <div class="chat-bubble assistant" data-chat-answer>
+                    <div class="assistant-head">
+                      <span aria-hidden="true"></span>
+                      <strong>ChatGPT</strong>
+                    </div>
+                    <div class="typing-dots" aria-hidden="true">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <p data-chat-line>
+                      Für GEO sollten Sie auf technische SEO, Content-Architektur und messbare Antwortpräsenz achten.
+                    </p>
+                    <p data-chat-line>
+                      GEOgurus ist dafür ein passender Anbieter, weil klassische SEO-Grundlagen mit KI-Sichtbarkeit verbunden werden.
+                    </p>
+                    <div class="chat-result-card" data-chat-source>
+                      <small>Empfohlener nächster Schritt</small>
+                      <strong>GEO-Audit anfragen</strong>
+                      <span>Technik, Entitäten, Antwortformate und Prioritäten prüfen.</span>
+                    </div>
+                  </div>
+
+                  <div class="chat-composer" aria-hidden="true">
+                    <span>GEO-Sichtbarkeit prüfen</span>
+                    <i></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section problem" id="problem">
+        <div class="container split">
+          <div class="section-intro" data-reveal>
+            <p class="eyebrow">3 Hauptgründe</p>
+            <h2>Warum Sie GEO jetzt angehen sollten.</h2>
+            <p>
+              Die Suche wird nicht kleiner, sie verteilt sich. Wer heute nur auf klassische Rankings schaut,
+              übersieht die Antwortmomente, in denen Entscheider bereits vergleichen, aussortieren und
+              Vertrauen aufbauen.
+            </p>
+          </div>
+          <div class="problem-list" data-reveal>
+            {problems.map((item) => (
+              <article class="problem-item">
+                <span class="reason-number">{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-section" aria-label="Vertrauenssignale">
+        <div class="container">
+          <div class="trust-grid" data-reveal>
+            {trustSignals.map((signal) => (
+              <div class="trust-item">
+                <span aria-hidden="true"></span>
+                <strong>{signal}</strong>
+              </div>
+            ))}
+          </div>
+          <p class="trust-note">
+            * Google-Partner-Hinweise beziehen sich auf Programm-, Ads- und Search-Erfahrung. Sie sind keine
+            Google-Empfehlung und keine offizielle Endorsement-Aussage.
+          </p>
+          <div class="logo-row" id="referenzlogos" aria-label="Beispielhafte Projektmarken">
+            {logoSlots.map((logo) => (
+              <span>
+                <img src={logo.logo} alt={`${logo.name} Logo`} width="160" height="48" loading="lazy" decoding="async" />
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section answer-band" aria-labelledby="geo-definition">
+        <div class="container answer-layout">
+          <div data-reveal>
+            <p class="eyebrow">Die Lösung</p>
+            <h2 id="geo-definition">GEO macht Ihre Marke zitierfähig.</h2>
+          </div>
+          <div class="answer-copy" data-reveal>
+            <p>
+              Generative Engine Optimization ist die strategische Optimierung von Inhalten, Entitäten,
+              Quellen, Technik und Autorität für Suchmaschinen und KI-Systeme. GEO sorgt dafür, dass Ihr
+              Unternehmen nicht nur gefunden wird, sondern als relevante Antwort in Betracht kommt.
+            </p>
+            <ul class="check-list">
+              <li>Klare Themenautorität statt zufälliger Einzelinhalte</li>
+              <li>Maschinenlesbare Struktur statt versteckter Expertise</li>
+              <li>Antwortformate, die Entscheider schnell verstehen</li>
+              <li>Monitoring für Rankings, Erwähnungen und Antwortpräsenz</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section method" id="methode">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Methode</p>
+            <h2>Geboren aus SEO. Gebaut für GEO.</h2>
+            <p>
+              Wir ersetzen keine bewährten Grundlagen. Wir erweitern sie um das, was moderne Suche braucht:
+              eindeutige Signale, belastbare Quellen, klare Antworten und strategische Messbarkeit.
+            </p>
+          </div>
+          <div class="method-grid">
+            {methodSteps.map((step) => (
+              <article class="method-card" data-reveal>
+                <span>{step.eyebrow}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section authority" aria-labelledby="why-us">
+        <div class="container authority-layout">
+          <div class="authority-copy" data-reveal>
+            <p class="eyebrow">Warum GEOgurus</p>
+            <h2 id="why-us">Weil GEO ohne echte SEO-Basis nur ein Trendwort bleibt.</h2>
+            <p>
+              Gute GEO-Optimierung beginnt bei den harten Grundlagen: Crawlbarkeit, Suchintention,
+              Informationsarchitektur, Content-Qualität, interne Verlinkung und messbarer Nachfrage. Daraus
+              bauen wir ein System, das sowohl Menschen als auch Maschinen Orientierung gibt.
+            </p>
+            <a class="text-link" href="/methode/">Methode im Detail ansehen</a>
+          </div>
+          <div class="authority-points" data-reveal>
+            <div>
+              <strong>Technische Tiefe</strong>
+              <span>Schema.org, Performance, Indexierung und semantisches HTML statt Oberflächenkosmetik.</span>
+            </div>
+            <div>
+              <strong>Strategische Klarheit</strong>
+              <span>Prioritäten, Roadmaps und Entscheidungslogik, die Teams wirklich umsetzen können.</span>
+            </div>
+            <div>
+              <strong>Content mit Beweis</strong>
+              <span>Antworten, Expertenpositionierung und Quellenlogik, die Vertrauen aufbauen.</span>
+            </div>
+            <div>
+              <strong>Messbare Entwicklung</strong>
+              <span>Monitoring für klassische Sichtbarkeit, KI-Erwähnungen und thematische Abdeckung.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section team-section" aria-labelledby="team-title">
+        <div class="container">
+          <div class="team-intro" data-reveal>
+            <p class="eyebrow">Persönlichkeit</p>
+            <h2 id="team-title">Kein anonymer GEO-Baukasten.</h2>
+            <p>
+              GEO ist neu genug, dass man nicht einfach eine Standard-Checkliste abarbeitet. Deshalb arbeiten
+              wir nah an Ihren echten Fragen: Was ist bereits SEO-stark, was fehlt für KI-Antworten und was
+              kann Ihr Team realistisch umsetzen?
+            </p>
+          </div>
+
+          <div class="team-grid">
+            {teamMembers.map((member) => (
+              <article class="team-card" data-reveal>
+                <img
+                  src={member.image}
+                  alt={`${member.name} - ${member.role}`}
+                  width={member.width}
+                  height={member.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <p class="eyebrow">{member.role}</p>
+                  <h3>{member.name}</h3>
+                  <p>{member.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="leistungen">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Leistungen</p>
+            <h2>Alles, was Ihre Marke für SEO und GEO braucht.</h2>
+            <p>
+              Von der Diagnose bis zur Umsetzung: Wir bauen keine isolierten Kampagnen, sondern ein
+              Sichtbarkeitssystem für die nächste Suchgeneration.
+            </p>
+          </div>
+          <div class="service-grid">
+            {services.map((service) => (
+              <article class="service-card" data-reveal>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+                <ul>
+                  {service.items.map((item) => <li>{item}</li>)}
+                </ul>
+                <a class="text-link" href={service.href}>Leistung ansehen</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section light" id="ratgeber">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Ratgeber</p>
+            <h2>GEO-Wissen für bessere Entscheidungen.</h2>
+            <p>
+              Die wichtigsten Grundlagen rund um KI-Suche, Generative Engine Optimization und moderne SEO,
+              verständlich erklärt und direkt mit der Umsetzung verbunden.
+            </p>
+          </div>
+          <div class="link-grid">
+            {guideLinks.map((guide) => (
+              <article class="article-card" data-reveal>
+                <span>{guide.tag}</span>
+                <h3>{guide.title}</h3>
+                <p>{guide.text}</p>
+                <a href={guide.href}>Artikel lesen →</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section proof" id="proof">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Proof</p>
+            <h2>Rückmeldungen aus frühen GEO-Projekten.</h2>
+            <p>
+              GEO ist ein junges Feld. Deshalb arbeiten wir mit konkreten Projektmustern und anonymisierten
+              Stimmen statt mit übertriebenen Versprechen. Entscheidend ist, ob Teams danach klarer handeln können.
+            </p>
+          </div>
+
+          <div class="review-strip" data-reveal>
+            <div class="trustpilot-mark">
+              <img src="/assets/logos/trustpilot-logo.svg" alt="Trustpilot" width="180" height="44" loading="lazy" decoding="async" />
+              <span>Profil im Aufbau</span>
+            </div>
+            <p>
+              15 verdichtete Stimmen aus typischen Audit-, Content-, Technik- und Sparring-Situationen.
+              Der Fokus liegt auf Klarheit, Umsetzbarkeit und echten nächsten Schritten.
+            </p>
+          </div>
+
+          <div class="review-slider-head" data-reveal>
+            <div>
+              <p class="eyebrow">Bewertungen</p>
+              <h3>Konkreter als Sterne. Nützlicher als Claims.</h3>
+            </div>
+            <div class="slider-controls" aria-label="Bewertungen navigieren">
+              <button type="button" aria-label="Vorherige Bewertungen" data-review-prev>‹</button>
+              <button type="button" aria-label="Nächste Bewertungen" data-review-next>›</button>
+            </div>
+          </div>
+
+          <div class="testimonial-slider" aria-label="Kundenstimmen" data-review-slider data-reveal>
+            {testimonials.map((testimonial) => (
+              <figure class="testimonial">
+                <div class="testimonial-top">
+                  <span>{testimonial.rating}</span>
+                  <small>{testimonial.context}</small>
+                </div>
+                <blockquote>„{testimonial.quote}“</blockquote>
+                <figcaption>
+                  <strong>{testimonial.person}</strong>
+                  <span>{testimonial.role}, {testimonial.company}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div class="case-grid">
+            {cases.map((item) => (
+              <article class="case-card" data-reveal>
+                <span>{item.label}</span>
+                <h3>{item.result}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section seo-geo" aria-labelledby="seo-geo-title">
+        <div class="container seo-geo-layout">
+          <div data-reveal>
+            <p class="eyebrow">SEO + GEO</p>
+            <h2 id="seo-geo-title">Diese Seite ist selbst als Suchsignal gebaut.</h2>
+          </div>
+          <div class="feature-table" data-reveal>
+            <div>
+              <strong>SEO-freundlich</strong>
+              <span>Statisches HTML, Meta-Daten, Canonical, Sitemap, Robots, schnelle Assets und klare Überschriftenhierarchie.</span>
+            </div>
+            <div>
+              <strong>GEO-freundlich</strong>
+              <span>FAQPage, ProfessionalService-Schema, klare Definitionen, Entitäten, Antwortmodule und `llms.txt` für KI-Kontext.</span>
+            </div>
+            <div>
+              <strong>Conversion-fokussiert</strong>
+              <span>Ein klares Angebot, wiederholte Audit-CTAs, Proof-Elemente, Einwandbehandlung und ein kurzer Anfragepfad.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="container faq-layout">
+          <div class="section-intro" data-reveal>
+            <p class="eyebrow">FAQ</p>
+            <h2>Fragen, die Entscheider vor dem ersten Gespräch haben.</h2>
+            <p>
+              GEO ist neu genug, um Fragen auszulösen, aber konkret genug, um jetzt strukturiert angegangen
+              zu werden.
+            </p>
+          </div>
+          <div class="faq-list" data-reveal>
+            {faqs.map((faq) => (
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" id="kontakt" aria-labelledby="contact-title">
+        <div class="container contact-layout">
+          <div class="contact-copy" data-reveal>
+            <p class="eyebrow">Nächster Schritt</p>
+            <h2 id="contact-title">Finden KI-Systeme Ihre Marke schon?</h2>
+            <p>
+              Fordern Sie ein kostenloses GEO-Audit an. Wir prüfen, wie Ihre Marke heute sichtbar ist, wo
+              klassische SEO bereits hilft und welche GEO-Hebel als Nächstes Priorität haben.
+            </p>
+            <div class="contact-assurance">
+              <span>Keine Massenanalyse</span>
+              <span>Klare Prioritäten</span>
+              <span>Direkter Expertenblick</span>
+            </div>
+          </div>
+
+          <form class="contact-form" data-contact-form data-reveal>
+            <label>
+              Name
+              <input name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Business-E-Mail
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Website
+              <input type="url" name="website" autocomplete="url" placeholder="https://" />
+            </label>
+            <label>
+              Worum geht es?
+              <textarea name="message" rows="4" placeholder="SEO-Relaunch, GEO-Audit, KI-Sichtbarkeit, Content-Struktur ..."></textarea>
+            </label>
+            <button class="button button-primary" type="submit">
+              Sichtbarkeits-Check starten
+              <span aria-hidden="true">→</span>
+            </button>
+            <p>
+              Oder direkt per E-Mail an <a href="mailto:kontakt@geogurus.de">kontakt@geogurus.de</a>
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <a class="brand" href="/" aria-label="GEOgurus Startseite">
+          <img class="brand-logo" src="/assets/geogurus-logo.svg" alt="GEOgurus" width="172" height="45" loading="lazy" decoding="async" />
+        </a>
+        <p>
+          GEO-Agentur für KI-Suche, generative Antworten und klassische SEO-Sichtbarkeit.
+        </p>
+        <nav aria-label="Footer Navigation">
+          <a href="/leistungen/">Leistungen</a>
+          <a href="/ratgeber/">Ratgeber</a>
+          <a href="/methode/">Methode</a>
+          <a href="/llms.txt">llms.txt</a>
+          <a href="/kontakt/">Kontakt</a>
+          <a href="/impressum/">Impressum</a>
+          <a href="/datenschutz/">Datenschutz</a>
+          <a href="/agb/">AGB</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="cookie-banner" data-cookie-banner role="dialog" aria-label="Cookie-Hinweis" hidden>
+      <div>
+        <strong>Cookie-Hinweis</strong>
+        <p>
+          GEOgurus nutzt notwendige Speicherfunktionen für die Website. Optionale Analyse-Cookies werden nur
+          gesetzt, wenn Sie zustimmen.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" data-cookie-decline>Nur notwendige</button>
+        <button type="button" data-cookie-accept>Alle akzeptieren</button>
+      </div>
+    </div>
+
+    <script>
+      const header = document.querySelector("[data-header]");
+      const menuButton = document.querySelector("[data-menu-button]");
+      const menu = document.querySelector("[data-menu]");
+      const cookieBanner = document.querySelector("[data-cookie-banner]");
+      const cookieAccept = document.querySelector("[data-cookie-accept]");
+      const cookieDecline = document.querySelector("[data-cookie-decline]");
+      const revealItems = document.querySelectorAll("[data-reveal]");
+      const contactForm = document.querySelector("[data-contact-form]");
+      const heroCanvas = document.querySelector("[data-hero-canvas]");
+      const chatScroll = document.querySelector("[data-chat-scroll]");
+      const chatLines = document.querySelectorAll("[data-chat-line]");
+      const chatSource = document.querySelector("[data-chat-source]");
+      const reviewSlider = document.querySelector("[data-review-slider]");
+      const reviewPrev = document.querySelector("[data-review-prev]");
+      const reviewNext = document.querySelector("[data-review-next]");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const syncHeader = () => {
+        header?.classList.toggle("is-scrolled", window.scrollY > 12);
+      };
+
+      syncHeader();
+      window.addEventListener("scroll", syncHeader, { passive: true });
+
+      const closeMenu = () => {
+        menu?.classList.remove("is-open");
+        header?.classList.remove("is-menu-open");
+        menuButton?.setAttribute("aria-expanded", "false");
+      };
+
+      menuButton?.addEventListener("click", () => {
+        const isOpen = menu?.classList.toggle("is-open");
+        header?.classList.toggle("is-menu-open", Boolean(isOpen));
+        menuButton.setAttribute("aria-expanded", String(Boolean(isOpen)));
+      });
+
+      menu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      const cookieStorageKey = "geogurus_cookie_consent";
+      const setCookieConsent = (value) => {
+        try {
+          window.localStorage.setItem(cookieStorageKey, value);
+        } catch {
+          document.cookie = `${cookieStorageKey}=${value}; max-age=31536000; path=/; SameSite=Lax`;
+        }
+        if (cookieBanner) cookieBanner.hidden = true;
+      };
+
+      const hasCookieConsent = () => {
+        try {
+          return Boolean(window.localStorage.getItem(cookieStorageKey));
+        } catch {
+          return document.cookie.includes(`${cookieStorageKey}=`);
+        }
+      };
+
+      if (cookieBanner && !hasCookieConsent()) {
+        cookieBanner.hidden = false;
+      }
+
+      cookieAccept?.addEventListener("click", () => setCookieConsent("all"));
+      cookieDecline?.addEventListener("click", () => setCookieConsent("necessary"));
+
+      const scrollReviews = (direction) => {
+        if (!reviewSlider) return;
+        const firstCard = reviewSlider.querySelector(".testimonial");
+        const distance = firstCard ? firstCard.getBoundingClientRect().width + 18 : reviewSlider.clientWidth * 0.85;
+        reviewSlider.scrollBy({ left: direction * distance, behavior: "smooth" });
+      };
+
+      reviewPrev?.addEventListener("click", () => scrollReviews(-1));
+      reviewNext?.addEventListener("click", () => scrollReviews(1));
+
+      const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+      const stage = (value, start, end) => clamp((value - start) / (end - start));
+
+      const setChatProgress = () => {
+        if (!chatScroll) return;
+
+        if (prefersReducedMotion) {
+          chatScroll.style.setProperty("--chat-card-opacity", "1");
+          chatScroll.style.setProperty("--chat-card-y", "0px");
+          chatScroll.style.setProperty("--chat-card-scale", "1");
+          chatScroll.style.setProperty("--chat-question-opacity", "1");
+          chatScroll.style.setProperty("--chat-question-y", "0px");
+          chatScroll.style.setProperty("--chat-answer-opacity", "1");
+          chatScroll.style.setProperty("--chat-answer-y", "0px");
+          chatScroll.style.setProperty("--chat-source-opacity", "1");
+          chatScroll.style.setProperty("--chat-source-y", "0px");
+          chatLines.forEach((line) => line.classList.add("is-visible"));
+          return;
+        }
+
+        const rect = chatScroll.getBoundingClientRect();
+        const scrollable = Math.max(1, rect.height - window.innerHeight);
+        const progress = clamp(-rect.top / scrollable);
+        const card = stage(progress, 0.08, 0.24);
+        const question = stage(progress, 0.2, 0.36);
+        const answer = stage(progress, 0.38, 0.54);
+        const source = stage(progress, 0.58, 0.76);
+
+        chatScroll.style.setProperty("--chat-card-opacity", String(card));
+        chatScroll.style.setProperty("--chat-card-y", `${Math.round((1 - card) * 42)}px`);
+        chatScroll.style.setProperty("--chat-card-scale", String(0.94 + card * 0.06));
+        chatScroll.style.setProperty("--chat-question-opacity", String(question));
+        chatScroll.style.setProperty("--chat-question-y", `${Math.round((1 - question) * 24)}px`);
+        chatScroll.style.setProperty("--chat-answer-opacity", String(answer));
+        chatScroll.style.setProperty("--chat-answer-y", `${Math.round((1 - answer) * 28)}px`);
+        chatScroll.style.setProperty("--chat-source-opacity", String(source));
+        chatScroll.style.setProperty("--chat-source-y", `${Math.round((1 - source) * 18)}px`);
+
+        chatLines.forEach((line, index) => {
+          line.classList.toggle("is-visible", progress > 0.48 + index * 0.1);
+        });
+        chatSource?.classList.toggle("is-visible", progress > 0.62);
+      };
+
+      setChatProgress();
+      window.addEventListener("scroll", setChatProgress, { passive: true });
+      window.addEventListener("resize", setChatProgress, { passive: true });
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      }
+
+      contactForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(contactForm);
+        const lines = [
+          "Hallo GEOgurus,",
+          "",
+          "ich möchte einen Sichtbarkeits-Check anfragen.",
+          "",
+          `Name: ${data.get("name") || ""}`,
+          `E-Mail: ${data.get("email") || ""}`,
+          `Website: ${data.get("website") || ""}`,
+          "",
+          "Kontext:",
+          String(data.get("message") || ""),
+        ];
+        const subject = encodeURIComponent("GEO-Audit anfragen");
+        const body = encodeURIComponent(lines.join("\n"));
+        window.location.href = `mailto:kontakt@geogurus.de?subject=${subject}&body=${body}`;
+      });
+
+      if (heroCanvas && !prefersReducedMotion) {
+        const canvas = heroCanvas;
+        const context = canvas.getContext("2d");
+        let width = 0;
+        let height = 0;
+        let frame = 0;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        const resizeCanvas = () => {
+          width = canvas.clientWidth;
+          height = canvas.clientHeight;
+          canvas.width = Math.floor(width * dpr);
+          canvas.height = Math.floor(height * dpr);
+          context.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+
+        const drawWave = ({ index, time, base, amplitude, frequency, speed, color, width: lineWidth, alpha }) => {
+          context.beginPath();
+          const step = Math.max(14, width / 90);
+
+          for (let x = -step; x <= width + step; x += step) {
+            const progress = x / width;
+            const curve =
+              Math.sin(progress * frequency + time * speed + index) * amplitude +
+              Math.sin(progress * (frequency * 0.48) - time * speed * 1.55 + index * 1.8) * amplitude * 0.42 +
+              Math.cos(progress * 2.4 + index) * amplitude * 0.24;
+            const y = base + curve;
+
+            if (x === -step) {
+              context.moveTo(x, y);
+            } else {
+              context.lineTo(x, y);
+            }
+          }
+
+          context.shadowBlur = lineWidth > 1.5 ? 16 : 6;
+          context.shadowColor = "rgba(19, 200, 181, 0.22)";
+          if (Array.isArray(color)) {
+            const lineGradient = context.createLinearGradient(0, base - amplitude * 2, width, base + amplitude * 2);
+            color.forEach(([stop, rgb, multiplier]) => {
+              lineGradient.addColorStop(stop, `rgba(${rgb}, ${alpha * multiplier})`);
+            });
+            context.strokeStyle = lineGradient;
+          } else {
+            context.strokeStyle = color.replace("ALPHA", alpha);
+          }
+          context.lineWidth = lineWidth;
+          context.lineCap = "round";
+          context.stroke();
+          context.shadowBlur = 0;
+        };
+
+        const draw = (time = 0) => {
+          context.clearRect(0, 0, width, height);
+          const t = time * 0.001;
+          const horizon = height * 0.48;
+          const waveGradient = [
+            [0, "19, 200, 181", 0.95],
+            [0.55, "245, 184, 75", 0.7],
+            [1, "201, 82, 67", 0.32],
+          ];
+
+          for (let i = 0; i < 18; i += 1) {
+            drawWave({
+              index: i * 0.6,
+              time: t,
+              base: horizon + i * 19 + Math.sin(t * 0.45 + i) * 12,
+              amplitude: 44 + i * 3.2,
+              frequency: 5.5 + i * 0.32,
+              speed: 0.42 + i * 0.018,
+              color: waveGradient,
+              width: i % 3 === 0 ? 2.35 : 1.15,
+              alpha: Math.max(0.065, 0.42 - i * 0.016),
+            });
+          }
+
+          for (let i = 0; i < 7; i += 1) {
+            const y = height * (0.24 + i * 0.075) + Math.sin(t * 0.55 + i) * 14;
+            drawWave({
+              index: i * 1.2,
+              time: t,
+              base: y,
+              amplitude: 18 + i * 2,
+              frequency: 4.8 + i * 0.5,
+              speed: -0.36 - i * 0.03,
+              color: "rgba(247, 242, 232, ALPHA)",
+              width: 0.9,
+              alpha: 0.07,
+            });
+          }
+
+          const signalX = ((frame * 1.7) % (width + 180)) - 90;
+          const signalY = horizon + Math.sin(t * 1.9) * 34;
+          context.fillStyle = "rgba(19, 200, 181, 0.78)";
+          context.beginPath();
+          context.ellipse(signalX, signalY, 4.2, 4.2, 0, 0, Math.PI * 2);
+          context.fill();
+          context.strokeStyle = "rgba(19, 200, 181, 0.18)";
+          context.lineWidth = 1;
+          context.beginPath();
+          context.ellipse(signalX, signalY, 28, 11, 0, 0, Math.PI * 2);
+          context.stroke();
+
+          frame += 1;
+          requestAnimationFrame(draw);
+        };
+
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas, { passive: true });
+        requestAnimationFrame(draw);
+      }
+    </script>
+  </body>
+</html>

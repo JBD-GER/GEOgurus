@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="GEOgurus GEO-Agentur">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081111"/>
+      <stop offset=".48" stop-color="#0b2423"/>
+      <stop offset="1" stop-color="#081111"/>
+    </linearGradient>
+    <linearGradient id="mark-bg" x1="84" y1="84" x2="146" y2="146" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13c8b5"/>
+      <stop offset=".56" stop-color="#37d7c7"/>
+      <stop offset="1" stop-color="#f5b84b"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#13c8b5" stop-opacity="0"/>
+      <stop offset=".35" stop-color="#13c8b5"/>
+      <stop offset=".74" stop-color="#f5b84b"/>
+      <stop offset="1" stop-color="#c95243" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity=".62" fill="none" stroke="url(#wave)" stroke-width="2">
+    <path d="M-80 420 C140 270 230 560 430 390 S760 210 940 370 1190 460 1280 310"/>
+    <path d="M-80 455 C130 315 255 585 468 430 S760 260 960 410 1190 505 1280 355"/>
+    <path d="M-80 490 C150 355 280 610 510 465 S805 310 990 450 1190 545 1280 400"/>
+    <path d="M-80 525 C170 405 300 630 545 500 S845 360 1020 492 1200 580 1280 445"/>
+  </g>
+  <g opacity=".18" stroke="#f7f2e8">
+    <path d="M0 160H1200M0 240H1200M0 320H1200M0 400H1200"/>
+    <path d="M180 0V630M360 0V630M540 0V630M720 0V630M900 0V630M1080 0V630"/>
+  </g>
+  <rect x="84" y="84" width="64" height="64" rx="18" fill="url(#mark-bg)"/>
+  <path d="M116.1 100.8c-9.7 0-17.6 7.6-17.6 17.3 0 9.6 7.7 17.4 17.5 17.4 5.4 0 10.1-2 13.3-5.4V117h-14.2v7.1h6.6v2.4c-1.4.8-3.3 1.1-5.3 1.1-5.5 0-9.7-4-9.7-9.7 0-5.5 4.1-9.7 9.7-9.7 3.2 0 5.8 1.2 8 3.4l5.6-5.4c-3.3-3.5-8-5.4-13.9-5.4Z" fill="#081111"/>
+  <path d="M133.6 102.4c3.1 3.8 5.1 8.6 5.1 13.9 0 12.3-10 22.4-22.5 22.4-4.7 0-9-1.5-12.6-4" fill="none" stroke="#081111" stroke-width="3.1" stroke-linecap="round" opacity=".4"/>
+  <circle cx="134.4" cy="103.1" r="3.5" fill="#081111" opacity=".58"/>
+  <text x="166" y="127" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="900" letter-spacing="0">GEO<tspan fill="#13c8b5">gurus</tspan></text>
+  <text x="84" y="270" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="0">Sichtbar in der</text>
+  <text x="84" y="354" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="0">neuen Suchwelt.</text>
+  <text x="88" y="422" fill="#13c8b5" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="0">GEO-Optimierung aus professioneller SEO-Erfahrung</text>
+</svg>

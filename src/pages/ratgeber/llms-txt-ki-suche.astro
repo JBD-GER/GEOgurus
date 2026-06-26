@@ -1,0 +1,190 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const contentBlocks = [
+  {
+    title: "Kurzprofil",
+    text:
+      "Wer ist die Marke, für wen arbeitet sie, in welchem Markt ist sie aktiv und welche Begriffe beschreiben das Angebot korrekt?",
+  },
+  {
+    title: "Leistungen",
+    text:
+      "Die wichtigsten Services, Zielgruppen, Anwendungsfälle und Abgrenzungen sollten kompakt und ohne Marketingnebel beschrieben werden.",
+  },
+  {
+    title: "Wichtige Links",
+    text:
+      "Zentrale Leistungsseiten, Ratgeberartikel, Kontaktseiten, Referenzen oder Dokumentationen werden als kuratierte Einstiegspunkte verlinkt.",
+  },
+  {
+    title: "Kontext und Grenzen",
+    text:
+      "Hinweise zur Einordnung helfen, falsche Schlüsse zu vermeiden: Was macht die Marke, was nicht, und welche Inhalte sind besonders relevant?",
+  },
+];
+
+const checklist = [
+  "Datei unter /llms.txt erreichbar machen",
+  "Markdown-Struktur mit klarem H1, kurzer Zusammenfassung und sinnvollen H2-Bereichen nutzen",
+  "Nur wichtige, belastbare und aktuelle Informationen aufnehmen",
+  "Links auf zentrale Seiten kuratieren statt jede URL ungefiltert aufzulisten",
+  "Aussagen konsistent mit Website, Meta-Daten, Schema.org und Markenpositionierung halten",
+  "Regelmäßig aktualisieren, wenn Leistungen, Zielgruppen oder wichtige Inhalte wechseln",
+];
+
+const limits = [
+  {
+    title: "Keine Ranking-Garantie",
+    text:
+      "Eine llms.txt garantiert keine Aufnahme in KI-Antworten und ersetzt keine starke Website-Struktur.",
+  },
+  {
+    title: "Kein Ersatz für robots.txt",
+    text:
+      "robots.txt steuert Crawling-Hinweise. llms.txt soll Kontext liefern. Beide Dateien haben unterschiedliche Aufgaben.",
+  },
+  {
+    title: "Kein Freifahrtschein für schwache Inhalte",
+    text:
+      "Wenn Website-Inhalte dünn, veraltet oder widersprüchlich sind, macht eine Kontextdatei diese Probleme nur sichtbarer.",
+  },
+  {
+    title: "Noch kein universeller Standard",
+    text:
+      "llms.txt ist ein vorgeschlagenes Format mit wachsender Aufmerksamkeit, aber kein überall verbindlich unterstützter Webstandard.",
+  },
+];
+
+const steps = [
+  {
+    step: "01 Inventar",
+    text:
+      "Welche Seiten erklären Marke, Leistungen, Methoden, Belege und Kontakt am besten? Nur diese sollten in die erste Fassung.",
+  },
+  {
+    step: "02 Verdichtung",
+    text:
+      "Die Datei fasst zentrale Informationen knapp zusammen und verweist auf vertiefende Seiten, statt die Website zu duplizieren.",
+  },
+  {
+    step: "03 Abgleich",
+    text:
+      "Aussagen werden mit Website, strukturierten Daten, Seitentiteln, Leistungsseiten und Positionierung abgeglichen.",
+  },
+  {
+    step: "04 Pflege",
+    text:
+      "Bei neuen Leistungen, wichtigen Artikeln, Relaunches oder geänderter Positionierung wird die Datei mit aktualisiert.",
+  },
+];
+---
+
+<PageLayout
+  title="llms.txt für KI-Suche | Kontextdatei für GEO"
+  description="Was ist llms.txt, wie kann eine Kontextdatei KI-Systemen helfen und warum gehört sie in eine moderne GEO-Strategie?"
+  canonicalPath="/ratgeber/llms-txt-ki-suche/"
+  eyebrow="Ratgeber"
+  headline="llms.txt: Kontext für KI-Systeme."
+  intro="Eine llms.txt kann zentrale Informationen über Marke, Leistungen und Inhalte maschinenlesbar bündeln. Sie ersetzt keine SEO, kann aber GEO unterstützen."
+  schema={{
+    "@type": "Article",
+    "@id": "https://geogurus.de/ratgeber/llms-txt-ki-suche/#article",
+    headline: "llms.txt für KI-Suche",
+    description: "Was llms.txt ist, welche Inhalte sinnvoll sind und wo die Grenzen liegen.",
+    author: { "@id": "https://geogurus.de/#organization" },
+    publisher: { "@id": "https://geogurus.de/#organization" },
+    mainEntityOfPage: "https://geogurus.de/ratgeber/llms-txt-ki-suche/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#definition">Definition</a>
+        <a href="#nutzen">Nutzen</a>
+        <a href="#inhalt">Inhalte</a>
+        <a href="#checkliste">Checkliste</a>
+        <a href="#grenzen">Grenzen</a>
+        <a href="#umsetzung">Umsetzung</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>Technik</li>
+          <li>6 Minuten</li>
+          <li>Für SEO & Webteams</li>
+        </ul>
+
+        <div class="answer-box" id="definition">
+          <p>
+            llms.txt ist ein vorgeschlagenes Markdown-Format unter /llms.txt, das KI-Systemen und
+            maschinenlesenden Tools eine kuratierte Orientierung zu Website, Marke und wichtigen Inhalten
+            geben kann.
+          </p>
+        </div>
+
+        <h2 id="nutzen">Welchen Nutzen kann llms.txt haben?</h2>
+        <p>
+          Viele Websites enthalten gute Informationen, aber sie sind über Navigation, Skripte, Landingpages,
+          PDFs, Blogartikel und interne Strukturen verteilt. Eine llms.txt kann helfen, die wichtigsten
+          Inhalte bewusst zu kuratieren: Was ist zentral, wie ist die Marke einzuordnen und welche Seiten
+          liefern den besten Kontext?
+        </p>
+        <p>
+          Für GEO ist das interessant, weil die Datei eine zusätzliche Orientierungsschicht schafft. Sie
+          ersetzt aber nicht die eigentliche Website. Wenn Leistungsseiten unklar sind, strukturierte Daten
+          fehlen oder Inhalte nicht belastbar sind, löst eine llms.txt das Problem nicht allein.
+        </p>
+
+        <h2 id="inhalt">Was sollte enthalten sein?</h2>
+        <div class="article-panels">
+          {contentBlocks.map((block) => (
+            <section class="article-panel">
+              <h3>{block.title}</h3>
+              <p>{block.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="checkliste">Praktische Checkliste</h2>
+        <ul>
+          {checklist.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="grenzen">Was llms.txt nicht kann</h2>
+        <p>
+          Die Datei ist ein Kontextbaustein, kein Sichtbarkeitsversprechen. Gerade deshalb sollte sie
+          sauber, knapp und wahr bleiben. Überladene Dateien mit Werbesprache, veralteten Links oder
+          widersprüchlichen Aussagen schwächen eher das Vertrauen.
+        </p>
+        <div class="decision-grid">
+          {limits.map((item) => (
+            <section class="decision-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="umsetzung">So wird llms.txt sinnvoll umgesetzt</h2>
+        <div class="process-list">
+          {steps.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Gute Faustregel: Wenn ein Mensch die Datei liest, sollte er in einer Minute verstehen, wer die
+            Marke ist, was sie anbietet und welche Seiten wirklich wichtig sind.
+          </p>
+        </div>
+        <a class="text-link" href="/llms.txt">GEOgurus llms.txt ansehen</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>

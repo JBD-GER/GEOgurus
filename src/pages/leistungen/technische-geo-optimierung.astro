@@ -1,0 +1,160 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const modules = [
+  {
+    title: "Schema.org",
+    text:
+      "Organisation, Leistungen, Artikel, FAQ, Breadcrumbs, Personen, lokale Signale und relevante Entitäten werden strukturiert ausgezeichnet.",
+  },
+  {
+    title: "Semantisches HTML",
+    text:
+      "Klare Überschriften, sinnvolle Sektionen, Listen, Tabellen, interne Sprungmarken und lesbare Inhaltsstruktur verbessern Verständnis.",
+  },
+  {
+    title: "Crawlbarkeit",
+    text:
+      "Robots, Sitemaps, Statuscodes, Canonicals, Weiterleitungen, interne Links und Indexierbarkeit werden sauber geprüft und korrigiert.",
+  },
+  {
+    title: "Performance",
+    text:
+      "Schnelle Seiten, leichte Assets, stabile Layouts und gute Core-Web-Vitals unterstützen Nutzererlebnis und technische Qualität.",
+  },
+  {
+    title: "Maschinenlesbarer Kontext",
+    text:
+      "llms.txt, strukturierte Seitentexte, konsistente Meta-Daten und klare Entitätsbezüge ergänzen die Website als Kontextsystem.",
+  },
+  {
+    title: "Relaunch-Sicherheit",
+    text:
+      "Bei Relaunches sichern wir Weiterleitungen, URL-Logik, Indexierungsregeln, Schema, Tracking und Prioritäten ab.",
+  },
+];
+
+const checks = [
+  "Sind wichtige Inhalte indexierbar und intern gut erreichbar?",
+  "Ist die Überschriftenstruktur logisch, scanbar und semantisch sauber?",
+  "Passen strukturierte Daten zu Seiteninhalt, Marke und Leistungen?",
+  "Gibt es widersprüchliche Canonicals, Weiterleitungen oder Statuscodes?",
+  "Werden zentrale Entitäten über Seiten hinweg konsistent beschrieben?",
+  "Sind Core-Web-Vitals, Layout-Stabilität und Asset-Gewicht im grünen Bereich?",
+];
+
+const process = [
+  {
+    step: "01 Technischer Check",
+    text:
+      "Wir prüfen Crawl, Indexierung, Templates, Statuscodes, Performance, Schema.org, interne Links und zentrale Seitentypen.",
+  },
+  {
+    step: "02 GEO-Signalabgleich",
+    text:
+      "Technik wird mit Content-Struktur, Entitäten, Antwortformaten und maschinenlesbarem Kontext abgeglichen.",
+  },
+  {
+    step: "03 Umsetzungspaket",
+    text:
+      "Empfehlungen werden so formuliert, dass Entwicklung, Marketing oder externe Dienstleister sie sauber umsetzen können.",
+  },
+  {
+    step: "04 Validierung",
+    text:
+      "Nach Umsetzung prüfen wir, ob Signale korrekt ausgespielt werden und keine SEO- oder GEO-Risiken entstanden sind.",
+  },
+];
+---
+
+<PageLayout
+  title="Technische GEO-Optimierung | Schema, Crawlbarkeit und KI-Signale"
+  description="Technische GEO-Optimierung für strukturierte Daten, semantisches HTML, Performance, Crawlbarkeit, Indexierung und maschinenlesbare Vertrauenssignale."
+  canonicalPath="/leistungen/technische-geo-optimierung/"
+  eyebrow="Leistung"
+  headline="Technik, die Expertise lesbar macht."
+  intro="GEO braucht saubere technische Grundlagen. Wir optimieren Ihre Website so, dass Suchmaschinen und KI-Systeme Inhalte, Entitäten und Beziehungen zuverlässig verstehen."
+  schema={{
+    "@type": "Service",
+    "@id": "https://geogurus.de/leistungen/technische-geo-optimierung/#service",
+    name: "Technische GEO-Optimierung",
+    provider: { "@id": "https://geogurus.de/#organization" },
+    serviceType: "Technische GEO-Optimierung",
+    url: "https://geogurus.de/leistungen/technische-geo-optimierung/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Technische Basis</p>
+        <h2>Wenn Maschinen Ihre Inhalte nicht sauber lesen, bleibt Expertise unscharf.</h2>
+      </div>
+      <p class="lead" data-reveal>
+        Technische GEO-Optimierung verbindet klassische technische SEO mit semantischen Signalen. Es geht
+        nicht darum, Suchmaschinen auszutricksen, sondern Inhalte, Beziehungen und Belege so sauber
+        bereitzustellen, dass sie zuverlässig verstanden werden können.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Module</p>
+        <h2>Die technischen Hebel für bessere Verständlichkeit.</h2>
+      </div>
+      <div class="detail-grid">
+        {modules.map((module) => (
+          <article class="detail-card" data-reveal>
+            <h2>{module.title}</h2>
+            <p>{module.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Prüffragen</p>
+        <h2>Technik wird an konkreten Signalen gemessen.</h2>
+        <p class="lead">
+          Wir prüfen nicht nur, ob Tools grüne Häkchen zeigen. Entscheidend ist, ob die technische Struktur
+          für Nutzer, Suchmaschinen und KI-Systeme ein klares Bild ergibt.
+        </p>
+      </div>
+      <ul data-reveal>
+        {checks.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Ablauf</p>
+        <h2>Von Befunden zu umsetzbaren technischen Tickets.</h2>
+      </div>
+      <div class="process-list" data-reveal>
+        {process.map((item) => (
+          <div class="process-step">
+            <strong>{item.step}</strong>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band dark">
+    <div class="container cta-panel" data-reveal>
+      <p class="eyebrow">Nächster Schritt</p>
+      <h2>Sie planen einen Relaunch oder vermuten technische Blocker?</h2>
+      <p>
+        Dann prüfen wir, ob Ihre technische Basis SEO- und GEO-Sichtbarkeit unterstützt oder ausbremst.
+      </p>
+      <a class="button button-primary" href="/kontakt/">Technik-Check anfragen →</a>
+    </div>
+  </section>
+</PageLayout>

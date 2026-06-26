@@ -1,0 +1,16 @@
+{
+  "name": "GEOgurus",
+  "short_name": "GEOgurus",
+  "description": "GEO-Agentur für Sichtbarkeit in KI-Suche, generativen Antworten und klassischen Suchmaschinen.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#081111",
+  "theme_color": "#13c8b5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

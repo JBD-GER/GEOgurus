@@ -1,0 +1,190 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const services = [
+  {
+    tag: "Analyse",
+    title: "GEO-Audit",
+    text:
+      "Der strategische Sichtbarkeits-Check für SEO-Basis, KI-Antwortpräsenz, Content-Struktur, Technik, Entitäten und Prioritäten.",
+    href: "/leistungen/geo-audit/",
+    items: ["Status quo", "Lücken", "Roadmap"],
+  },
+  {
+    tag: "Content",
+    title: "Content-Architektur",
+    text:
+      "Themencluster, Leistungsseiten, Antwortformate und Experteninhalte, die Menschen überzeugen und Maschinen Zusammenhänge liefern.",
+    href: "/leistungen/content-architektur/",
+    items: ["Topic Maps", "Briefings", "Interne Links"],
+  },
+  {
+    tag: "Technik",
+    title: "Technische GEO-Optimierung",
+    text:
+      "Strukturierte Daten, semantisches HTML, Crawlbarkeit, Performance und maschinenlesbare Signale für bessere Einordnung.",
+    href: "/leistungen/technische-geo-optimierung/",
+    items: ["Schema.org", "Crawlability", "llms.txt"],
+  },
+  {
+    tag: "Steuerung",
+    title: "Monitoring & Enablement",
+    text:
+      "Regelmäßige Messung von Rankings, Erwähnungen, Antwortpräsenz, Themenlücken und Fortschritt für Ihr Team.",
+    href: "/leistungen/monitoring/",
+    items: ["Dashboards", "Prioritäten", "Sparring"],
+  },
+];
+
+const phases = [
+  {
+    step: "01 Diagnose",
+    text:
+      "Wir prüfen, wo Ihre Website heute trägt, wo sie Such- oder KI-Systemen zu wenig Kontext gibt und welche Risiken zuerst gelöst werden müssen.",
+  },
+  {
+    step: "02 Architektur",
+    text:
+      "Aus Befunden werden Themencluster, Seitenrollen, interne Links, Content-Formate und technische Anforderungen abgeleitet.",
+  },
+  {
+    step: "03 Umsetzung",
+    text:
+      "Wir optimieren Inhalte, Struktur, Schema.org, semantische Signale und Antwortmodule mit Ihrem Team oder Ihren Dienstleistern.",
+  },
+  {
+    step: "04 Steuerung",
+    text:
+      "Monitoring macht sichtbar, welche Themen, Seiten und Antwortmuster sich entwickeln und wo neue Prioritäten entstehen.",
+  },
+];
+
+const decisions = [
+  {
+    title: "Wenn unklar ist, wo Sie stehen",
+    text:
+      "Starten Sie mit dem GEO-Audit. Es trennt Annahmen von Befunden und zeigt, welcher Hebel zuerst wirkt.",
+    href: "/leistungen/geo-audit/",
+  },
+  {
+    title: "Wenn viele Inhalte vorhanden sind",
+    text:
+      "Content-Architektur bringt Ordnung in Themen, Suchintentionen, Entscheidungsfragen und interne Verlinkung.",
+    href: "/leistungen/content-architektur/",
+  },
+  {
+    title: "Wenn Technik oder Relaunch ansteht",
+    text:
+      "Technische GEO-Optimierung sorgt dafür, dass Inhalte, Entitäten und Belege maschinenlesbar werden.",
+    href: "/leistungen/technische-geo-optimierung/",
+  },
+  {
+    title: "Wenn Umsetzung laufen soll",
+    text:
+      "Monitoring und Enablement halten Sichtbarkeit, Lücken, Fortschritt und nächste Maßnahmen steuerbar.",
+    href: "/leistungen/monitoring/",
+  },
+];
+---
+
+<PageLayout
+  title="GEO-Leistungen | GEOgurus"
+  description="GEO-Audit, Content-Architektur, technische GEO-Optimierung und Monitoring für Unternehmen, die in KI-Suche und klassischer Suche sichtbar werden wollen."
+  canonicalPath="/leistungen/"
+  eyebrow="Leistungen"
+  headline="GEO-Leistungen mit echter SEO-Basis."
+  intro="Wir verbinden technische Suchmaschinenoptimierung, strategische Content-Arbeit und GEO-Optimierung zu einem Sichtbarkeitssystem für Google, KI-Suche und generative Antworten."
+  schema={{
+    "@type": "Service",
+    "@id": "https://geogurus.de/leistungen/#service",
+    name: "GEO-Leistungen",
+    provider: { "@id": "https://geogurus.de/#organization" },
+    serviceType: ["GEO-Audit", "Content-Architektur", "Technische GEO-Optimierung", "Monitoring"],
+    url: "https://geogurus.de/leistungen/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Überblick</p>
+        <h2>Von der Diagnose bis zur laufenden Steuerung.</h2>
+      </div>
+      <p class="lead" data-reveal>
+        GEO funktioniert nicht als einzelner Trick. Es entsteht aus sauberer Technik, klarer
+        Informationsarchitektur, belegbarer Expertise und kontinuierlicher Messung. Die Leistungen sind so
+        aufgebaut, dass sie einzeln starten können und zusammen ein belastbares System ergeben.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container service-grid">
+      {services.map((service) => (
+        <article class="service-card" data-reveal>
+          <p class="eyebrow">{service.tag}</p>
+          <h3>{service.title}</h3>
+          <p>{service.text}</p>
+          <ul>
+            {service.items.map((item) => <li>{item}</li>)}
+          </ul>
+          <a class="text-link" href={service.href}>Mehr erfahren</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Ablauf</p>
+        <h2>Die Reihenfolge ist bewusst einfach.</h2>
+        <p class="lead">
+          Erst verstehen, dann strukturieren, dann umsetzen, dann messen. So entstehen keine losen
+          Maßnahmen, sondern nachvollziehbare Entscheidungen.
+        </p>
+      </div>
+      <div class="process-list" data-reveal>
+        {phases.map((phase) => (
+          <div class="process-step">
+            <strong>{phase.step}</strong>
+            <p>{phase.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Einstieg wählen</p>
+        <h2>Welche Leistung passt zuerst?</h2>
+        <p>
+          Je nach Ausgangslage ist ein anderer Startpunkt sinnvoll. Entscheidend ist, dass Maßnahmen nicht
+          isoliert geplant werden, sondern auf Sichtbarkeit, Antwortfähigkeit und Umsetzung einzahlen.
+        </p>
+      </div>
+      <div class="decision-grid">
+        {decisions.map((item) => (
+          <article class="decision-card" data-reveal>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <a class="text-link" href={item.href}>Leistung ansehen</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band dark">
+    <div class="container cta-panel" data-reveal>
+      <p class="eyebrow">Startpunkt</p>
+      <h2>Unsicher, welche Leistung zuerst sinnvoll ist?</h2>
+      <p>
+        Starten Sie mit dem GEO-Audit. Danach ist klar, ob technische Grundlagen, Content-Struktur,
+        Markenentitäten oder Monitoring die höchste Priorität haben.
+      </p>
+      <a class="button button-primary" href="/kontakt/">GEO-Audit anfragen →</a>
+    </div>
+  </section>
+</PageLayout>

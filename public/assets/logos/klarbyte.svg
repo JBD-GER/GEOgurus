@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title">
+  <title id="title">Klarbyte</title>
+  <rect width="240" height="72" rx="10" fill="none"/>
+  <g fill="#f7f2e8">
+    <path d="M22 20h9v13.2L43.8 20h11.4L39.7 35.6 56 52H44L31 38.5V52h-9V20z"/>
+    <path d="M62 20h5v32h-5z" opacity=".72"/>
+  </g>
+  <text x="78" y="36" fill="#f7f2e8" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="850">Klarbyte</text>
+  <text x="80" y="53" fill="#f7f2e8" opacity=".62" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="760" letter-spacing="2">DATA CLARITY</text>
+</svg>

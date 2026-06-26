@@ -1,0 +1,50 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+---
+
+<PageLayout
+  title="GEO-Audit anfragen | Kontakt zu GEOgurus"
+  description="Kontaktieren Sie GEOgurus für ein GEO-Audit, einen Sichtbarkeits-Check oder Beratung zu SEO, GEO und KI-Suche."
+  canonicalPath="/kontakt/"
+  eyebrow="Kontakt"
+  headline="Finden KI-Systeme Ihre Marke schon?"
+  intro="Schicken Sie uns Ihre Website und den Kontext. Wir prüfen, wo klassische SEO bereits trägt und welche GEO-Hebel als Nächstes sinnvoll sind."
+>
+  <section class="content-band light">
+    <div class="container contact-layout">
+      <div class="contact-copy" data-reveal>
+        <p class="eyebrow">Anfrage</p>
+        <h2>Starten Sie mit einem Sichtbarkeits-Check.</h2>
+        <p>
+          Wir melden uns mit einer ersten Einschätzung, ob ein GEO-Audit, technische Optimierung,
+          Content-Architektur oder Monitoring der sinnvollste Einstieg ist.
+        </p>
+        <div class="authority-points">
+          <div><strong>Kein Massencheck</strong><span>Wir betrachten Ausgangslage, Markt und Zielgruppe.</span></div>
+          <div><strong>Klare Empfehlung</strong><span>Sie erfahren, welcher nächste Schritt wirklich sinnvoll ist.</span></div>
+        </div>
+      </div>
+
+      <form class="contact-form" data-contact-form data-reveal>
+        <label>
+          Name
+          <input name="name" autocomplete="name" required />
+        </label>
+        <label>
+          Business-E-Mail
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          Website
+          <input type="url" name="website" autocomplete="url" placeholder="https://" />
+        </label>
+        <label>
+          Worum geht es?
+          <textarea name="message" rows="5" placeholder="GEO-Audit, Relaunch, Content-Struktur, technische SEO, KI-Sichtbarkeit ..."></textarea>
+        </label>
+        <button class="button button-primary" type="submit">Sichtbarkeits-Check starten →</button>
+        <p>Oder direkt per E-Mail an <a href="mailto:kontakt@geogurus.de">kontakt@geogurus.de</a></p>
+      </form>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,184 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const modules = [
+  {
+    title: "Topic Maps",
+    text:
+      "Wir ordnen Themen, Suchintentionen, Entscheidungsphasen, Leistungsbezüge und unterstützende Inhalte zu einem tragfähigen Cluster.",
+  },
+  {
+    title: "Seitenrollen",
+    text:
+      "Jede Seite bekommt eine klare Aufgabe: verkaufen, erklären, vergleichen, belegen, einordnen oder in ein tieferes Thema führen.",
+  },
+  {
+    title: "Antwortformate",
+    text:
+      "Definitionen, Kriterien, Prozesse, FAQs, Vergleiche und Beispiele werden so strukturiert, dass sie schnell erfassbar sind.",
+  },
+  {
+    title: "Expertenpositionierung",
+    text:
+      "Wir machen sichtbar, warum Ihre Marke eine glaubwürdige Quelle ist: Erfahrung, Methodik, Verantwortlichkeit, Belege und Perspektive.",
+  },
+  {
+    title: "Interne Verlinkung",
+    text:
+      "Relevante Inhalte werden logisch verbunden, damit Themenautorität nicht verstreut bleibt und Nutzer klare nächste Schritte finden.",
+  },
+  {
+    title: "Content-Briefings",
+    text:
+      "Redaktion, Fachteam oder Agentur erhalten Briefings mit Suchintention, Struktur, Kernantworten, Proof-Punkten und internen Links.",
+  },
+];
+
+const process = [
+  {
+    step: "01 Themen inventarisieren",
+    text:
+      "Bestehende Inhalte, Leistungen, Suchdaten, Sales-Fragen, Wettbewerber und interne Expertise werden gesammelt und geordnet.",
+  },
+  {
+    step: "02 Cluster planen",
+    text:
+      "Wir definieren Pillar-Seiten, unterstützende Ratgeber, Vergleichsinhalte, Proof-Elemente und conversionnahe Einstiege.",
+  },
+  {
+    step: "03 Seiten strukturieren",
+    text:
+      "Für wichtige Seiten entstehen klare Inhaltsgerüste mit H-Struktur, Antwortmodulen, Belegen, CTAs und Verlinkungslogik.",
+  },
+  {
+    step: "04 Umsetzung begleiten",
+    text:
+      "Briefings, Reviews und Prioritäten helfen, die Architektur sauber in reale Seiten und redaktionelle Abläufe zu übersetzen.",
+  },
+];
+
+const outcomes = [
+  {
+    title: "Mehr Orientierung",
+    text:
+      "Nutzer verstehen schneller, welche Lösung passt, welche Kriterien wichtig sind und warum Ihre Marke relevant ist.",
+  },
+  {
+    title: "Mehr Themenautorität",
+    text:
+      "Suchsysteme erkennen Zusammenhänge besser, weil Inhalte nicht isoliert, sondern als zusammenhängendes Wissenssystem auftreten.",
+  },
+  {
+    title: "Mehr Umsetzbarkeit",
+    text:
+      "Teams bekommen klare Seitenrollen, Briefings und Prioritäten statt abstrakter Content-Empfehlungen.",
+  },
+  {
+    title: "Mehr GEO-Fähigkeit",
+    text:
+      "Antwortmodule, Belege und klare Entitäten erhöhen die Chance, als Quelle für generative Antworten verstanden zu werden.",
+  },
+];
+---
+
+<PageLayout
+  title="Content-Architektur für GEO und SEO | GEOgurus"
+  description="Content-Architektur für GEO: Themencluster, Antwortformate, Experteninhalte und interne Verlinkung für bessere Sichtbarkeit in Suche und KI-Antworten."
+  canonicalPath="/leistungen/content-architektur/"
+  eyebrow="Leistung"
+  headline="Content, der verstanden und zitiert werden kann."
+  intro="Wir strukturieren Ihre Expertise so, dass Entscheider schneller Vertrauen aufbauen und Such- sowie KI-Systeme die relevanten Zusammenhänge erkennen."
+  schema={{
+    "@type": "Service",
+    "@id": "https://geogurus.de/leistungen/content-architektur/#service",
+    name: "Content-Architektur für GEO und SEO",
+    provider: { "@id": "https://geogurus.de/#organization" },
+    serviceType: "Content-Architektur",
+    url: "https://geogurus.de/leistungen/content-architektur/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Ansatz</p>
+        <h2>Weg von Einzeltexten. Hin zu Themenautorität.</h2>
+      </div>
+      <p class="lead" data-reveal>
+        Eine gute Content-Architektur beantwortet nicht nur einzelne Keywords. Sie erklärt ein Thema
+        vollständig, ordnet Leistungen ein, belegt Expertise und schafft interne Verbindungen, die Menschen
+        und Maschinen helfen.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Module</p>
+        <h2>Aus Expertise wird eine klare Inhaltsstruktur.</h2>
+        <p>
+          Wir planen nicht nur neue Artikel. Wir definieren, welche Seiten welche Aufgabe haben, welche
+          Fragen dort beantwortet werden und wie die Inhalte zusammenwirken.
+        </p>
+      </div>
+      <div class="detail-grid">
+        {modules.map((module) => (
+          <article class="detail-card" data-reveal>
+            <h2>{module.title}</h2>
+            <p>{module.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Ablauf</p>
+        <h2>Die Architektur entsteht aus Nachfrage und echter Expertise.</h2>
+        <p class="lead">
+          Die beste Struktur liegt selten in Keyword-Listen allein. Sie entsteht aus Suchdaten,
+          Kundenfragen, Fachwissen, Wettbewerbsbild und der Frage, welche Entscheidung Nutzer treffen wollen.
+        </p>
+      </div>
+      <div class="process-list" data-reveal>
+        {process.map((item) => (
+          <div class="process-step">
+            <strong>{item.step}</strong>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Wirkung</p>
+        <h2>Was sich durch gute Content-Architektur verändert.</h2>
+      </div>
+      <div class="decision-grid">
+        {outcomes.map((outcome) => (
+          <article class="decision-card" data-reveal>
+            <h3>{outcome.title}</h3>
+            <p>{outcome.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band dark">
+    <div class="container cta-panel" data-reveal>
+      <p class="eyebrow">Nächster Schritt</p>
+      <h2>Ihre Inhalte ranken, aber erklären noch nicht genug?</h2>
+      <p>
+        Dann lohnt sich eine Content-Architektur, die Suchintention, Expertise, Antwortfähigkeit und interne
+        Verlinkung zusammenbringt.
+      </p>
+      <a class="button button-primary" href="/kontakt/">Content-Architektur anfragen →</a>
+    </div>
+  </section>
+</PageLayout>

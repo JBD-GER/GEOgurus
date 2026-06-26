@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title">
+  <title id="title">Nexora</title>
+  <rect width="240" height="72" rx="10" fill="none"/>
+  <g fill="none" stroke="#f7f2e8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 50V22l30 28V22" stroke-width="5.5"/>
+    <path d="M59 24l11 12-11 12" stroke-width="3.5" opacity=".78"/>
+  </g>
+  <text x="78" y="36" fill="#f7f2e8" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="850">Nexora</text>
+  <text x="80" y="53" fill="#f7f2e8" opacity=".62" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="760" letter-spacing="2">B2B PLATFORM</text>
+</svg>

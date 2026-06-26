@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title">
+  <title id="title">Orbitwerk</title>
+  <rect width="240" height="72" rx="10" fill="none"/>
+  <g fill="none" stroke="#f7f2e8" stroke-linecap="round">
+    <circle cx="40" cy="36" r="15" stroke-width="4"/>
+    <path d="M18 40c16-16 35-22 56-14" stroke-width="3" opacity=".76"/>
+    <circle cx="58" cy="26" r="3.5" fill="#f7f2e8" stroke="none"/>
+  </g>
+  <text x="78" y="36" fill="#f7f2e8" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="850">Orbitwerk</text>
+  <text x="80" y="53" fill="#f7f2e8" opacity=".62" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="760" letter-spacing="2">INDUSTRIAL TECH</text>
+</svg>

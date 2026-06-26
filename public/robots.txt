@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geogurus.de/sitemap-index.xml

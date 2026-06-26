@@ -1,0 +1,171 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const articles = [
+  {
+    tag: "Grundlagen",
+    title: "Was ist GEO?",
+    text:
+      "Der Einstieg in Generative Engine Optimization: Definition, Signale, typische Missverständnisse und ein sinnvoller Startpunkt.",
+    href: "/ratgeber/was-ist-geo/",
+    meta: ["8 Min.", "Strategie", "Startpunkt"],
+  },
+  {
+    tag: "Vergleich",
+    title: "GEO vs. SEO",
+    text:
+      "Was klassische SEO weiterhin leistet, was GEO ergänzt und wie Unternehmen beides zu einem Sichtbarkeitssystem verbinden.",
+    href: "/ratgeber/geo-vs-seo/",
+    meta: ["7 Min.", "SEO + GEO", "Entscheidung"],
+  },
+  {
+    tag: "Technik",
+    title: "llms.txt und KI-Suche",
+    text:
+      "Was eine llms.txt leisten kann, welche Inhalte hineingehören und warum sie nur ein Baustein in einer GEO-Strategie ist.",
+    href: "/ratgeber/llms-txt-ki-suche/",
+    meta: ["6 Min.", "Technik", "Kontext"],
+  },
+];
+
+const learningPath = [
+  {
+    step: "01 Einordnen",
+    text:
+      "Verstehen, wie generative Suche Informationen verarbeitet, warum Quellenwürdigkeit wichtiger wird und welche SEO-Grundlagen weiter tragen.",
+  },
+  {
+    step: "02 Prüfen",
+    text:
+      "Bestehende Inhalte, technische Signale, Entitäten und Antwortpräsenz gegen konkrete Such- und Entscheidungsfragen spiegeln.",
+  },
+  {
+    step: "03 Strukturieren",
+    text:
+      "Themencluster, Leistungsseiten, Ratgeberinhalte, interne Verlinkung und Belege so ordnen, dass Expertise schneller erkennbar wird.",
+  },
+  {
+    step: "04 Messen",
+    text:
+      "Rankings, Erwähnungen, KI-Antworten, Themenlücken und Umsetzungsfortschritt regelmäßig beobachten und priorisieren.",
+  },
+];
+
+const topicBlocks = [
+  {
+    title: "Für Entscheider",
+    text:
+      "Was ändert sich an Sichtbarkeit, welche Budgets sind sinnvoll und wann lohnt sich ein GEO-Audit statt einzelner Content-Maßnahmen?",
+  },
+  {
+    title: "Für Marketing-Teams",
+    text:
+      "Wie werden bestehende SEO-Seiten in Antwortformate, Themencluster und conversionnahe Informationsarchitektur übersetzt?",
+  },
+  {
+    title: "Für technische Teams",
+    text:
+      "Welche Rolle spielen Crawlbarkeit, semantisches HTML, strukturierte Daten, Performance, robots.txt, llms.txt und saubere Statuscodes?",
+  },
+  {
+    title: "Für Content-Verantwortliche",
+    text:
+      "Wie entstehen Inhalte, die nicht nur Keywords abdecken, sondern Entscheidungsfragen beantworten, Expertise belegen und zitiert werden können?",
+  },
+];
+---
+
+<PageLayout
+  title="GEO-Ratgeber | Wissen zu KI-Suche, SEO und Generative Engine Optimization"
+  description="Der GEOgurus Ratgeber erklärt GEO, KI-Suche, moderne SEO, technische Signale, Content-Architektur und Sichtbarkeit in generativen Antworten."
+  canonicalPath="/ratgeber/"
+  eyebrow="Ratgeber"
+  headline="GEO verstehen. Bessere Entscheidungen treffen."
+  intro="Ein kompakter Wissensbereich für Unternehmen, die klassische SEO nicht wegwerfen, sondern für KI-Suche, generative Antworten und moderne Discovery weiterentwickeln wollen."
+  schema={{
+    "@type": "CollectionPage",
+    "@id": "https://geogurus.de/ratgeber/#collection",
+    name: "GEO-Ratgeber",
+    url: "https://geogurus.de/ratgeber/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Orientierung</p>
+        <h2>Der Ratgeber sortiert das Thema von der Strategie bis zur Technik.</h2>
+      </div>
+      <p class="lead" data-reveal>
+        GEO ist kein isolierter Trick. Es geht um die Frage, ob Ihre Marke in Suchsystemen, KI-Antworten
+        und Entscheidungsphasen als verständliche, vertrauenswürdige Quelle auftaucht. Die Artikel zeigen,
+        welche Grundlagen bleiben, welche Signale dazukommen und wie aus Wissen ein umsetzbarer Plan wird.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container link-grid">
+      {articles.map((article) => (
+        <article class="article-card" data-reveal>
+          <span>{article.tag}</span>
+          <h2>{article.title}</h2>
+          <p>{article.text}</p>
+          <ul class="article-meta" aria-label="Artikeldetails">
+            {article.meta.map((item) => <li>{item}</li>)}
+          </ul>
+          <a href={article.href}>Artikel lesen →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Lernpfad</p>
+        <h2>So wird aus GEO-Wissen ein sinnvoller Arbeitsplan.</h2>
+      </div>
+      <div class="process-list" data-reveal>
+        {learningPath.map((item) => (
+          <div class="process-step">
+            <strong>{item.step}</strong>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Themen</p>
+        <h2>Die wichtigsten Fragen hängen selten an nur einem Kanal.</h2>
+        <p>
+          Gute GEO-Arbeit verbindet Geschäftslogik, SEO-Handwerk, Content-Architektur und technische
+          Lesbarkeit. Deshalb ist der Ratgeber bewusst nach Rollen und Entscheidungen gedacht.
+        </p>
+      </div>
+      <div class="detail-grid">
+        {topicBlocks.map((block) => (
+          <article class="detail-card" data-reveal>
+            <h2>{block.title}</h2>
+            <p>{block.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band dark">
+    <div class="container cta-panel" data-reveal>
+      <p class="eyebrow">Nächster Schritt</p>
+      <h2>Sie wollen wissen, wo Ihre Website heute steht?</h2>
+      <p>
+        Der Ratgeber hilft beim Einordnen. Das GEO-Audit übersetzt diese Fragen in konkrete Befunde,
+        Prioritäten und Maßnahmen für Ihre Website.
+      </p>
+      <a class="button button-primary" href="/leistungen/geo-audit/">GEO-Audit ansehen →</a>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,207 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const seoBasics = [
+  "Crawlbarkeit, Indexierung, Statuscodes und saubere Informationsarchitektur",
+  "Suchintention, Keyword-Cluster, interne Verlinkung und Snippet-Qualität",
+  "Autorität, hilfreiche Inhalte, Nutzererlebnis und technische Performance",
+  "Messung von Rankings, Impressionen, Klicks, Conversions und Content-Wirkung",
+];
+
+const geoAdditions = [
+  {
+    title: "Antwortfähigkeit",
+    text:
+      "Inhalte müssen einzelne Entscheidungsfragen direkt beantworten, ohne den Kontext zu verlieren.",
+  },
+  {
+    title: "Entitäten",
+    text:
+      "Marke, Leistungen, Personen, Standorte, Produkte und Themen brauchen klare Beziehungen und konsistente Aussagen.",
+  },
+  {
+    title: "Quellenlogik",
+    text:
+      "Aussagen werden stärker nach Belegbarkeit, Erfahrung, Aktualität und Verantwortlichkeit bewertet.",
+  },
+  {
+    title: "Antwortpräsenz",
+    text:
+      "Monitoring schaut nicht nur auf Rankings, sondern auch auf Erwähnungen und Muster in generativen Antworten.",
+  },
+];
+
+const comparisonRows = [
+  {
+    label: "Ziel",
+    seo: "Auffindbarkeit in Suchergebnissen und organische Nachfrage erschließen.",
+    geo: "Als verständliche Quelle in generativen Antworten und KI-gestützten Empfehlungen auftauchen.",
+  },
+  {
+    label: "Inhalt",
+    seo: "Suchintention, Keyword-Abdeckung, Landingpages und hilfreiche Inhalte.",
+    geo: "Antwortmodule, Belege, Definitionen, Entscheidungslogik und vollständige Themencluster.",
+  },
+  {
+    label: "Technik",
+    seo: "Crawlbarkeit, Indexierung, Performance, interne Links und saubere Seitenstruktur.",
+    geo: "Zusätzlich semantische Klarheit, strukturierte Daten, Entitätsbezüge und maschinenlesbarer Kontext.",
+  },
+  {
+    label: "Messung",
+    seo: "Rankings, Impressionen, Klicks, CTR, Leads und Umsatzbeitrag.",
+    geo: "Zusätzlich KI-Erwähnungen, Antwortpräsenz, Quellenmuster, Themenlücken und Markenverständnis.",
+  },
+];
+
+const operatingModel = [
+  {
+    step: "01 SEO-Basis prüfen",
+    text:
+      "Technik, Indexierung, Nachfrage, interne Verlinkung und bestehende Content-Performance zeigen, welches Fundament bereits trägt.",
+  },
+  {
+    step: "02 GEO-Lücken erkennen",
+    text:
+      "Wir prüfen, welche Fragen generative Systeme beantworten, wo Wettbewerber genannt werden und welche Belege oder Strukturen fehlen.",
+  },
+  {
+    step: "03 Inhalte umbauen",
+    text:
+      "Starke SEO-Seiten werden in klare Antwortstrukturen, Cluster, Vergleiche, Kriterien, FAQs und Proof-Elemente übersetzt.",
+  },
+  {
+    step: "04 Wirkung zusammen messen",
+    text:
+      "SEO- und GEO-Signale werden gemeinsam betrachtet, damit Maßnahmen nicht gegeneinander optimiert werden.",
+  },
+];
+---
+
+<PageLayout
+  title="GEO vs. SEO | Unterschied und Zusammenspiel"
+  description="GEO vs. SEO: Was bleibt bei klassischer Suchmaschinenoptimierung wichtig, was verändert KI-Suche und wie verbinden Unternehmen beides sinnvoll?"
+  canonicalPath="/ratgeber/geo-vs-seo/"
+  eyebrow="Ratgeber"
+  headline="GEO vs. SEO: kein Entweder-oder."
+  intro="GEO ersetzt SEO nicht. Es erweitert SEO um Antwortfähigkeit, Entitäten, Quellenwürdigkeit und Sichtbarkeit in generativen Suchsystemen."
+  schema={{
+    "@type": "Article",
+    "@id": "https://geogurus.de/ratgeber/geo-vs-seo/#article",
+    headline: "GEO vs. SEO: Unterschied und Zusammenspiel",
+    description:
+      "Was klassische SEO weiterhin leistet, was GEO ergänzt und wie Unternehmen beides sinnvoll verbinden.",
+    author: { "@id": "https://geogurus.de/#organization" },
+    publisher: { "@id": "https://geogurus.de/#organization" },
+    mainEntityOfPage: "https://geogurus.de/ratgeber/geo-vs-seo/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#kurz">Kurzantwort</a>
+        <a href="#gleich">Was gleich bleibt</a>
+        <a href="#neu">Was GEO ergänzt</a>
+        <a href="#vergleich">Vergleich</a>
+        <a href="#praxis">Praxis</a>
+        <a href="#prioritaeten">Prioritäten</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>Vergleich</li>
+          <li>7 Minuten</li>
+          <li>Für SEO & Marketing-Leitung</li>
+        </ul>
+
+        <div class="answer-box" id="kurz">
+          <p>
+            SEO optimiert Auffindbarkeit in klassischen Suchsystemen. GEO optimiert zusätzlich, ob eine
+            Marke in generativen Antworten verstanden, eingeordnet und als Quelle berücksichtigt wird.
+          </p>
+        </div>
+
+        <h2 id="gleich">Was bei SEO wichtig bleibt</h2>
+        <p>
+          GEO funktioniert selten ohne solide SEO-Basis. Wenn Suchmaschinen Inhalte nicht sauber crawlen,
+          indexieren und thematisch einordnen können, haben auch generative Systeme weniger verlässliche
+          Signale. Deshalb bleiben viele Grundlagen unverändert wichtig.
+        </p>
+        <ul>
+          {seoBasics.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="neu">Was GEO ergänzt</h2>
+        <p>
+          Der Unterschied liegt nicht darin, dass SEO verschwindet. Der Unterschied liegt in der Art, wie
+          Sichtbarkeit entsteht: KI-Systeme verdichten Informationen, vergleichen Quellen und formulieren
+          Antworten. Dafür müssen Inhalte stärker als Wissenssystem funktionieren.
+        </p>
+        <div class="article-panels">
+          {geoAdditions.map((item) => (
+            <section class="article-panel">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="vergleich">GEO und SEO im direkten Vergleich</h2>
+        <div class="feature-table">
+          {comparisonRows.map((row) => (
+            <div>
+              <strong>{row.label}</strong>
+              <span>
+                <b>SEO:</b> {row.seo}<br />
+                <b>GEO:</b> {row.geo}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="praxis">Was bedeutet das in der Praxis?</h2>
+        <p>
+          Gute Umsetzung beginnt meistens nicht mit neuen Tools, sondern mit einer anderen Betrachtung
+          vorhandener Seiten. Eine starke SEO-Landingpage kann für GEO trotzdem schwach sein, wenn sie
+          keine klare Kurzantwort liefert, Kriterien nicht erklärt, Belege versteckt oder verwandte Fragen
+          nicht logisch verknüpft.
+        </p>
+        <div class="process-list">
+          {operatingModel.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="prioritaeten">Welche Priorität hat was?</h2>
+        <div class="decision-grid">
+          <section class="decision-card">
+            <h3>Erst SEO reparieren</h3>
+            <p>
+              Wenn Seiten nicht indexierbar sind, Ladezeiten schwach sind, Inhalte kaum Suchintention treffen
+              oder interne Links fehlen, gehört zuerst das Fundament in Ordnung.
+            </p>
+          </section>
+          <section class="decision-card">
+            <h3>GEO parallel aufbauen</h3>
+            <p>
+              Wenn SEO bereits trägt, lohnt sich der Blick auf Antwortformate, Entitäten, Quellenwürdigkeit,
+              Themencluster und KI-Antwortpräsenz sofort.
+            </p>
+          </section>
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Die beste Strategie ist selten SEO oder GEO. Sie ist ein gemeinsames System aus technischer
+            Auffindbarkeit, klarer Expertise und messbarer Antwortpräsenz.
+          </p>
+        </div>
+        <a class="button button-primary" href="/leistungen/">GEO-Leistungen ansehen →</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>

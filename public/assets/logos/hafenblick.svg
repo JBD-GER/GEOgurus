@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title">
+  <title id="title">Hafenblick</title>
+  <rect width="240" height="72" rx="10" fill="none"/>
+  <g fill="none" stroke="#f7f2e8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 45c7-6 14-6 21 0s14 6 21 0" stroke-width="3.5" opacity=".78"/>
+    <path d="M30 40V24h25v16" stroke-width="4.5"/>
+    <path d="M36 31h13" stroke-width="2.8"/>
+  </g>
+  <text x="78" y="36" fill="#f7f2e8" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="850">Hafenblick</text>
+  <text x="80" y="53" fill="#f7f2e8" opacity=".62" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="760" letter-spacing="2">LOCAL SERVICES</text>
+</svg>

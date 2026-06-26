@@ -1,0 +1,224 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const buildingBlocks = [
+  {
+    title: "Antwortfähigkeit",
+    text:
+      "Inhalte müssen Fragen direkt, präzise und belegbar beantworten. Das betrifft Definitionen, Vergleiche, Kriterien, Prozesse, Beispiele und klare Empfehlungen.",
+  },
+  {
+    title: "Entity-Klarheit",
+    text:
+      "Such- und KI-Systeme müssen verstehen, wer die Marke ist, wofür sie steht, welche Leistungen sie anbietet und welche Personen oder Quellen dahinterstehen.",
+  },
+  {
+    title: "Technische Lesbarkeit",
+    text:
+      "Semantisches HTML, strukturierte Daten, interne Links, Indexierbarkeit, Performance und maschinenlesbare Kontextsignale helfen beim Verstehen.",
+  },
+  {
+    title: "Quellenwürdigkeit",
+    text:
+      "Erfahrung, Belege, Methodik, Autorenschaft, Fallbeispiele und konsistente Aussagen machen Inhalte belastbarer als reine Keyword-Texte.",
+  },
+];
+
+const signals = [
+  "Vollständige Themencluster statt einzelner isolierter Landingpages",
+  "Klare Leistungs-, Marken-, Personen- und Produktentitäten",
+  "Definitionen und Kurzantworten, die ohne Kontext verständlich sind",
+  "Nachvollziehbare Belege, Beispiele, Prozesse und Entscheidungskriterien",
+  "Strukturierte Daten, semantische Überschriften und saubere interne Verlinkung",
+  "Aktualität, Verantwortlichkeit und eindeutige Kontakt- oder Anbieterinformationen",
+];
+
+const mistakes = [
+  {
+    title: "Nur neue Texte produzieren",
+    text:
+      "Mehr Content hilft wenig, wenn Inhalte nicht zusammenhängen, keine Suchintention treffen oder Expertise nicht klar belegt wird.",
+  },
+  {
+    title: "SEO gegen GEO ausspielen",
+    text:
+      "GEO braucht SEO-Grundlagen. Ohne Crawlbarkeit, Indexierung, interne Verlinkung und Nachfrageverständnis fehlt die Basis.",
+  },
+  {
+    title: "Antworten zu werblich schreiben",
+    text:
+      "Generative Systeme und Nutzer brauchen belastbare Einordnung. Reine Sales-Sprache ist selten zitierfähig.",
+  },
+  {
+    title: "Technik als Nebensache behandeln",
+    text:
+      "Wenn Struktur, Statuscodes, Schema.org oder Performance schwach sind, wird gute Expertise schwerer maschinenlesbar.",
+  },
+];
+
+const startSteps = [
+  {
+    step: "01 Fragen sammeln",
+    text:
+      "Welche Fragen stellen Zielgruppen vor einem Kauf, Vergleich, Wechsel, Relaunch oder Beratungsgespräch wirklich?",
+  },
+  {
+    step: "02 Inhalte spiegeln",
+    text:
+      "Welche Antworten liefert die Website bereits, welche sind verstreut, welche fehlen und welche sind nicht belegbar genug?",
+  },
+  {
+    step: "03 Struktur bauen",
+    text:
+      "Themencluster, Leistungsseiten, Ratgeberartikel, Proof-Elemente und interne Links werden zu einem nachvollziehbaren System.",
+  },
+  {
+    step: "04 Signale messen",
+    text:
+      "Rankings, Erwähnungen, Antwortpräsenz, Crawl-Qualität und Themenlücken werden regelmäßig geprüft und priorisiert.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Ist GEO dasselbe wie SEO?",
+    answer:
+      "Nein. GEO baut auf SEO auf, erweitert den Fokus aber auf generative Antworten, Entitäten, Quellenwürdigkeit und direkte Antwortfähigkeit.",
+  },
+  {
+    question: "Braucht jedes Unternehmen GEO?",
+    answer:
+      "Besonders relevant ist GEO für Unternehmen mit erklärungsbedürftigen Leistungen, hoher Beratungsintensität, starkem Wettbewerb oder langen Entscheidungsprozessen.",
+  },
+  {
+    question: "Kann GEO kurzfristig Ergebnisse bringen?",
+    answer:
+      "Ein Audit bringt sofort Klarheit. Sichtbarkeit entsteht abhängig von Ausgangslage, Wettbewerb, technischer Qualität und Umsetzung meist über Wochen bis Monate.",
+  },
+];
+---
+
+<PageLayout
+  title="Was ist GEO? Generative Engine Optimization einfach erklärt"
+  description="GEO steht für Generative Engine Optimization. Der Artikel erklärt, wie Marken in KI-Suche, generativen Antworten und modernen Discovery-Kanälen sichtbar werden."
+  canonicalPath="/ratgeber/was-ist-geo/"
+  eyebrow="Ratgeber"
+  headline="Was ist GEO?"
+  intro="Generative Engine Optimization beschreibt die Optimierung von Inhalten, Entitäten, Technik und Autorität für KI-Suche und generative Antwortsysteme."
+  schema={{
+    "@type": "Article",
+    "@id": "https://geogurus.de/ratgeber/was-ist-geo/#article",
+    headline: "Was ist GEO?",
+    description: "Generative Engine Optimization einfach erklärt.",
+    author: { "@id": "https://geogurus.de/#organization" },
+    publisher: { "@id": "https://geogurus.de/#organization" },
+    mainEntityOfPage: "https://geogurus.de/ratgeber/was-ist-geo/",
+  }}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#definition">Definition</a>
+        <a href="#warum">Warum GEO wichtig wird</a>
+        <a href="#bausteine">Bausteine</a>
+        <a href="#signale">Signale</a>
+        <a href="#fehler">Typische Fehler</a>
+        <a href="#start">Startplan</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>Grundlagen</li>
+          <li>8 Minuten</li>
+          <li>Für Marketing & Geschäftsführung</li>
+        </ul>
+
+        <div class="answer-box" id="definition">
+          <p>
+            GEO ist die Optimierung einer Marke für generative Suchsysteme, damit Inhalte verstanden,
+            eingeordnet und in relevanten Antwortmomenten als Quelle genutzt werden können.
+          </p>
+        </div>
+
+        <h2 id="warum">Warum GEO wichtig wird</h2>
+        <p>
+          Suche verändert sich von reinen Ergebnislisten hin zu Antworten, Zusammenfassungen, Empfehlungen
+          und Vergleichsdialogen. Nutzer klicken nicht mehr immer zehn blaue Links durch, sondern erwarten
+          eine schnelle, belastbare Einordnung. Genau dort entscheidet sich, ob eine Marke sichtbar ist oder
+          im Hintergrund bleibt.
+        </p>
+        <p>
+          Klassische SEO bleibt dabei wichtig: technische Qualität, Suchintention, gute Inhalte, interne
+          Verlinkung und Autorität verschwinden nicht. GEO ergänzt diese Grundlage um die Frage, ob Inhalte
+          so klar, belegbar und strukturiert sind, dass generative Systeme sie sicher verstehen und als
+          Antwortbaustein verwenden können.
+        </p>
+
+        <h2 id="bausteine">Die vier Bausteine von GEO</h2>
+        <div class="article-panels">
+          {buildingBlocks.map((block) => (
+            <section class="article-panel">
+              <h3>{block.title}</h3>
+              <p>{block.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="signale">Welche Signale zählen?</h2>
+        <p>
+          Es gibt nicht den einen GEO-Schalter. Sichtbarkeit entsteht aus vielen Signalen, die zusammen ein
+          klares Bild ergeben: Wer spricht, worüber, mit welcher Erfahrung, in welcher Struktur und mit
+          welchen Belegen?
+        </p>
+        <ul>
+          {signals.map((signal) => <li>{signal}</li>)}
+        </ul>
+
+        <h2 id="fehler">Typische GEO-Fehler</h2>
+        <div class="decision-grid">
+          {mistakes.map((mistake) => (
+            <section class="decision-card">
+              <h3>{mistake.title}</h3>
+              <p>{mistake.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="start">Wie startet man mit GEO?</h2>
+        <p>
+          Der sinnvollste Start ist kein blindes Content-Feuerwerk, sondern eine Diagnose. Erst wenn klar
+          ist, welche Inhalte tragen, welche Signale fehlen und wo die Marke in KI-Antworten nicht vorkommt,
+          lassen sich Maßnahmen sauber priorisieren.
+        </p>
+        <div class="process-list">
+          {startSteps.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="faq">Häufige Fragen</h2>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Praktischer Einstieg: Prüfen Sie zuerst, ob Ihre wichtigsten Leistungen, Themen und Belege
+            bereits so strukturiert sind, dass Menschen und Maschinen daraus klare Antworten ableiten können.
+          </p>
+        </div>
+        <a class="button button-primary" href="/leistungen/geo-audit/">GEO-Audit ansehen →</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>
