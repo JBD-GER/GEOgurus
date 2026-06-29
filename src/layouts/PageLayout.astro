@@ -1,4 +1,5 @@
 ---
+import Analytics from "@vercel/analytics/astro";
 import "../styles/global.css";
 
 const {
@@ -168,6 +169,8 @@ const baseSchema = {
         <button type="button" data-cookie-accept>Alle akzeptieren</button>
       </div>
     </div>
+
+    <Analytics />
 
     <script>
       const header = document.querySelector("[data-header]");
