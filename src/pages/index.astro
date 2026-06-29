@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 
-const siteUrl = "https://geogurus.de";
+const siteUrl = "https://www.geogurus.de";
 const title =
   "GEOgurus | GEO-Agentur für KI-Suche, generative Antworten und SEO-Sichtbarkeit";
 const description =
@@ -132,33 +132,21 @@ const guideLinks = [
   },
 ];
 
-const teamMembers = [
+const teamPrinciples = [
   {
-    name: "Christoph",
-    role: "GEO-Strategie & SEO-Fundament",
-    image: "/assets/team/christoph-geogurus.jpg",
-    width: 1200,
-    height: 800,
+    title: "Strategie zuerst",
     text:
-      "Verbindet technische SEO, Content-Systeme und pragmatische Priorisierung. Der Blick geht immer zuerst auf Wirkung, nicht auf Trendbegriffe.",
+      "Jede Empfehlung wird an Zielgruppe, Angebot, Wettbewerb und Umsetzbarkeit gespiegelt. Kein GEO-Theater ohne Priorität.",
   },
   {
-    name: "Mara K.",
-    role: "Content-Architektur",
-    image: "/assets/team/mara-geogurus.jpg",
-    width: 1200,
-    height: 798,
+    title: "SEO bleibt Fundament",
     text:
-      "Übersetzt Fachwissen in Themencluster, Antwortformate und Seitenstrukturen, die Nutzer schnell verstehen und KI-Systeme sauber einordnen können.",
+      "Crawlbarkeit, Suchintention, interne Verlinkung und technische Qualität werden nicht übersprungen, sondern gezielt erweitert.",
   },
   {
-    name: "Jonas R.",
-    role: "Technische GEO-Optimierung",
-    image: "/assets/team/jonas-geogurus.jpg",
-    width: 1200,
-    height: 1803,
+    title: "Umsetzung statt Folien",
     text:
-      "Prüft Crawlbarkeit, Schema.org, semantiknahe Templates und technische Signale, damit Expertise nicht an der Maschinenlesbarkeit scheitert.",
+      "Aus Analyse werden konkrete Seiten, Briefings, technische Tickets, Messpunkte und nächste Schritte für Ihr Team.",
   },
 ];
 
@@ -755,24 +743,36 @@ const schema = {
             </p>
           </div>
 
-          <div class="team-grid">
-            {teamMembers.map((member) => (
-              <article class="team-card" data-reveal>
+          <div class="team-showcase" data-reveal>
+            <article class="founder-card">
+              <div class="founder-photo">
                 <img
-                  src={member.image}
-                  alt={`${member.name} - ${member.role}`}
-                  width={member.width}
-                  height={member.height}
+                  src="/assets/team/christoph-geogurus.jpg"
+                  alt="Christoph - GEO-Strategie und SEO-Fundament"
+                  width="1200"
+                  height="800"
                   loading="lazy"
                   decoding="async"
                 />
-                <div>
-                  <p class="eyebrow">{member.role}</p>
-                  <h3>{member.name}</h3>
-                  <p>{member.text}</p>
-                </div>
-              </article>
-            ))}
+              </div>
+              <div class="founder-note">
+                <p class="eyebrow">Direkter Ansprechpartner</p>
+                <h3>Christoph</h3>
+                <p>
+                  Verbindet technische SEO, Content-Systeme und pragmatische Priorisierung. Der Blick geht
+                  zuerst auf Wirkung, Aufwand und die Frage, was Ihr Team wirklich umsetzen kann.
+                </p>
+              </div>
+            </article>
+
+            <div class="team-operating" aria-label="Arbeitsweise">
+              {teamPrinciples.map((item) => (
+                <article class="team-principle">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>

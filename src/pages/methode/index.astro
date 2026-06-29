@@ -1,5 +1,78 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+
+const process = [
+  {
+    step: "01 Verstehen",
+    text:
+      "Wir analysieren Rankings, Antwortpräsenz, Wettbewerber, Zielgruppenfragen, technische Grundlagen und Markenentitäten.",
+  },
+  {
+    step: "02 Strukturieren",
+    text:
+      "Aus Befunden werden Themencluster, Seitenrollen, interne Links, Antwortformate und technische Anforderungen abgeleitet.",
+  },
+  {
+    step: "03 Optimieren",
+    text:
+      "Content, Schema.org, semantisches HTML, Proof-Signale und Antwortmodule werden gezielt umgesetzt oder als Tickets vorbereitet.",
+  },
+  {
+    step: "04 Messen",
+    text:
+      "Wir beobachten klassische SEO-Signale, KI-Erwähnungen, Themenlücken und Umsetzungseffekte, damit Prioritäten steuerbar bleiben.",
+  },
+];
+
+const auditLayers = [
+  {
+    title: "Suchintention & Nachfrage",
+    text:
+      "Welche Fragen stellen Entscheider wirklich, welche Suchmuster zeigen Kaufnähe und welche Themen werden heute nur oberflächlich bedient?",
+  },
+  {
+    title: "Entity- und Markenverständnis",
+    text:
+      "Ist eindeutig erkennbar, wer der Anbieter ist, welche Leistungen angeboten werden, welche Personen dahinterstehen und wofür die Marke relevant ist?",
+  },
+  {
+    title: "Content-Architektur",
+    text:
+      "Sind Leistungsseiten, Ratgeber, Proof-Elemente und interne Links so verbunden, dass Nutzer und KI-Systeme Zusammenhänge schnell verstehen?",
+  },
+  {
+    title: "Technische Lesbarkeit",
+    text:
+      "Wir prüfen Crawlbarkeit, Indexierung, semantisches HTML, strukturierte Daten, Performance, Sitemaps, robots.txt und maschinenlesbare Signale.",
+  },
+  {
+    title: "Antwortfähigkeit",
+    text:
+      "Inhalte werden darauf gespiegelt, ob sie konkrete Fragen direkt, belegbar und zitierfähig beantworten oder nur allgemein werblich bleiben.",
+  },
+  {
+    title: "Monitoring & Priorisierung",
+    text:
+      "Befunde werden nach Wirkung, Aufwand, Risiko und Abhängigkeiten sortiert, damit aus Analyse ein realistischer Arbeitsplan entsteht.",
+  },
+];
+
+const sprintSteps = [
+  "Kickoff mit Zielen, Zielgruppen, Angebot, Wettbewerb und vorhandenen Daten",
+  "Audit von Technik, Content, Entitäten, Antwortformaten und Suchintentionen",
+  "Roadmap mit konkreter Reihenfolge für Content, Technik und Monitoring",
+  "Umsetzungsbriefings für Redaktion, Entwicklung oder interne Marketing-Teams",
+  "Review-Schleifen, damit neue Seiten nicht nur schöner, sondern verständlicher werden",
+];
+
+const outputs = [
+  "Priorisierte GEO- und SEO-Roadmap",
+  "Themencluster und Seitenrollen",
+  "Briefings für Leistungsseiten, Ratgeber und FAQ-Module",
+  "Technische Tickets für Schema.org, HTML-Struktur, Indexierung und Performance",
+  "Messpunkte für Rankings, KI-Erwähnungen, Antwortpräsenz und Themenlücken",
+  "Entscheidungsvorlage für nächste Sprints und Budgetprioritäten",
+];
 ---
 
 <PageLayout
@@ -11,35 +84,92 @@ import PageLayout from "../../layouts/PageLayout.astro";
   intro="Wir arbeiten nicht mit GEO-Hype, sondern mit einer klaren Abfolge: verstehen, strukturieren, optimieren, messen."
   schema={{
     "@type": "HowTo",
-    "@id": "https://geogurus.de/methode/#howto",
+    "@id": "https://www.geogurus.de/methode/#howto",
     name: "GEO-Sichtbarkeit aufbauen",
-    step: [
-      { "@type": "HowToStep", name: "Sichtbarkeit verstehen" },
-      { "@type": "HowToStep", name: "Antwortfähigkeit bauen" },
-      { "@type": "HowToStep", name: "Signale verstärken" },
-      { "@type": "HowToStep", name: "Wirkung messen" },
-    ],
+    step: process.map((item) => ({ "@type": "HowToStep", name: item.step })),
   }}
 >
   <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Grundlogik</p>
+        <h2>GEO entsteht aus Verständnis, nicht aus einzelnen Tricks.</h2>
+      </div>
+      <p class="lead" data-reveal>
+        Gute GEO-Arbeit macht vorhandene Expertise sichtbarer, verständlicher und belastbarer. Deshalb
+        verbinden wir Strategie, Technik, Content und Monitoring, statt nur neue Texte zu produzieren.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-band">
     <div class="container process-list" data-reveal>
-      <div class="process-step"><strong>01 Verstehen</strong><p>Wir analysieren Rankings, Antwortpräsenz, Wettbewerber, Zielgruppenfragen, technische Grundlagen und Markenentitäten.</p></div>
-      <div class="process-step"><strong>02 Strukturieren</strong><p>Wir ordnen Themen, Suchintentionen, Leistungsseiten, Ratgeberinhalte und interne Verlinkung zu einem klaren System.</p></div>
-      <div class="process-step"><strong>03 Optimieren</strong><p>Content, Schema.org, semantisches HTML, Proof-Signale und Antwortformate werden gezielt umgesetzt.</p></div>
-      <div class="process-step"><strong>04 Messen</strong><p>Wir beobachten klassische SEO-Signale, KI-Erwähnungen, Themenlücken und Umsetzungseffekte.</p></div>
+      {process.map((item) => (
+        <div class="process-step">
+          <strong>{item.step}</strong>
+          <p>{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Analyseebenen</p>
+        <h2>Wir prüfen nicht nur Rankings, sondern Verständlichkeit.</h2>
+        <p>
+          Klassische SEO zeigt, ob Seiten gefunden werden. GEO fragt zusätzlich, ob Inhalte als belastbare
+          Antwort, Quelle und Empfehlung taugen.
+        </p>
+      </div>
+      <div class="detail-grid">
+        {auditLayers.map((layer) => (
+          <article class="detail-card" data-reveal>
+            <h2>{layer.title}</h2>
+            <p>{layer.text}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
   <section class="content-band">
     <div class="container intro-grid">
       <div data-reveal>
-        <p class="eyebrow">Prinzip</p>
-        <h2>GEO ist kein einzelner Hack.</h2>
+        <p class="eyebrow">Sprint</p>
+        <h2>Aus Audit wird eine umsetzbare Reihenfolge.</h2>
+        <p class="lead">
+          Der wichtigste Unterschied: Am Ende gibt es keine lose Ideensammlung, sondern klare Arbeitspakete
+          für Content, Technik und Monitoring.
+        </p>
       </div>
-      <p class="lead" data-reveal>
-        Gute GEO-Arbeit macht vorhandene Expertise sichtbarer, verständlicher und belastbarer. Deshalb verbinden wir
-        Strategie, Technik, Content und Monitoring, statt nur neue Texte zu produzieren.
-      </p>
+      <div data-reveal>
+        <ul class="check-list dark-check-list">
+          {sprintSteps.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Output</p>
+        <h2>Was nach der Methode konkret vorliegt.</h2>
+      </div>
+      <div data-reveal>
+        <ul>
+          {outputs.map((item) => <li>{item}</li>)}
+        </ul>
+        <div class="answer-box">
+          <p>
+            Die Methode ist bewusst pragmatisch: erst verstehen, dann strukturieren, dann optimieren, dann
+            messen. So bleibt GEO steuerbar und wird kein abstraktes Trendprojekt.
+          </p>
+        </div>
+        <a class="button button-primary" href="/kontakt/">Methode auf Ihre Website anwenden →</a>
+      </div>
     </div>
   </section>
 </PageLayout>

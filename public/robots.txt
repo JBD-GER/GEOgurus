@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://geogurus.de/sitemap-index.xml
+Sitemap: https://www.geogurus.de/sitemap-index.xml

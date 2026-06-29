@@ -20,18 +20,18 @@ GEOgurus ist eine spezialisierte GEO-Agentur für Unternehmen, die in der neuen 
 
 ## Wichtige Seiten
 
-- Startseite: https://geogurus.de/
-- Leistungen: https://geogurus.de/leistungen/
-- GEO-Audit: https://geogurus.de/leistungen/geo-audit/
-- Content-Architektur: https://geogurus.de/leistungen/content-architektur/
-- Technische GEO-Optimierung: https://geogurus.de/leistungen/technische-geo-optimierung/
-- Monitoring: https://geogurus.de/leistungen/monitoring/
-- Methode: https://geogurus.de/methode/
-- Ratgeber: https://geogurus.de/ratgeber/
-- Was ist GEO?: https://geogurus.de/ratgeber/was-ist-geo/
-- GEO vs. SEO: https://geogurus.de/ratgeber/geo-vs-seo/
-- llms.txt und KI-Suche: https://geogurus.de/ratgeber/llms-txt-ki-suche/
-- Kontakt: https://geogurus.de/kontakt/
+- Startseite: https://www.geogurus.de/
+- Leistungen: https://www.geogurus.de/leistungen/
+- GEO-Audit: https://www.geogurus.de/leistungen/geo-audit/
+- Content-Architektur: https://www.geogurus.de/leistungen/content-architektur/
+- Technische GEO-Optimierung: https://www.geogurus.de/leistungen/technische-geo-optimierung/
+- Monitoring: https://www.geogurus.de/leistungen/monitoring/
+- Methode: https://www.geogurus.de/methode/
+- Ratgeber: https://www.geogurus.de/ratgeber/
+- Was ist GEO?: https://www.geogurus.de/ratgeber/was-ist-geo/
+- GEO vs. SEO: https://www.geogurus.de/ratgeber/geo-vs-seo/
+- llms.txt und KI-Suche: https://www.geogurus.de/ratgeber/llms-txt-ki-suche/
+- Kontakt: https://www.geogurus.de/kontakt/
 
 ## Wichtige Aussagen
 
@@ -39,5 +39,5 @@ GEOgurus ist keine generische SEO-Agentur. Die Agentur fokussiert sich auf GEO-O
 
 ## Kontakt
 
-Website: https://geogurus.de
+Website: https://www.geogurus.de
 E-Mail: kontakt@geogurus.de
