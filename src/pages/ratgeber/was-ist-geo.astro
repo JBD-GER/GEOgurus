@@ -96,6 +96,24 @@ const faqs = [
       "Ein Audit bringt sofort Klarheit. Sichtbarkeit entsteht abhängig von Ausgangslage, Wettbewerb, technischer Qualität und Umsetzung meist über Wochen bis Monate.",
   },
 ];
+
+const relatedArticles = [
+  {
+    title: "Antwortmaschinen-Optimierung",
+    text: "Wie Inhalte aufgebaut werden, damit sie in KI-Antworten als Quelle funktionieren.",
+    href: "/ratgeber/antwortmaschinen-optimierung/",
+  },
+  {
+    title: "GEO Content Briefing",
+    text: "Das praktische Briefing-Framework für antwortfähige Inhalte, Entitäten und Proof.",
+    href: "/ratgeber/geo-content-briefing/",
+  },
+  {
+    title: "KI-Sichtbarkeit messen",
+    text: "Welche KPIs zeigen, ob GEO-Maßnahmen in generativen Antworten Wirkung entfalten.",
+    href: "/ratgeber/ki-sichtbarkeit-messen/",
+  },
+];
 ---
 
 <PageLayout
@@ -105,15 +123,36 @@ const faqs = [
   eyebrow="Ratgeber"
   headline="Was ist GEO?"
   intro="Generative Engine Optimization beschreibt die Optimierung von Inhalten, Entitäten, Technik und Autorität für KI-Suche und generative Antwortsysteme."
-  schema={{
-    "@type": "Article",
-    "@id": "https://www.geogurus.de/ratgeber/was-ist-geo/#article",
-    headline: "Was ist GEO?",
-    description: "Generative Engine Optimization einfach erklärt.",
-    author: { "@id": "https://www.geogurus.de/#organization" },
-    publisher: { "@id": "https://www.geogurus.de/#organization" },
-    mainEntityOfPage: "https://www.geogurus.de/ratgeber/was-ist-geo/",
-  }}
+  schema={[
+    {
+      "@type": "Article",
+      "@id": "https://www.geogurus.de/ratgeber/was-ist-geo/#article",
+      headline: "Was ist GEO?",
+      description: "Generative Engine Optimization einfach erklärt.",
+      author: { "@id": "https://www.geogurus.de/#organization" },
+      publisher: { "@id": "https://www.geogurus.de/#organization" },
+      mainEntityOfPage: "https://www.geogurus.de/ratgeber/was-ist-geo/",
+      inLanguage: "de-DE",
+      about: ["Generative Engine Optimization", "GEO", "KI-Suche", "SEO"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.geogurus.de/ratgeber/was-ist-geo/#breadcrumb",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: "https://www.geogurus.de/ratgeber/" },
+        { "@type": "ListItem", position: 2, name: "Was ist GEO?", item: "https://www.geogurus.de/ratgeber/was-ist-geo/" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.geogurus.de/ratgeber/was-ist-geo/#faq",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ]}
 >
   <section class="content-band light">
     <div class="container article-grid">
@@ -125,6 +164,7 @@ const faqs = [
         <a href="#signale">Signale</a>
         <a href="#fehler">Typische Fehler</a>
         <a href="#start">Startplan</a>
+        <a href="#vertiefung">Vertiefung</a>
         <a href="#faq">FAQ</a>
       </aside>
 
@@ -198,6 +238,21 @@ const faqs = [
               <strong>{item.step}</strong>
               <p>{item.text}</p>
             </div>
+          ))}
+        </div>
+
+        <h2 id="vertiefung">Welche GEO-Themen sollte man danach vertiefen?</h2>
+        <p>
+          Nach der Grunddefinition wird GEO praktisch: Inhalte müssen antwortfähig werden, Briefings müssen
+          klarere Signale liefern und die Wirkung sollte über KI-Sichtbarkeit beobachtet werden.
+        </p>
+        <div class="article-panels">
+          {relatedArticles.map((article) => (
+            <section class="article-panel">
+              <h3>{article.title}</h3>
+              <p>{article.text}</p>
+              <a class="text-link" href={article.href}>Weiterlesen</a>
+            </section>
           ))}
         </div>
 

@@ -1,0 +1,307 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const siteUrl = "https://www.geogurus.de";
+
+const kpis = [
+  {
+    title: "Antwortpräsenz",
+    text:
+      "Wie häufig wird die Marke bei relevanten Fragen überhaupt genannt, empfohlen oder als Quelle sichtbar?",
+  },
+  {
+    title: "Share of Answer",
+    text:
+      "Welchen Anteil an relevanten Antwortmomenten besetzt die Marke im Vergleich zu Wettbewerbern, Portalen und neutralen Quellen?",
+  },
+  {
+    title: "Quellenmuster",
+    text:
+      "Welche Seiten, Inhalte oder Drittquellen prägen Antworten und welche davon lassen sich durch eigene Inhalte beeinflussen?",
+  },
+  {
+    title: "Entity Coverage",
+    text:
+      "Wie gut werden Marke, Leistungen, Zielgruppen, Personen, Standort, Branche und zentrale Themen miteinander verbunden?",
+  },
+  {
+    title: "Antwortqualität",
+    text:
+      "Sind Nennungen korrekt, positiv, differenziert und entscheidungsrelevant oder entstehen Lücken, Verwechslungen und schwache Einordnung?",
+  },
+  {
+    title: "Umsetzungsfortschritt",
+    text:
+      "Welche technischen, strukturellen und redaktionellen Maßnahmen wurden erledigt und welche Wirkung zeigen sie über Zeit?",
+  },
+];
+
+const promptSets = [
+  {
+    label: "Problemfragen",
+    text:
+      "Fragen, die Nutzer am Anfang der Recherche stellen: Symptome, Ursachen, Risiken, typische Fehler und Lösungswege.",
+  },
+  {
+    label: "Vergleichsfragen",
+    text:
+      "Anfragen zu Alternativen, Anbieterklassen, Methoden, Tools, Agenturen, Kostenlogik und Auswahlkriterien.",
+  },
+  {
+    label: "Kauffragen",
+    text:
+      "Entscheidungsnahe Fragen zu Umsetzung, Budget, Dauer, Voraussetzungen, Verantwortlichkeiten und nächstem Schritt.",
+  },
+  {
+    label: "Markenfragen",
+    text:
+      "Prompts, die prüfen, ob die Marke richtig verstanden wird: Leistungen, Positionierung, Zielgruppen, Erfahrungen und Abgrenzung.",
+  },
+];
+
+const dashboard = [
+  "Kernfragen und Prompt-Set nach Funnel-Stufe",
+  "Markennennung, Wettbewerbernennung und neutrale Quellen",
+  "Antwortsentiment und Korrektheit der Aussagen",
+  "Verlinkte oder erkennbare Quellen und zitierte Seitentypen",
+  "Abdeckung zentraler Entitäten und Themencluster",
+  "Veränderung nach Content-, Technik- und Proof-Maßnahmen",
+  "Priorisierte Lücken für neue Inhalte, interne Links oder technische Optimierung",
+];
+
+const mistakes = [
+  {
+    title: "Nur einzelne Prompts testen",
+    text:
+      "Einzelne Screenshots wirken überzeugend, sind aber selten belastbar. Besser sind stabile Prompt-Sets, Wiederholungen und Zeitvergleiche.",
+  },
+  {
+    title: "KI-Sichtbarkeit mit Rankings verwechseln",
+    text:
+      "Rankings bleiben wichtig, erklären aber nicht, ob eine Marke in generativen Antworten korrekt genannt oder empfohlen wird.",
+  },
+  {
+    title: "Keine Wettbewerber vergleichen",
+    text:
+      "Ohne Vergleich sieht man nicht, ob die eigene Marke fehlt oder ob das ganze Thema in KI-Antworten noch schwach abgedeckt ist.",
+  },
+  {
+    title: "Messung von Umsetzung trennen",
+    text:
+      "Monitoring bringt wenig, wenn es nicht in Content-Briefings, technische Tickets, interne Links und Proof-Verbesserungen übersetzt wird.",
+  },
+];
+
+const setup = [
+  {
+    step: "01 Themen und Fragen definieren",
+    text:
+      "Starten Sie mit geschäftskritischen Leistungen, Zielgruppenfragen, Sales-Einwänden und Suchdaten. Daraus entsteht das Prompt-Set.",
+  },
+  {
+    step: "02 Basislinie erfassen",
+    text:
+      "Dokumentieren Sie, welche Marken, Seiten, Quellen und Aussagen heute in Antworten auftauchen. Das ist der Ausgangspunkt.",
+  },
+  {
+    step: "03 Lücken priorisieren",
+    text:
+      "Fehlende Entitäten, schwache Proof-Elemente, unklare Leistungsseiten und dünne Ratgeber werden nach Wirkung und Aufwand sortiert.",
+  },
+  {
+    step: "04 Maßnahmen umsetzen",
+    text:
+      "Content, interne Links, Schema.org, llms.txt, technische Lesbarkeit und Belege werden gezielt verbessert.",
+  },
+  {
+    step: "05 Entwicklung beobachten",
+    text:
+      "Die gleichen Fragen werden regelmäßig geprüft. Relevant ist nicht ein einzelnes Ergebnis, sondern die Tendenz über mehrere Messpunkte.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Kann man KI-Sichtbarkeit exakt messen?",
+    answer:
+      "Nicht so exakt wie klassische Rankings. KI-Antworten können variieren. Belastbar wird die Messung durch stabile Prompt-Sets, Wiederholungen, Wettbewerbsvergleiche und Zeitreihen.",
+  },
+  {
+    question: "Welche Tools braucht man für GEO-Monitoring?",
+    answer:
+      "Am Anfang reicht oft ein sauberes Prompt-Set mit strukturierter Dokumentation. Später helfen Monitoring-Tools, Search-Console-Daten, Crawling, Logik für Wettbewerbsvergleiche und Content-Tracking.",
+  },
+  {
+    question: "Wie oft sollte man KI-Sichtbarkeit prüfen?",
+    answer:
+      "Für aktive Projekte ist ein monatlicher Rhythmus sinnvoll. Bei Relaunches, neuen Content-Clustern oder starken Wettbewerbsbewegungen kann ein kürzerer Takt helfen.",
+  },
+];
+---
+
+<PageLayout
+  title="KI-Sichtbarkeit messen | GEO-KPIs, Monitoring und Antwortpräsenz"
+  description="KI-Sichtbarkeit messen: Welche GEO-KPIs zählen, wie Antwortpräsenz, Share of Answer, Quellenmuster und Entity Coverage sinnvoll beobachtet werden."
+  canonicalPath="/ratgeber/ki-sichtbarkeit-messen/"
+  eyebrow="Ratgeber"
+  headline="KI-Sichtbarkeit messen: GEO braucht bessere KPIs als nur Rankings."
+  intro="Wer in generativen Antworten sichtbar werden will, muss mehr messen als Positionen. Dieser Ratgeber zeigt, welche Signale ein sinnvolles GEO-Monitoring braucht."
+  schema={[
+    {
+      "@type": "Article",
+      "@id": `${siteUrl}/ratgeber/ki-sichtbarkeit-messen/#article`,
+      headline: "KI-Sichtbarkeit messen: GEO-KPIs, Monitoring und Antwortpräsenz",
+      description:
+        "Welche KPIs helfen, Sichtbarkeit in KI-Antworten und generativer Suche zu beobachten: Antwortpräsenz, Share of Answer, Quellenmuster und Entity Coverage.",
+      author: { "@id": `${siteUrl}/#organization` },
+      publisher: { "@id": `${siteUrl}/#organization` },
+      mainEntityOfPage: `${siteUrl}/ratgeber/ki-sichtbarkeit-messen/`,
+      inLanguage: "de-DE",
+      about: ["KI-Sichtbarkeit messen", "GEO Monitoring", "Antwortpräsenz", "Share of Answer"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/ratgeber/ki-sichtbarkeit-messen/#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: `${siteUrl}/ratgeber/` },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "KI-Sichtbarkeit messen",
+          item: `${siteUrl}/ratgeber/ki-sichtbarkeit-messen/`,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/ratgeber/ki-sichtbarkeit-messen/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ]}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#kurzantwort">Kurzantwort</a>
+        <a href="#problem">Warum Rankings nicht reichen</a>
+        <a href="#kpis">GEO-KPIs</a>
+        <a href="#prompts">Prompt-Sets</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#fehler">Fehler</a>
+        <a href="#setup">Setup</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>Monitoring</li>
+          <li>10 Minuten</li>
+          <li>Für Marketing, SEO & Geschäftsführung</li>
+        </ul>
+
+        <div class="answer-box" id="kurzantwort">
+          <p>
+            KI-Sichtbarkeit misst, ob eine Marke in relevanten generativen Antworten genannt, korrekt
+            eingeordnet und gegenüber Wettbewerbern als hilfreiche Quelle sichtbar wird.
+          </p>
+        </div>
+
+        <h2 id="problem">Warum Rankings allein nicht mehr reichen</h2>
+        <p>
+          Klassische SEO-KPIs bleiben wichtig: Rankings, Impressionen, Klicks, CTR und Conversions zeigen,
+          wie organische Suche funktioniert. Aber generative Antworten schaffen zusätzliche Sichtbarkeits-
+          momente. Nutzer sehen Zusammenfassungen, Empfehlungen und Vergleichstexte, bevor sie auf eine
+          Website klicken oder manchmal ohne überhaupt zu klicken.
+        </p>
+        <p>
+          Deshalb braucht GEO ein eigenes Monitoring. Es geht nicht darum, jede KI-Antwort absolut zu
+          kontrollieren. Es geht darum, Muster zu erkennen: Wird die Marke genannt? Werden Wettbewerber
+          häufiger empfohlen? Welche Quellen prägen die Antworten? Welche Themen versteht das System
+          falsch oder gar nicht?
+        </p>
+
+        <h2 id="kpis">Die wichtigsten GEO-KPIs</h2>
+        <div class="article-panels">
+          {kpis.map((kpi) => (
+            <section class="article-panel">
+              <h3>{kpi.title}</h3>
+              <p>{kpi.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="prompts">Prompt-Sets: Die Basis jeder Messung</h2>
+        <p>
+          Ein einzelner Prompt ist keine Strategie. Gute Messung beginnt mit einem stabilen Set aus Fragen,
+          das echte Entscheidungsphasen abbildet. Diese Sets sollten regelmäßig gleich oder sehr ähnlich
+          geprüft werden, damit Entwicklungen sichtbar werden.
+        </p>
+        <div class="feature-table">
+          {promptSets.map((item) => (
+            <div>
+              <strong>{item.label}</strong>
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="dashboard">Was in ein GEO-Dashboard gehört</h2>
+        <p>
+          Ein gutes Dashboard verbindet Sichtbarkeit, Qualität und Umsetzung. Es zeigt nicht nur, ob eine
+          Marke vorkommt, sondern auch, warum sie vorkommt oder warum sie fehlt.
+        </p>
+        <ul>
+          {dashboard.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="fehler">Typische Fehler beim Messen von KI-Sichtbarkeit</h2>
+        <div class="decision-grid">
+          {mistakes.map((mistake) => (
+            <section class="decision-card">
+              <h3>{mistake.title}</h3>
+              <p>{mistake.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="setup">Setup für ein erstes GEO-Monitoring</h2>
+        <p>
+          Der Einstieg muss nicht kompliziert sein. Wichtig ist, dass die Messung von Anfang an mit
+          Umsetzung verbunden wird. Monitoring ohne Priorisierung erzeugt nur schöne Tabellen, aber keine
+          bessere Sichtbarkeit.
+        </p>
+        <div class="process-list">
+          {setup.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="faq">Häufige Fragen</h2>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Gute Messung macht GEO steuerbar: Sie zeigt, welche Inhalte wirklich verstanden werden, welche
+            Entitäten fehlen und welche Maßnahmen die Antwortpräsenz über Zeit verbessern.
+          </p>
+        </div>
+        <a class="button button-primary" href="/leistungen/monitoring/">GEO-Monitoring ansehen →</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>

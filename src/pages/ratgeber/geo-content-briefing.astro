@@ -1,0 +1,294 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const siteUrl = "https://www.geogurus.de";
+
+const briefingBlocks = [
+  {
+    title: "Such- und Antwortintention",
+    text:
+      "Das Briefing trennt Informationsfragen, Vergleichsfragen, Risikoabwägung und Kaufabsicht, statt alles in eine Keyword-Liste zu werfen.",
+  },
+  {
+    title: "Entity-Set",
+    text:
+      "Marke, Leistung, Zielgruppe, Problem, Methode, Branche, Standort und relevante Fachbegriffe werden konsistent festgelegt.",
+  },
+  {
+    title: "Antwortarchitektur",
+    text:
+      "Kurzantwort, Definition, Kriterien, Beispiele, Belege, FAQ und nächste Schritte werden vor dem Schreiben geplant.",
+  },
+  {
+    title: "Proof und Vertrauen",
+    text:
+      "Das Briefing definiert, welche Erfahrung, Datenpunkte, Prozesse, Grenzen oder Beispiele die Aussagen belastbar machen.",
+  },
+];
+
+const structure = [
+  {
+    label: "Above the fold",
+    text:
+      "Eine klare Nutzen- oder Antwortaussage, die sofort zeigt, welche Frage die Seite beantwortet und für wen sie relevant ist.",
+  },
+  {
+    label: "Kurzantwort",
+    text:
+      "Ein kompakter Antwortblock mit Definition, Kernaussage oder Empfehlung. Er ist der schnellste Einstieg für Nutzer und Antwortsysteme.",
+  },
+  {
+    label: "Vertiefung",
+    text:
+      "Abschnitte für Kriterien, Unterschiede, Ablauf, Beispiele, Risiken, Kostenlogik, technische Voraussetzungen und typische Fehler.",
+  },
+  {
+    label: "Entscheidung",
+    text:
+      "Klare nächste Schritte, passende interne Links, Kontaktoption, Audit-Hinweis oder weiterführender Ratgeber.",
+  },
+];
+
+const checklist = [
+  "Primäre Frage und sekundäre Fragen vor dem Schreiben festlegen",
+  "Zielgruppe, Entscheidungsphase und gewünschte Handlung eindeutig definieren",
+  "Hauptentitäten und verwandte Begriffe konsistent benennen",
+  "Kurzantwort, Definition und Zusammenfassung als eigenständige Bausteine planen",
+  "Belege, Beispiele, Methodik und Grenzen aktiv einbauen",
+  "Interne Links zu Leistungsseiten, Ratgebern und Kontaktpunkten festlegen",
+  "Schema.org, Meta Title, Description, H1 und Zwischenüberschriften abstimmen",
+  "Nach Veröffentlichung Rankings, KI-Antworten, Leads und Themenlücken prüfen",
+];
+
+const proofElements = [
+  {
+    title: "Erfahrung",
+    text:
+      "Was hat das Unternehmen selbst gesehen, geprüft, umgesetzt oder aus Projekten gelernt?",
+  },
+  {
+    title: "Methodik",
+    text:
+      "Nach welchem Vorgehen wird analysiert, priorisiert, umgesetzt oder gemessen?",
+  },
+  {
+    title: "Grenzen",
+    text:
+      "Wo ist eine Aussage nur abhängig von Markt, Wettbewerb, Datenlage oder technischer Ausgangssituation gültig?",
+  },
+  {
+    title: "Nächster Schritt",
+    text:
+      "Was sollte der Leser nach der Information tun: prüfen, vergleichen, anfragen, intern briefen oder priorisieren?",
+  },
+];
+
+const workflow = [
+  {
+    step: "01 Suchraum klären",
+    text:
+      "Cluster, Fragen, Zielgruppen, Pain Points und vorhandene Seiten werden gesammelt. Daraus entsteht ein klares Themenziel.",
+  },
+  {
+    step: "02 Briefing schreiben",
+    text:
+      "Antwortintention, Entitäten, Struktur, Pflichtabschnitte, Belege, interne Links und Conversion-Ziel werden dokumentiert.",
+  },
+  {
+    step: "03 Content erstellen",
+    text:
+      "Der Text wird nicht nur lesbar, sondern modular gebaut: kurze Antworten, starke H2-Struktur, Beispiele, Listen, Tabellen und FAQ.",
+  },
+  {
+    step: "04 Qualität prüfen",
+    text:
+      "Vor Veröffentlichung werden Suchintention, semantische Vollständigkeit, technische Auszeichnung, E-E-A-T-Signale und interne Links geprüft.",
+  },
+  {
+    step: "05 Nachoptimieren",
+    text:
+      "Nach dem Launch zeigen Rankings, KI-Antworten, Klickdaten, Scrolltiefe, Leads und Sales-Fragen, welche Abschnitte weiter geschärft werden.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Was unterscheidet ein GEO Content Briefing von einem SEO Briefing?",
+    answer:
+      "Ein SEO Briefing fokussiert oft Keywords, Suchintention und Struktur. Ein GEO Briefing ergänzt Antwortfähigkeit, Entitäten, Belege, Quellenlogik, FAQ, interne Wissensverknüpfung und Messung in KI-Antworten.",
+  },
+  {
+    question: "Braucht jeder Artikel ein GEO Briefing?",
+    answer:
+      "Für geschäftskritische Leistungsseiten, Ratgeber, Vergleichsseiten und erklärungsbedürftige Themen ja. Für kleine News oder sehr einfache Inhalte reicht oft eine reduzierte Version.",
+  },
+  {
+    question: "Wie lang sollte ein GEO-optimierter Beitrag sein?",
+    answer:
+      "So lang wie nötig, aber nicht länger. Entscheidend ist nicht Wortzahl, sondern ob die Seite alle relevanten Fragen klar beantwortet, belegt, strukturiert und mit passenden nächsten Schritten verbindet.",
+  },
+];
+---
+
+<PageLayout
+  title="GEO Content Briefing | Inhalte für KI-Suche und SEO planen"
+  description="GEO Content Briefing: Framework für Inhalte, die in SEO, KI-Suche und generativen Antworten funktionieren. Mit Struktur, Entitäten, Proof, FAQ und Checkliste."
+  canonicalPath="/ratgeber/geo-content-briefing/"
+  eyebrow="Ratgeber"
+  headline="GEO Content Briefing: So entstehen Inhalte, die KI-Systeme verstehen."
+  intro="Ein gutes Briefing entscheidet, ob Content nur Text wird oder ein zitierfähiger Wissensbaustein für SEO, GEO, KI-Suche und Kaufentscheidungen."
+  schema={[
+    {
+      "@type": "Article",
+      "@id": `${siteUrl}/ratgeber/geo-content-briefing/#article`,
+      headline: "GEO Content Briefing: Inhalte für KI-Suche und SEO planen",
+      description:
+        "Ein Framework für GEO-optimierte Inhalte mit Suchintention, Entitäten, Antwortarchitektur, Belegen, internen Links und Messung.",
+      author: { "@id": `${siteUrl}/#organization` },
+      publisher: { "@id": `${siteUrl}/#organization` },
+      mainEntityOfPage: `${siteUrl}/ratgeber/geo-content-briefing/`,
+      inLanguage: "de-DE",
+      about: ["GEO Content Briefing", "SEO Content", "KI-Suche", "Generative Engine Optimization"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/ratgeber/geo-content-briefing/#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: `${siteUrl}/ratgeber/` },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "GEO Content Briefing",
+          item: `${siteUrl}/ratgeber/geo-content-briefing/`,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/ratgeber/geo-content-briefing/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ]}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#kurzantwort">Kurzantwort</a>
+        <a href="#warum">Warum Briefings zählen</a>
+        <a href="#bausteine">Bausteine</a>
+        <a href="#struktur">Struktur</a>
+        <a href="#checkliste">Checkliste</a>
+        <a href="#proof">Proof</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>Content</li>
+          <li>11 Minuten</li>
+          <li>Für Marketing, SEO & Redaktion</li>
+        </ul>
+
+        <div class="answer-box" id="kurzantwort">
+          <p>
+            Ein GEO Content Briefing plant Inhalte so, dass sie Suchintention, Antwortfähigkeit, Entitäten,
+            Belege, interne Links und Conversion-Ziele gleichzeitig erfüllen.
+          </p>
+        </div>
+
+        <h2 id="warum">Warum normale SEO-Briefings oft nicht mehr reichen</h2>
+        <p>
+          Viele Content-Briefings starten mit Keywords, Suchvolumen, Wortzahl und einer groben H2-Struktur.
+          Das ist ein Anfang, aber für GEO zu wenig. Generative Systeme brauchen klarere Signale: Welche
+          Frage wird beantwortet? Welche Entitäten sind zentral? Welche Aussagen sind belegbar? Welche
+          Seite ist die beste Vertiefung? Welche Entscheidung soll der Leser danach treffen?
+        </p>
+        <p>
+          Genau deshalb muss ein Briefing vor dem Schreiben mehr leisten. Es ist die Bauzeichnung für einen
+          Inhalt, der nicht nur ranken, sondern als zuverlässiger Antwortbaustein verstanden werden soll.
+          Besonders wichtig ist das bei <a class="text-link" href="/leistungen/content-architektur/">Content-Architektur</a>,
+          Leistungsseiten, Vergleichsthemen und erklärungsbedürftigen Angeboten.
+        </p>
+
+        <h2 id="bausteine">Die vier Bausteine eines GEO Content Briefings</h2>
+        <div class="article-panels">
+          {briefingBlocks.map((block) => (
+            <section class="article-panel">
+              <h3>{block.title}</h3>
+              <p>{block.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="struktur">Empfohlene Struktur für GEO-Inhalte</h2>
+        <p>
+          GEO-Content sollte modular gedacht werden. Eine starke Seite liefert schnelle Orientierung,
+          beantwortet die Kernfrage direkt und führt danach in die Tiefe. Dadurch funktioniert sie für
+          Leser, klassische Suchmaschinen und generative Systeme gleichzeitig.
+        </p>
+        <div class="feature-table">
+          {structure.map((item) => (
+            <div>
+              <strong>{item.label}</strong>
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="checkliste">GEO Content Briefing: Checkliste</h2>
+        <ul>
+          {checklist.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="proof">Proof gehört ins Briefing, nicht erst in den Text</h2>
+        <p>
+          Viele Inhalte klingen sauber, bleiben aber austauschbar. Für GEO ist das gefährlich, weil
+          generative Systeme und Nutzer nach belastbarer Einordnung suchen. Deshalb gehört Proof schon in
+          das Briefing.
+        </p>
+        <div class="decision-grid">
+          {proofElements.map((item) => (
+            <section class="decision-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="workflow">Workflow: Vom Thema zur GEO-optimierten Seite</h2>
+        <div class="process-list">
+          {workflow.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="faq">Häufige Fragen</h2>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Die beste Faustregel: Wenn das Briefing keine klare Kurzantwort, keine Entitäten und keinen
+            Proof enthält, wird der spätere Inhalt wahrscheinlich auch nicht zitierfähig genug.
+          </p>
+        </div>
+        <a class="button button-primary" href="/leistungen/content-architektur/">Content-Architektur optimieren →</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>

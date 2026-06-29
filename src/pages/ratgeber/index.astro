@@ -1,25 +1,57 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
+const siteUrl = "https://www.geogurus.de";
+
 const articles = [
   {
     tag: "Grundlagen",
+    theme: "GEO verstehen",
     title: "Was ist GEO?",
     text:
-      "Der Einstieg in Generative Engine Optimization: Definition, Signale, typische Missverständnisse und ein sinnvoller Startpunkt.",
+      "Der klare Einstieg in Generative Engine Optimization: Definition, Signale, typische Missverständnisse und ein sinnvoller Startpunkt.",
     href: "/ratgeber/was-ist-geo/",
     meta: ["8 Min.", "Strategie", "Startpunkt"],
   },
   {
     tag: "Vergleich",
+    theme: "SEO + GEO",
     title: "GEO vs. SEO",
     text:
-      "Was klassische SEO weiterhin leistet, was GEO ergänzt und wie Unternehmen beides zu einem Sichtbarkeitssystem verbinden.",
+      "Was klassische SEO weiterhin leistet, was GEO ergänzt und wie Unternehmen beides zu einem belastbaren Sichtbarkeitssystem verbinden.",
     href: "/ratgeber/geo-vs-seo/",
     meta: ["7 Min.", "SEO + GEO", "Entscheidung"],
   },
   {
+    tag: "Antwortlogik",
+    theme: "Zitierfähigkeit",
+    title: "Antwortmaschinen-Optimierung",
+    text:
+      "Wie Inhalte aufgebaut sein müssen, damit KI-Systeme Ihre Marke nicht nur finden, sondern als hilfreiche Quelle einordnen können.",
+    href: "/ratgeber/antwortmaschinen-optimierung/",
+    meta: ["10 Min.", "AEO", "KI-Antworten"],
+  },
+  {
+    tag: "Content",
+    theme: "Briefing",
+    title: "GEO Content Briefing",
+    text:
+      "Ein praktisches Framework für Inhalte, die Suchintention, Entitäten, Belege, Kurzantworten und Conversion sauber zusammenbringen.",
+    href: "/ratgeber/geo-content-briefing/",
+    meta: ["11 Min.", "Content", "Briefing"],
+  },
+  {
+    tag: "Monitoring",
+    theme: "Messbarkeit",
+    title: "KI-Sichtbarkeit messen",
+    text:
+      "Welche GEO-KPIs wirklich helfen: Antwortpräsenz, Quellenmuster, Share of Answer, Entity Coverage und Umsetzungsfortschritt.",
+    href: "/ratgeber/ki-sichtbarkeit-messen/",
+    meta: ["10 Min.", "KPIs", "Monitoring"],
+  },
+  {
     tag: "Technik",
+    theme: "Kontextdatei",
     title: "llms.txt und KI-Suche",
     text:
       "Was eine llms.txt leisten kann, welche Inhalte hineingehören und warum sie nur ein Baustein in einer GEO-Strategie ist.",
@@ -28,110 +60,170 @@ const articles = [
   },
 ];
 
-const learningPath = [
+const quickAnswers = [
   {
-    step: "01 Einordnen",
-    text:
-      "Verstehen, wie generative Suche Informationen verarbeitet, warum Quellenwürdigkeit wichtiger wird und welche SEO-Grundlagen weiter tragen.",
+    question: "Was bringt GEO-Optimierung konkret?",
+    answer:
+      "GEO macht Inhalte, Entitäten und Belege so klar, dass Suchmaschinen und KI-Systeme eine Marke besser verstehen, einordnen und in relevanten Antwortmomenten berücksichtigen können.",
+    href: "/ratgeber/was-ist-geo/",
   },
   {
-    step: "02 Prüfen",
+    question: "Reicht klassische SEO noch aus?",
+    answer:
+      "SEO bleibt das Fundament. GEO erweitert dieses Fundament um Antwortfähigkeit, Quellenwürdigkeit, Entity-Klarheit, KI-Monitoring und strukturierte Entscheidungsinhalte.",
+    href: "/ratgeber/geo-vs-seo/",
+  },
+  {
+    question: "Wie misst man Sichtbarkeit in KI-Antworten?",
+    answer:
+      "Sinnvoll ist eine Kombination aus Prompt-Sets, Antwortpräsenz, Quellen- und Wettbewerbsnennungen, Themenabdeckung, Sentiment und Umsetzungsfortschritt.",
+    href: "/ratgeber/ki-sichtbarkeit-messen/",
+  },
+];
+
+const learningPath = [
+  {
+    step: "01 Verstehen",
+    title: "GEO einordnen",
     text:
-      "Bestehende Inhalte, technische Signale, Entitäten und Antwortpräsenz gegen konkrete Such- und Entscheidungsfragen spiegeln.",
+      "Starten Sie mit Begriffen, Suchverhalten, Antwortsystemen und der Frage, warum klassische Rankings nicht mehr alle Sichtbarkeitsmomente erklären.",
+    href: "/ratgeber/was-ist-geo/",
+  },
+  {
+    step: "02 Vergleichen",
+    title: "SEO und GEO verbinden",
+    text:
+      "Prüfen Sie, welche SEO-Grundlagen tragen und welche zusätzlichen Signale für KI-Suche, generative Antworten und moderne Discovery fehlen.",
+    href: "/ratgeber/geo-vs-seo/",
   },
   {
     step: "03 Strukturieren",
+    title: "Antwortfähige Inhalte bauen",
     text:
-      "Themencluster, Leistungsseiten, Ratgeberinhalte, interne Verlinkung und Belege so ordnen, dass Expertise schneller erkennbar wird.",
+      "Übersetzen Sie Themencluster, Leistungsseiten und Ratgeber in klare Kurzantworten, Belege, Kriterien, Beispiele und interne Verknüpfungen.",
+    href: "/ratgeber/geo-content-briefing/",
   },
   {
     step: "04 Messen",
+    title: "Antwortpräsenz beobachten",
     text:
-      "Rankings, Erwähnungen, KI-Antworten, Themenlücken und Umsetzungsfortschritt regelmäßig beobachten und priorisieren.",
+      "Messen Sie Rankings, KI-Erwähnungen, Quellenmuster, Themenlücken und Fortschritt zusammen, damit GEO nicht zur Bauchgefühl-Disziplin wird.",
+    href: "/ratgeber/ki-sichtbarkeit-messen/",
   },
 ];
 
 const topicBlocks = [
   {
-    title: "Für Entscheider",
+    title: "Für Geschäftsführung",
     text:
-      "Was ändert sich an Sichtbarkeit, welche Budgets sind sinnvoll und wann lohnt sich ein GEO-Audit statt einzelner Content-Maßnahmen?",
+      "Wie verändert KI-Suche Nachfrage, Vergleichsprozesse und Markenvertrauen? Der Ratgeber hilft, GEO als strategische Sichtbarkeitsfrage einzuordnen.",
   },
   {
     title: "Für Marketing-Teams",
     text:
-      "Wie werden bestehende SEO-Seiten in Antwortformate, Themencluster und conversionnahe Informationsarchitektur übersetzt?",
+      "Welche Seiten brauchen Kurzantworten, Belege, Cluster, interne Links und stärkere Conversion-Pfade, damit Inhalte nicht nur ranken, sondern zitiert werden?",
   },
   {
-    title: "Für technische Teams",
+    title: "Für SEO-Verantwortliche",
     text:
-      "Welche Rolle spielen Crawlbarkeit, semantisches HTML, strukturierte Daten, Performance, robots.txt, llms.txt und saubere Statuscodes?",
+      "Wie bleiben Crawlbarkeit, Suchintention und technische Qualität relevant, während Entitäten, Antwortpräsenz und Quellenwürdigkeit wichtiger werden?",
   },
   {
-    title: "Für Content-Verantwortliche",
+    title: "Für Content-Teams",
     text:
-      "Wie entstehen Inhalte, die nicht nur Keywords abdecken, sondern Entscheidungsfragen beantworten, Expertise belegen und zitiert werden können?",
+      "Wie entstehen Briefings, die nicht bei Keywords stehen bleiben, sondern Entscheidungsfragen, Proof, Struktur und semantische Beziehungen abdecken?",
+  },
+];
+
+const hubFaqs = [
+  {
+    question: "Ist der GEO-Ratgeber für Anfänger oder Fortgeschrittene gedacht?",
+    answer:
+      "Für beide. Die Grundlagenartikel erklären GEO und SEO sauber, die Vertiefungen zeigen konkrete Frameworks für Content, Antwortmaschinen und Monitoring.",
+  },
+  {
+    question: "Welche Artikel sollte man zuerst lesen?",
+    answer:
+      "Ein guter Einstieg ist Was ist GEO, danach GEO vs. SEO. Wer direkt umsetzen möchte, liest anschließend GEO Content Briefing und KI-Sichtbarkeit messen.",
+  },
+  {
+    question: "Kann GEO ohne technische SEO funktionieren?",
+    answer:
+      "Nur sehr eingeschränkt. Wenn Crawlbarkeit, Indexierung, Seitenstruktur, interne Links und Performance schwach sind, werden auch gute GEO-Inhalte schlechter verstanden.",
   },
 ];
 ---
 
 <PageLayout
-  title="GEO-Ratgeber | Wissen zu KI-Suche, SEO und Generative Engine Optimization"
-  description="Der GEOgurus Ratgeber erklärt GEO, KI-Suche, moderne SEO, technische Signale, Content-Architektur und Sichtbarkeit in generativen Antworten."
+  title="GEO-Ratgeber | KI-Suche, SEO, Content und Antwortmaschinen optimieren"
+  description="Der GEOgurus Ratgeber erklärt GEO-Optimierung, KI-Sichtbarkeit, Antwortmaschinen, SEO, Content-Briefings, llms.txt und Monitoring für generative Suche."
   canonicalPath="/ratgeber/"
-  eyebrow="Ratgeber"
-  headline="GEO verstehen. Bessere Entscheidungen treffen."
-  intro="Ein kompakter Wissensbereich für Unternehmen, die klassische SEO nicht wegwerfen, sondern für KI-Suche, generative Antworten und moderne Discovery weiterentwickeln wollen."
-  schema={{
-    "@type": "CollectionPage",
-    "@id": "https://www.geogurus.de/ratgeber/#collection",
-    name: "GEO-Ratgeber",
-    url: "https://www.geogurus.de/ratgeber/",
-  }}
+  eyebrow="GEO-Ratgeber"
+  headline="Der Ratgeber für GEO, KI-Suche und moderne SEO."
+  intro="Strategische Orientierung und konkrete Frameworks für Unternehmen, die in Google, KI-Antworten, Antwortmaschinen und generativen Suchsystemen sichtbar, verständlich und zitierfähig werden wollen."
+  schema={[
+    {
+      "@type": "CollectionPage",
+      "@id": `${siteUrl}/ratgeber/#collection`,
+      name: "GEO-Ratgeber",
+      headline: "Der Ratgeber für GEO, KI-Suche und moderne SEO",
+      description:
+        "Wissenshub zu Generative Engine Optimization, SEO, Antwortmaschinen, Content-Briefings, llms.txt und KI-Sichtbarkeit.",
+      url: `${siteUrl}/ratgeber/`,
+      inLanguage: "de-DE",
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: [
+        "Generative Engine Optimization",
+        "KI-Suche",
+        "Antwortmaschinen-Optimierung",
+        "Suchmaschinenoptimierung",
+        "GEO Content",
+        "KI-Sichtbarkeit messen",
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${siteUrl}/ratgeber/#article-list`,
+      name: "GEOgurus Ratgeberartikel",
+      itemListElement: articles.map((article, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: article.title,
+        url: `${siteUrl}${article.href}`,
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/ratgeber/#faq`,
+      mainEntity: hubFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ]}
 >
   <section class="content-band light">
     <div class="container intro-grid">
       <div data-reveal>
         <p class="eyebrow">Orientierung</p>
-        <h2>Der Ratgeber sortiert das Thema von der Strategie bis zur Technik.</h2>
+        <h2>GEO ist kein Blog-Thema. Es ist eine neue Sichtbarkeitslogik.</h2>
       </div>
-      <p class="lead" data-reveal>
-        GEO ist kein isolierter Trick. Es geht um die Frage, ob Ihre Marke in Suchsystemen, KI-Antworten
-        und Entscheidungsphasen als verständliche, vertrauenswürdige Quelle auftaucht. Die Artikel zeigen,
-        welche Grundlagen bleiben, welche Signale dazukommen und wie aus Wissen ein umsetzbarer Plan wird.
-      </p>
-    </div>
-  </section>
-
-  <section class="content-band">
-    <div class="container link-grid">
-      {articles.map((article) => (
-        <article class="article-card" data-reveal>
-          <span>{article.tag}</span>
-          <h2>{article.title}</h2>
-          <p>{article.text}</p>
-          <ul class="article-meta" aria-label="Artikeldetails">
-            {article.meta.map((item) => <li>{item}</li>)}
-          </ul>
-          <a href={article.href}>Artikel lesen →</a>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="content-band light">
-    <div class="container intro-grid">
       <div data-reveal>
-        <p class="eyebrow">Lernpfad</p>
-        <h2>So wird aus GEO-Wissen ein sinnvoller Arbeitsplan.</h2>
-      </div>
-      <div class="process-list" data-reveal>
-        {learningPath.map((item) => (
-          <div class="process-step">
-            <strong>{item.step}</strong>
-            <p>{item.text}</p>
-          </div>
-        ))}
+        <p class="lead">
+          Suchsysteme liefern immer häufiger Antworten, Vergleiche, Zusammenfassungen und Empfehlungen.
+          Der Ratgeber erklärt, wie Unternehmen Inhalte, Entitäten, Technik und Vertrauen so strukturieren,
+          dass sie in diesen Momenten nicht verschwinden.
+        </p>
+        <div class="answer-box">
+          <p>
+            Kurz gesagt: GEO verbindet klassische SEO mit Antwortfähigkeit, Quellenwürdigkeit,
+            maschinenlesbarer Struktur und Monitoring für generative Suchumgebungen.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -139,11 +231,85 @@ const topicBlocks = [
   <section class="content-band">
     <div class="container">
       <div class="section-heading" data-reveal>
-        <p class="eyebrow">Themen</p>
-        <h2>Die wichtigsten Fragen hängen selten an nur einem Kanal.</h2>
+        <p class="eyebrow">Schnelle Antworten</p>
+        <h2>Die wichtigsten GEO-Fragen auf einen Blick.</h2>
         <p>
-          Gute GEO-Arbeit verbindet Geschäftslogik, SEO-Handwerk, Content-Architektur und technische
-          Lesbarkeit. Deshalb ist der Ratgeber bewusst nach Rollen und Entscheidungen gedacht.
+          Diese Kurzantworten sind bewusst kompakt formuliert: Sie helfen Menschen beim Einstieg und geben
+          Such- und KI-Systemen klare semantische Signale.
+        </p>
+      </div>
+      <div class="hub-answer-grid">
+        {quickAnswers.map((item) => (
+          <article class="hub-answer-card" data-reveal>
+            <h2>{item.question}</h2>
+            <p>{item.answer}</p>
+            <a href={item.href}>Vertiefung lesen →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Alle Beiträge</p>
+        <h2>Sechs Ratgeber für Strategie, Content, Technik und Messung.</h2>
+        <p>
+          Die Artikel sind als Cluster aufgebaut: erst verstehen, dann strukturieren, dann messen und
+          laufend verbessern.
+        </p>
+      </div>
+      <div class="link-grid">
+        {articles.map((article) => (
+          <article class="article-card" data-reveal>
+            <span>{article.tag}</span>
+            <small>{article.theme}</small>
+            <h2>{article.title}</h2>
+            <p>{article.text}</p>
+            <ul class="article-meta" aria-label="Artikeldetails">
+              {article.meta.map((item) => <li>{item}</li>)}
+            </ul>
+            <a href={article.href}>Artikel lesen →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">Lernpfad</p>
+        <h2>So wird aus GEO-Wissen ein konkreter Arbeitsplan.</h2>
+        <p class="lead">
+          Wer GEO nur als einzelne Maßnahme betrachtet, optimiert zu kurz. Wirkung entsteht, wenn Strategie,
+          Content, Technik und Messung wie ein System zusammenspielen.
+        </p>
+      </div>
+      <div class="process-list" data-reveal>
+        {learningPath.map((item) => (
+          <div class="process-step">
+            <strong>{item.step}</strong>
+            <p>
+              <b>{item.title}</b><br />
+              {item.text}<br />
+              <a class="text-link" href={item.href}>Passenden Artikel öffnen</a>
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band light">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Themencluster</p>
+        <h2>Der Ratgeber deckt die Rollen ab, die GEO wirklich bewegen.</h2>
+        <p>
+          Gute GEO-Arbeit ist nicht nur Content und nicht nur Technik. Sie braucht Entscheidungen,
+          Zuständigkeiten, saubere Briefings, messbare Signale und eine Website, die Expertise klar macht.
         </p>
       </div>
       <div class="detail-grid">
@@ -157,13 +323,30 @@ const topicBlocks = [
     </div>
   </section>
 
+  <section class="content-band">
+    <div class="container intro-grid">
+      <div data-reveal>
+        <p class="eyebrow">FAQ</p>
+        <h2>Häufige Fragen zum GEO-Ratgeber.</h2>
+      </div>
+      <div class="faq-list" data-reveal>
+        {hubFaqs.map((faq) => (
+          <details>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="content-band dark">
     <div class="container cta-panel" data-reveal>
       <p class="eyebrow">Nächster Schritt</p>
-      <h2>Sie wollen wissen, wo Ihre Website heute steht?</h2>
+      <h2>Sie wollen wissen, wo Ihre Website in der KI-Suche steht?</h2>
       <p>
-        Der Ratgeber hilft beim Einordnen. Das GEO-Audit übersetzt diese Fragen in konkrete Befunde,
-        Prioritäten und Maßnahmen für Ihre Website.
+        Der Ratgeber erklärt das System. Das GEO-Audit übersetzt es in konkrete Befunde, Prioritäten,
+        Content-Lücken, technische Maßnahmen und eine Roadmap für Ihre Website.
       </p>
       <a class="button button-primary" href="/leistungen/geo-audit/">GEO-Audit ansehen →</a>
     </div>

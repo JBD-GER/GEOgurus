@@ -14,6 +14,7 @@ const {
 const siteUrl = "https://www.geogurus.de";
 const canonical = `${siteUrl}${canonicalPath}`;
 const socialImage = `${siteUrl}/assets/geogurus-og.svg`;
+const schemaItems = Array.isArray(schema) ? schema : schema ? [schema] : [];
 
 const navItems = [
   { href: "/leistungen/", label: "Leistungen" },
@@ -58,7 +59,7 @@ const baseSchema = {
       publisher: { "@id": `${siteUrl}/#organization` },
       inLanguage: "de-DE",
     },
-    ...(schema ? [schema] : []),
+    ...schemaItems,
   ],
 };
 ---

@@ -76,6 +76,27 @@ const operatingModel = [
       "SEO- und GEO-Signale werden gemeinsam betrachtet, damit Maßnahmen nicht gegeneinander optimiert werden.",
   },
 ];
+
+const relatedArticles = [
+  {
+    title: "GEO Content Briefing",
+    text:
+      "Wenn SEO-Seiten schon ranken, zeigt das Briefing, wie sie für KI-Antworten, Entitäten und Entscheidungsfragen erweitert werden.",
+    href: "/ratgeber/geo-content-briefing/",
+  },
+  {
+    title: "Antwortmaschinen-Optimierung",
+    text:
+      "Der nächste Schritt für Seiten, die nicht nur gefunden, sondern in Antwortsystemen als Quelle verstanden werden sollen.",
+    href: "/ratgeber/antwortmaschinen-optimierung/",
+  },
+  {
+    title: "KI-Sichtbarkeit messen",
+    text:
+      "So werden SEO-KPIs mit Antwortpräsenz, Quellenmustern und Share of Answer verbunden.",
+    href: "/ratgeber/ki-sichtbarkeit-messen/",
+  },
+];
 ---
 
 <PageLayout
@@ -85,16 +106,28 @@ const operatingModel = [
   eyebrow="Ratgeber"
   headline="GEO vs. SEO: kein Entweder-oder."
   intro="GEO ersetzt SEO nicht. Es erweitert SEO um Antwortfähigkeit, Entitäten, Quellenwürdigkeit und Sichtbarkeit in generativen Suchsystemen."
-  schema={{
-    "@type": "Article",
-    "@id": "https://www.geogurus.de/ratgeber/geo-vs-seo/#article",
-    headline: "GEO vs. SEO: Unterschied und Zusammenspiel",
-    description:
-      "Was klassische SEO weiterhin leistet, was GEO ergänzt und wie Unternehmen beides sinnvoll verbinden.",
-    author: { "@id": "https://www.geogurus.de/#organization" },
-    publisher: { "@id": "https://www.geogurus.de/#organization" },
-    mainEntityOfPage: "https://www.geogurus.de/ratgeber/geo-vs-seo/",
-  }}
+  schema={[
+    {
+      "@type": "Article",
+      "@id": "https://www.geogurus.de/ratgeber/geo-vs-seo/#article",
+      headline: "GEO vs. SEO: Unterschied und Zusammenspiel",
+      description:
+        "Was klassische SEO weiterhin leistet, was GEO ergänzt und wie Unternehmen beides sinnvoll verbinden.",
+      author: { "@id": "https://www.geogurus.de/#organization" },
+      publisher: { "@id": "https://www.geogurus.de/#organization" },
+      mainEntityOfPage: "https://www.geogurus.de/ratgeber/geo-vs-seo/",
+      inLanguage: "de-DE",
+      about: ["GEO vs. SEO", "Generative Engine Optimization", "Suchmaschinenoptimierung", "KI-Suche"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.geogurus.de/ratgeber/geo-vs-seo/#breadcrumb",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: "https://www.geogurus.de/ratgeber/" },
+        { "@type": "ListItem", position: 2, name: "GEO vs. SEO", item: "https://www.geogurus.de/ratgeber/geo-vs-seo/" },
+      ],
+    },
+  ]}
 >
   <section class="content-band light">
     <div class="container article-grid">
@@ -106,6 +139,7 @@ const operatingModel = [
         <a href="#vergleich">Vergleich</a>
         <a href="#praxis">Praxis</a>
         <a href="#prioritaeten">Prioritäten</a>
+        <a href="#vertiefung">Vertiefung</a>
       </aside>
 
       <article class="article-body" data-reveal>
@@ -192,6 +226,21 @@ const operatingModel = [
               Themencluster und KI-Antwortpräsenz sofort.
             </p>
           </section>
+        </div>
+
+        <h2 id="vertiefung">Wie geht es nach dem Vergleich weiter?</h2>
+        <p>
+          Wenn klar ist, dass SEO und GEO zusammengehören, folgt die Umsetzung: vorhandene Seiten werden
+          in Antwortformate, bessere Briefings und messbare Sichtbarkeits-Signale übersetzt.
+        </p>
+        <div class="article-panels">
+          {relatedArticles.map((article) => (
+            <section class="article-panel">
+              <h3>{article.title}</h3>
+              <p>{article.text}</p>
+              <a class="text-link" href={article.href}>Weiterlesen</a>
+            </section>
+          ))}
         </div>
 
         <div class="answer-box">

@@ -1,0 +1,292 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const siteUrl = "https://www.geogurus.de";
+
+const answerSignals = [
+  {
+    title: "Direkte Kurzantwort",
+    text:
+      "Jede wichtige Frage braucht eine präzise Antwort, die ohne langen Einstieg verständlich ist und danach sinnvoll vertieft wird.",
+  },
+  {
+    title: "Eindeutige Entitäten",
+    text:
+      "Marke, Leistung, Zielgruppe, Problem, Methode und Ergebnis müssen konsistent benannt und miteinander verknüpft sein.",
+  },
+  {
+    title: "Belegbare Aussagen",
+    text:
+      "Antwortmaschinen bevorzugen Inhalte, die Erfahrung, Kriterien, Beispiele, Autorenschaft und nachvollziehbare Quellenlogik erkennen lassen.",
+  },
+  {
+    title: "Saubere Struktur",
+    text:
+      "Überschriften, Listen, Tabellen, interne Links, Schema.org und semantisches HTML helfen Systemen, Inhalte in Antwortbausteine zu zerlegen.",
+  },
+];
+
+const pageAssets = [
+  "Definitionen für zentrale Begriffe und Leistungsbereiche",
+  "Vergleichsabschnitte für Alternativen, Anbieterklassen oder Lösungswege",
+  "Kriterienlisten für Auswahl, Priorisierung und Budgetentscheidungen",
+  "Prozessabschnitte mit klaren Schritten, Inputs und Ergebnissen",
+  "FAQ-Bereiche mit echten Entscheidungsfragen statt Füllfragen",
+  "Proof-Elemente wie Beispiele, Methoden, Rollen, Erfahrung und konkrete Grenzen",
+];
+
+const quoteFactors = [
+  {
+    label: "Verständlichkeit",
+    text:
+      "Kann ein System die Antwort extrahieren, ohne mehrere Absätze interpretieren zu müssen?",
+  },
+  {
+    label: "Eindeutigkeit",
+    text:
+      "Ist klar, ob die Seite eine Definition, eine Empfehlung, einen Vergleich oder eine Leistung erklärt?",
+  },
+  {
+    label: "Vertrauen",
+    text:
+      "Wird sichtbar, wer spricht, warum die Aussage belastbar ist und wo die Grenzen der Empfehlung liegen?",
+  },
+  {
+    label: "Anschlussfähigkeit",
+    text:
+      "Führen interne Links zu passenden Vertiefungen, Leistungsseiten, Kontaktpunkten und verwandten Fragen?",
+  },
+];
+
+const mistakes = [
+  {
+    title: "Nur lange Texte schreiben",
+    text:
+      "Länge ersetzt keine Antwortqualität. Ein langer Artikel ohne klare Definitionen, Kriterien und Belege ist für Antwortsysteme schwerer nutzbar.",
+  },
+  {
+    title: "Jede Frage gleich behandeln",
+    text:
+      "Informationsfragen, Vergleichsfragen und Kaufentscheidungen brauchen unterschiedliche Formate, Tonalität und Conversion-Pfade.",
+  },
+  {
+    title: "Entitäten verstecken",
+    text:
+      "Wenn Marke, Leistung, Branche, Standort, Personen oder Zielgruppen nur beiläufig auftauchen, bleibt der Kontext schwach.",
+  },
+  {
+    title: "Proof erst am Ende zeigen",
+    text:
+      "Belege, Erfahrung und Methode sollten dort stehen, wo Entscheidungen entstehen, nicht nur in einer isolierten Referenzsektion.",
+  },
+];
+
+const roadmap = [
+  {
+    step: "01 Fragen inventarisieren",
+    text:
+      "Sammeln Sie Fragen aus Sales, Support, Search Console, Keyword-Recherche, Wettbewerbsseiten und echten Beratungsgesprächen.",
+  },
+  {
+    step: "02 Antworttypen sortieren",
+    text:
+      "Ordnen Sie Fragen nach Definition, Vergleich, Auswahlkriterium, Prozess, Risiko, Preis, Anbieterentscheidung und nächstem Schritt.",
+  },
+  {
+    step: "03 Seiten umbauen",
+    text:
+      "Ergänzen Sie Kurzantworten, strukturierte Abschnitte, interne Links, FAQ, Tabellen, Beispiele und klare Autoritäts-Signale.",
+  },
+  {
+    step: "04 Wirkung prüfen",
+    text:
+      "Messen Sie Rankings, Snippet-Qualität, KI-Erwähnungen, Antwortpräsenz, Quellenmuster und Lead-Qualität gemeinsam.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Ist Antwortmaschinen-Optimierung dasselbe wie GEO?",
+    answer:
+      "Antwortmaschinen-Optimierung ist ein wichtiger Teil von GEO. GEO betrachtet zusätzlich technische Signale, Entitäten, Quellenwürdigkeit, Monitoring und die gesamte Informationsarchitektur.",
+  },
+  {
+    question: "Welche Seiten sollte man zuerst optimieren?",
+    answer:
+      "Priorität haben Seiten mit hoher geschäftlicher Bedeutung: Leistungsseiten, Vergleichsseiten, wichtige Ratgeber, Preis- oder Prozessseiten und Inhalte, die oft in Beratungsgesprächen erklärt werden.",
+  },
+  {
+    question: "Muss jeder Abschnitt als FAQ formuliert werden?",
+    answer:
+      "Nein. FAQs helfen bei klaren Einzelantworten, aber viele Themen funktionieren besser als Vergleich, Prozess, Tabelle, Checkliste, Kriterienliste oder kompakter Erklärabschnitt.",
+  },
+];
+---
+
+<PageLayout
+  title="Antwortmaschinen-Optimierung | Sichtbar in KI-Antworten werden"
+  description="Antwortmaschinen-Optimierung erklärt, wie Inhalte für KI-Antworten, generative Suche und GEO strukturiert werden: Kurzantworten, Entitäten, Proof und interne Links."
+  canonicalPath="/ratgeber/antwortmaschinen-optimierung/"
+  eyebrow="Ratgeber"
+  headline="Antwortmaschinen-Optimierung: So wird Ihre Marke zitierfähig."
+  intro="Antwortmaschinen liefern keine klassische Trefferliste, sondern verdichtete Empfehlungen. Dieser Ratgeber zeigt, wie Seiten aufgebaut sein müssen, damit Ihre Expertise als Antwortbaustein verstanden wird."
+  schema={[
+    {
+      "@type": "Article",
+      "@id": `${siteUrl}/ratgeber/antwortmaschinen-optimierung/#article`,
+      headline: "Antwortmaschinen-Optimierung: So wird Ihre Marke zitierfähig",
+      description:
+        "Wie Inhalte für KI-Antworten, generative Suche und GEO aufgebaut werden: Kurzantworten, Entitäten, Belege, Struktur und interne Links.",
+      author: { "@id": `${siteUrl}/#organization` },
+      publisher: { "@id": `${siteUrl}/#organization` },
+      mainEntityOfPage: `${siteUrl}/ratgeber/antwortmaschinen-optimierung/`,
+      inLanguage: "de-DE",
+      about: ["Antwortmaschinen-Optimierung", "Generative Engine Optimization", "KI-Antworten"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/ratgeber/antwortmaschinen-optimierung/#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: `${siteUrl}/ratgeber/` },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Antwortmaschinen-Optimierung",
+          item: `${siteUrl}/ratgeber/antwortmaschinen-optimierung/`,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/ratgeber/antwortmaschinen-optimierung/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ]}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#kurzantwort">Kurzantwort</a>
+        <a href="#bedeutung">Warum es wichtig ist</a>
+        <a href="#signale">Antwortsignale</a>
+        <a href="#assets">Seitenbausteine</a>
+        <a href="#zitierfaehigkeit">Zitierfähigkeit</a>
+        <a href="#fehler">Fehler</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>Antwortlogik</li>
+          <li>10 Minuten</li>
+          <li>Für SEO, Content & Geschäftsführung</li>
+        </ul>
+
+        <div class="answer-box" id="kurzantwort">
+          <p>
+            Antwortmaschinen-Optimierung bedeutet, Inhalte so zu strukturieren, dass KI-Systeme eine Marke
+            als klare, belastbare und zitierfähige Quelle für konkrete Fragen verstehen können.
+          </p>
+        </div>
+
+        <h2 id="bedeutung">Warum Antwortmaschinen anders funktionieren</h2>
+        <p>
+          Klassische Suche zeigt Ergebnisse. Antwortmaschinen verdichten Informationen. Nutzer fragen nicht
+          nur nach einem Keyword, sondern nach Empfehlungen, Vergleichen, Kriterien, Risiken, Kosten und
+          konkreten nächsten Schritten. Dadurch entsteht Sichtbarkeit nicht nur über Positionen, sondern auch
+          über die Frage, welche Quellen in einer Antwort erkennbar berücksichtigt werden.
+        </p>
+        <p>
+          Für Unternehmen heißt das: Eine Seite muss nicht nur ranken, sondern antworten können. Sie muss
+          verständlich zeigen, wofür die Marke steht, welche Erfahrung dahinterliegt, welche Probleme gelöst
+          werden und warum die Aussagen vertrauenswürdig sind. Genau hier verbindet sich Antwortmaschinen-
+          Optimierung mit <a class="text-link" href="/ratgeber/was-ist-geo/">GEO-Optimierung</a>.
+        </p>
+
+        <h2 id="signale">Die wichtigsten Antwortsignale</h2>
+        <p>
+          Antwortmaschinen brauchen keine Werbetexte, sondern gut lesbare Wissensbausteine. Besonders stark
+          sind Inhalte, die eine Frage schnell beantworten und anschließend Belege, Einschränkungen und
+          nächste Schritte liefern.
+        </p>
+        <div class="article-panels">
+          {answerSignals.map((signal) => (
+            <section class="article-panel">
+              <h3>{signal.title}</h3>
+              <p>{signal.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="assets">Welche Seitenbausteine machen Inhalte antwortfähig?</h2>
+        <p>
+          Viele Seiten sind für Menschen hübsch, aber für Antwortsysteme unklar. Die wichtigsten Aussagen
+          stehen verstreut, Begriffe wechseln, Belege fehlen oder der nächste Schritt bleibt vage. Diese
+          Bausteine bringen Ordnung in die Seite:
+        </p>
+        <ul>
+          {pageAssets.map((asset) => <li>{asset}</li>)}
+        </ul>
+
+        <h2 id="zitierfaehigkeit">Was macht eine Seite zitierfähig?</h2>
+        <div class="feature-table">
+          {quoteFactors.map((factor) => (
+            <div>
+              <strong>{factor.label}</strong>
+              <span>{factor.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="fehler">Typische Fehler bei Antwortmaschinen-Optimierung</h2>
+        <div class="decision-grid">
+          {mistakes.map((mistake) => (
+            <section class="decision-card">
+              <h3>{mistake.title}</h3>
+              <p>{mistake.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="roadmap">Roadmap: So optimieren Sie bestehende Seiten</h2>
+        <p>
+          Der beste Einstieg ist meistens kein komplett neuer Artikel. Häufig liegen die stärksten Chancen
+          in vorhandenen Leistungsseiten und Ratgeberbeiträgen, die bereits Nachfrage haben, aber noch nicht
+          präzise genug als Antwortquelle funktionieren.
+        </p>
+        <div class="process-list">
+          {roadmap.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="faq">Häufige Fragen</h2>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Gute Antwortmaschinen-Optimierung beginnt mit einer einfachen Prüfung: Kann jede wichtige Seite
+            in wenigen Sätzen erklären, für welche Frage sie die beste Quelle ist?
+          </p>
+        </div>
+        <a class="button button-primary" href="/leistungen/content-architektur/">Content-Architektur ansehen →</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>

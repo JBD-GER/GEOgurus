@@ -78,6 +78,27 @@ const steps = [
       "Bei neuen Leistungen, wichtigen Artikeln, Relaunches oder geänderter Positionierung wird die Datei mit aktualisiert.",
   },
 ];
+
+const relatedArticles = [
+  {
+    title: "Antwortmaschinen-Optimierung",
+    text:
+      "llms.txt kann Kontext liefern. Die eigentliche Zitierfähigkeit entsteht aber auf den Seiten selbst.",
+    href: "/ratgeber/antwortmaschinen-optimierung/",
+  },
+  {
+    title: "GEO Content Briefing",
+    text:
+      "So werden Inhalte geplant, die zur llms.txt, zu Schema.org und zur Website-Positionierung passen.",
+    href: "/ratgeber/geo-content-briefing/",
+  },
+  {
+    title: "KI-Sichtbarkeit messen",
+    text:
+      "Welche Signale zeigen, ob technische Kontextarbeit auch in Antwortpräsenz mündet.",
+    href: "/ratgeber/ki-sichtbarkeit-messen/",
+  },
+];
 ---
 
 <PageLayout
@@ -87,15 +108,32 @@ const steps = [
   eyebrow="Ratgeber"
   headline="llms.txt: Kontext für KI-Systeme."
   intro="Eine llms.txt kann zentrale Informationen über Marke, Leistungen und Inhalte maschinenlesbar bündeln. Sie ersetzt keine SEO, kann aber GEO unterstützen."
-  schema={{
-    "@type": "Article",
-    "@id": "https://www.geogurus.de/ratgeber/llms-txt-ki-suche/#article",
-    headline: "llms.txt für KI-Suche",
-    description: "Was llms.txt ist, welche Inhalte sinnvoll sind und wo die Grenzen liegen.",
-    author: { "@id": "https://www.geogurus.de/#organization" },
-    publisher: { "@id": "https://www.geogurus.de/#organization" },
-    mainEntityOfPage: "https://www.geogurus.de/ratgeber/llms-txt-ki-suche/",
-  }}
+  schema={[
+    {
+      "@type": "Article",
+      "@id": "https://www.geogurus.de/ratgeber/llms-txt-ki-suche/#article",
+      headline: "llms.txt für KI-Suche",
+      description: "Was llms.txt ist, welche Inhalte sinnvoll sind und wo die Grenzen liegen.",
+      author: { "@id": "https://www.geogurus.de/#organization" },
+      publisher: { "@id": "https://www.geogurus.de/#organization" },
+      mainEntityOfPage: "https://www.geogurus.de/ratgeber/llms-txt-ki-suche/",
+      inLanguage: "de-DE",
+      about: ["llms.txt", "KI-Suche", "GEO", "maschinenlesbarer Kontext"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.geogurus.de/ratgeber/llms-txt-ki-suche/#breadcrumb",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: "https://www.geogurus.de/ratgeber/" },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "llms.txt und KI-Suche",
+          item: "https://www.geogurus.de/ratgeber/llms-txt-ki-suche/",
+        },
+      ],
+    },
+  ]}
 >
   <section class="content-band light">
     <div class="container article-grid">
@@ -107,6 +145,7 @@ const steps = [
         <a href="#checkliste">Checkliste</a>
         <a href="#grenzen">Grenzen</a>
         <a href="#umsetzung">Umsetzung</a>
+        <a href="#vertiefung">Vertiefung</a>
       </aside>
 
       <article class="article-body" data-reveal>
@@ -174,6 +213,21 @@ const steps = [
               <strong>{item.step}</strong>
               <p>{item.text}</p>
             </div>
+          ))}
+        </div>
+
+        <h2 id="vertiefung">Welche GEO-Bausteine gehören dazu?</h2>
+        <p>
+          Eine llms.txt ist nur eine Kontextschicht. Die stärkeren Signale entstehen auf der Website: in
+          klaren Antworten, konsistenten Entitäten, strukturierten Briefings und messbarer Antwortpräsenz.
+        </p>
+        <div class="article-panels">
+          {relatedArticles.map((article) => (
+            <section class="article-panel">
+              <h3>{article.title}</h3>
+              <p>{article.text}</p>
+              <a class="text-link" href={article.href}>Weiterlesen</a>
+            </section>
           ))}
         </div>
 
