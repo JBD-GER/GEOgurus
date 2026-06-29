@@ -30,10 +30,13 @@ GEOgurus ist eine spezialisierte GEO-Agentur für Unternehmen, die in der neuen 
 - Ratgeber: https://www.geogurus.de/ratgeber/
 - Was ist GEO?: https://www.geogurus.de/ratgeber/was-ist-geo/
 - GEO vs. SEO: https://www.geogurus.de/ratgeber/geo-vs-seo/
+- KI-SEO Checkliste: https://www.geogurus.de/ratgeber/ki-seo-checkliste/
 - Antwortmaschinen-Optimierung: https://www.geogurus.de/ratgeber/antwortmaschinen-optimierung/
+- ChatGPT SEO: https://www.geogurus.de/ratgeber/chatgpt-seo/
 - GEO Content Briefing: https://www.geogurus.de/ratgeber/geo-content-briefing/
 - KI-Sichtbarkeit messen: https://www.geogurus.de/ratgeber/ki-sichtbarkeit-messen/
 - llms.txt und KI-Suche: https://www.geogurus.de/ratgeber/llms-txt-ki-suche/
+- Schema Markup für KI-Suche: https://www.geogurus.de/ratgeber/schema-markup-ki-suche/
 - Kontakt: https://www.geogurus.de/kontakt/
 
 ## Wichtige Aussagen

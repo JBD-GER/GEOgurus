@@ -1,0 +1,336 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const siteUrl = "https://www.geogurus.de";
+
+const pillars = [
+  {
+    title: "SEO-Fundament",
+    text:
+      "Crawlbarkeit, Indexierung, Performance, Informationsarchitektur, interne Links und Suchintention müssen tragen.",
+  },
+  {
+    title: "Antwortfähigkeit",
+    text:
+      "Wichtige Fragen brauchen direkte Antworten, klare Definitionen, Kriterien, Beispiele und sinnvolle Vertiefungen.",
+  },
+  {
+    title: "Entity- und Proof-Signale",
+    text:
+      "Marke, Leistungen, Personen, Erfahrung, Methode und Grenzen müssen nachvollziehbar und konsistent sichtbar sein.",
+  },
+  {
+    title: "Monitoring",
+    text:
+      "KI-Sichtbarkeit, Quellenmuster, Wettbewerber, Rankings, Leads und Content-Lücken gehören in ein gemeinsames Reporting.",
+  },
+];
+
+const technicalChecklist = [
+  "Indexierbarkeit, Canonicals, Statuscodes, robots.txt und XML-Sitemap prüfen",
+  "Semantische Überschriften, saubere HTML-Struktur und interne Linkpfade herstellen",
+  "Schema.org für Organization, WebSite, BreadcrumbList, Article, FAQ und Services einsetzen",
+  "Core-Web-Vitals, mobile Darstellung und störende Skripte im Blick behalten",
+  "Zentrale URLs in einer klaren Informationsarchitektur bündeln statt Themen zu verstreuen",
+  "llms.txt als kuratierte Kontextdatei ergänzen, wenn die wichtigsten Seiten stabil sind",
+];
+
+const contentChecklist = [
+  "Für jede geschäftskritische Frage eine kompakte Kurzantwort formulieren",
+  "Definitionen, Vergleiche, Kriterien, Prozesse, Risiken und nächste Schritte abdecken",
+  "Leistungsseiten mit Ratgebern, FAQ, Methodenseiten und Proof-Elementen verknüpfen",
+  "Austauschbare Aussagen durch Beispiele, Methodik, Grenzen und Erfahrung ersetzen",
+  "Content-Briefings um Entitäten, Antworttypen, interne Links und Belege erweitern",
+  "Bestehende Ranking-Seiten auf GEO-Lücken prüfen, bevor blind neue Artikel entstehen",
+];
+
+const authorityChecklist = [
+  "Autorenschaft, Organisation, Kontakt, Impressum und Verantwortlichkeiten klar ausweisen",
+  "Methoden, Prozesse, Projektlogik und Entscheidungskriterien transparent erklären",
+  "Referenzen, Beispiele, Branchenwissen und echte Erfahrung dort zeigen, wo Vertrauen entsteht",
+  "Widersprüche zwischen Meta-Daten, Seiteninhalt, Schema.org und llms.txt entfernen",
+  "Aussagen regelmäßig aktualisieren, wenn Leistungen, Tools oder Marktbedingungen wechseln",
+  "Grenzen und Abhängigkeiten nennen, statt jede Frage mit absoluter Sicherheit zu beantworten",
+];
+
+const measurementChecklist = [
+  "Prompt-Sets für Informations-, Vergleichs-, Anbieter- und Kaufentscheidungen erstellen",
+  "Antwortpräsenz, Marken-Nennungen, Quellen, Wettbewerber und Sentiment dokumentieren",
+  "SEO-Daten aus Rankings, Impressionen, Klicks und Leads mit KI-Antwortdaten verbinden",
+  "Themenlücken priorisieren: Was wird gefragt, aber auf der Website nicht sauber beantwortet?",
+  "Nach Optimierungen erneut messen und Veränderungen an konkreten URLs festmachen",
+  "Reporting nicht nur für Marketing bauen, sondern auch für Geschäftsführung und Sales nutzbar machen",
+];
+
+const priorityMatrix = [
+  {
+    label: "Sofort",
+    text:
+      "Technische Blocker, falsche Indexierung, schwache Leistungsseiten, fehlende Kurzantworten und widersprüchliche Markeninformationen.",
+  },
+  {
+    label: "Als Nächstes",
+    text:
+      "Themencluster, interne Links, strukturierte Daten, FAQ-Abschnitte, Vergleichsinhalte und klare Proof-Elemente.",
+  },
+  {
+    label: "Laufend",
+    text:
+      "KI-Monitoring, Content-Updates, Prompt-Tests, Wettbewerbsbeobachtung, neue Fragen aus Sales und Support.",
+  },
+  {
+    label: "Nicht zuerst",
+    text:
+      "Massenhaft neue KI-Texte, Tool-Spielereien ohne Prozess, kosmetische Änderungen ohne Einfluss auf Antwortqualität.",
+  },
+];
+
+const roadmap = [
+  {
+    step: "01 Inventur",
+    text:
+      "Alle wichtigen Leistungsseiten, Ratgeber, Methoden, FAQ, Proof-Seiten und technischen Signale werden gesammelt.",
+  },
+  {
+    step: "02 Lückenanalyse",
+    text:
+      "Die Website wird gegen Suchintention, Prompt-Sets, Entitäten, strukturierte Daten und Wettbewerberantworten gespiegelt.",
+  },
+  {
+    step: "03 Quick Wins",
+    text:
+      "Klare Antworten, interne Links, Schema-Markup, Meta-Daten und fehlerhafte Signale werden zuerst verbessert.",
+  },
+  {
+    step: "04 Cluster-Ausbau",
+    text:
+      "Neue oder überarbeitete Inhalte schließen wichtige Themenlücken und stärken die wichtigsten kommerziellen Seiten.",
+  },
+  {
+    step: "05 Messzyklus",
+    text:
+      "KI-Antwortpräsenz, SEO-KPIs, Leads und Content-Qualität werden wiederholt geprüft und in Prioritäten übersetzt.",
+  },
+];
+
+const relatedArticles = [
+  {
+    title: "ChatGPT SEO",
+    text:
+      "Wie die Checkliste speziell auf ChatGPT-ähnliche Antwortmomente, Prompts und Dialoge angewendet wird.",
+    href: "/ratgeber/chatgpt-seo/",
+  },
+  {
+    title: "GEO Content Briefing",
+    text:
+      "Das Briefing-Framework, mit dem aus der Checkliste konkrete Inhalte und Seitenstrukturen werden.",
+    href: "/ratgeber/geo-content-briefing/",
+  },
+  {
+    title: "KI-Sichtbarkeit messen",
+    text:
+      "So wird aus der Checkliste ein wiederholbarer Messprozess für SEO und generative Antworten.",
+    href: "/ratgeber/ki-sichtbarkeit-messen/",
+  },
+];
+
+const faqs = [
+  {
+    question: "Was ist KI-SEO?",
+    answer:
+      "KI-SEO verbindet klassische Suchmaschinenoptimierung mit GEO, Antwortmaschinen-Optimierung, klaren Entitäten, strukturierten Daten und Monitoring für generative Suchsysteme.",
+  },
+  {
+    question: "Sollte man zuerst SEO oder GEO optimieren?",
+    answer:
+      "Wenn technische SEO-Grundlagen schwach sind, haben sie Priorität. Sobald Crawling, Indexierung und Struktur tragen, sollten GEO-Maßnahmen wie Antwortmodule, Entitäten, Proof und KI-Monitoring parallel aufgebaut werden.",
+  },
+  {
+    question: "Wie oft sollte man die KI-SEO Checkliste prüfen?",
+    answer:
+      "Für geschäftskritische Websites mindestens quartalsweise und nach größeren Content-, Technik- oder Angebotsänderungen. Prompt-Sets und Antwortpräsenz können je nach Wettbewerb auch monatlich geprüft werden.",
+  },
+];
+---
+
+<PageLayout
+  title="KI-SEO Checkliste | GEO, Content und Technik optimieren"
+  description="KI-SEO Checkliste für GEO, ChatGPT SEO und moderne Suchmaschinenoptimierung: Technik, Content, Entitäten, Proof, Schema.org und Monitoring."
+  canonicalPath="/ratgeber/ki-seo-checkliste/"
+  eyebrow="Ratgeber"
+  headline="KI-SEO Checkliste: Der praktische Plan für GEO und moderne SEO."
+  intro="Diese Checkliste zeigt, welche Maßnahmen Websites für klassische Suche, KI-Antworten und generative Sichtbarkeit wirklich brauchen: von Technik über Content bis Monitoring."
+  schema={[
+    {
+      "@type": "Article",
+      "@id": `${siteUrl}/ratgeber/ki-seo-checkliste/#article`,
+      headline: "KI-SEO Checkliste: Der praktische Plan für GEO und moderne SEO",
+      description:
+        "Eine operative Checkliste für KI-SEO, GEO, technische SEO, Content-Struktur, Entitäten, Schema.org und Sichtbarkeitsmessung.",
+      author: { "@id": `${siteUrl}/#organization` },
+      publisher: { "@id": `${siteUrl}/#organization` },
+      mainEntityOfPage: `${siteUrl}/ratgeber/ki-seo-checkliste/`,
+      inLanguage: "de-DE",
+      about: ["KI-SEO", "GEO", "SEO Checkliste", "ChatGPT SEO", "KI-Suche"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/ratgeber/ki-seo-checkliste/#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: `${siteUrl}/ratgeber/` },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "KI-SEO Checkliste",
+          item: `${siteUrl}/ratgeber/ki-seo-checkliste/`,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/ratgeber/ki-seo-checkliste/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ]}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#kurzantwort">Kurzantwort</a>
+        <a href="#fundament">Fundament</a>
+        <a href="#technik">Technik</a>
+        <a href="#content">Content</a>
+        <a href="#autoritaet">Autorität</a>
+        <a href="#messung">Messung</a>
+        <a href="#prioritaeten">Prioritäten</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>Checkliste</li>
+          <li>13 Minuten</li>
+          <li>Für SEO, Marketing & Webteams</li>
+        </ul>
+
+        <div class="answer-box" id="kurzantwort">
+          <p>
+            KI-SEO optimiert Websites so, dass sie in klassischen Suchergebnissen, KI-Antworten und
+            generativen Suchsystemen besser verstanden werden. Dafür müssen Technik, Content, Entitäten,
+            Vertrauen und Monitoring zusammenarbeiten.
+          </p>
+        </div>
+
+        <h2 id="fundament">Die vier Säulen einer KI-SEO-Strategie</h2>
+        <p>
+          KI-SEO ist keine Abkürzung und kein Tool-Setup. Es ist die Weiterentwicklung solider SEO-Arbeit:
+          Die Website muss crawlbar, hilfreich und schnell sein, aber zusätzlich so klar strukturiert werden,
+          dass generative Systeme Antworten, Belege und Zusammenhänge zuverlässig erkennen.
+        </p>
+        <div class="article-panels">
+          {pillars.map((pillar) => (
+            <section class="article-panel">
+              <h3>{pillar.title}</h3>
+              <p>{pillar.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="technik">Technische KI-SEO Checkliste</h2>
+        <p>
+          Technik ist nicht glamourös, aber brutal wichtig: Wenn Signale falsch, unvollständig oder schwer
+          erreichbar sind, kann auch sehr guter Content schlechter verstanden werden.
+        </p>
+        <ul>
+          {technicalChecklist.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="content">Content- und Antwort-Checkliste</h2>
+        <p>
+          Für generative Suchsysteme sind klare Antwortbausteine entscheidend. Jede wichtige Seite sollte
+          nicht nur einen Suchbegriff bedienen, sondern eine echte Entscheidungsfrage lösen.
+        </p>
+        <ul>
+          {contentChecklist.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="autoritaet">Autorität, Proof und Vertrauenssignale</h2>
+        <p>
+          Viele KI-SEO-Projekte scheitern nicht an der Wortzahl, sondern an schwachen Vertrauenssignalen.
+          Nutzer und Antwortsysteme müssen erkennen, warum eine Aussage glaubwürdig ist.
+        </p>
+        <ul>
+          {authorityChecklist.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="messung">Messung und Monitoring</h2>
+        <p>
+          Klassische SEO-KPIs bleiben wichtig, aber sie reichen nicht mehr aus. Wer KI-SEO ernst nimmt,
+          misst zusätzlich, ob die Marke in Antworten vorkommt, in welchem Kontext sie genannt wird und
+          welche Quellen generative Systeme bevorzugen.
+        </p>
+        <ul>
+          {measurementChecklist.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="prioritaeten">Prioritäten: Was kommt zuerst?</h2>
+        <div class="feature-table">
+          {priorityMatrix.map((item) => (
+            <div>
+              <strong>{item.label}</strong>
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="roadmap">Umsetzungs-Roadmap</h2>
+        <p>
+          Die Checkliste wird erst wertvoll, wenn sie in eine Reihenfolge kommt. Sonst entsteht viel Aktivität,
+          aber wenig Sichtbarkeit. Dieser Ablauf hält Diagnose, Umsetzung und Messung zusammen.
+        </p>
+        <div class="process-list">
+          {roadmap.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="vertiefung">Passende Vertiefungen</h2>
+        <div class="article-panels">
+          {relatedArticles.map((article) => (
+            <section class="article-panel">
+              <h3>{article.title}</h3>
+              <p>{article.text}</p>
+              <a class="text-link" href={article.href}>Weiterlesen</a>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="faq">Häufige Fragen</h2>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Die beste KI-SEO Checkliste ist kein PDF, das im Projektordner schläft. Sie ist ein wiederholbarer
+            Arbeitsprozess aus prüfen, priorisieren, umsetzen, messen und nachschärfen.
+          </p>
+        </div>
+        <a class="button button-primary" href="/leistungen/geo-audit/">KI-SEO Audit anfragen →</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>

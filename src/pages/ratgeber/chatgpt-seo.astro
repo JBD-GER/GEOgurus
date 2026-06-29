@@ -1,0 +1,332 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const siteUrl = "https://www.geogurus.de";
+
+const visibilitySignals = [
+  {
+    title: "Klare Kernantwort",
+    text:
+      "Jede zentrale Frage braucht eine kompakte Antwort, die auch ohne langen Kontext verständlich bleibt und danach sauber vertieft wird.",
+  },
+  {
+    title: "Stabile Entitäten",
+    text:
+      "Marke, Leistung, Zielgruppe, Branche, Methode, Standort und Expertise müssen auf der Website konsistent benannt werden.",
+  },
+  {
+    title: "Belegbare Expertise",
+    text:
+      "ChatGPT SEO braucht Inhalte, die Erfahrung, Kriterien, Beispiele, Grenzen, Autorenschaft und nachvollziehbare Prozesse zeigen.",
+  },
+  {
+    title: "Starke Themencluster",
+    text:
+      "Einzelne Blogposts reichen selten. Sichtbarkeit entsteht, wenn Leistungsseiten, Ratgeber, FAQs und Proof-Seiten logisch verlinkt sind.",
+  },
+];
+
+const optimizationAreas = [
+  {
+    label: "Informationsfragen",
+    text:
+      "Definitionen, Grundlagen, Anleitungen und kurze Erklärungen so formulieren, dass sie direkt zitier- und zusammenfassbar sind.",
+  },
+  {
+    label: "Vergleichsfragen",
+    text:
+      "Alternativen, Kriterien, Vor- und Nachteile, Grenzen und Entscheidungshilfen transparent darstellen.",
+  },
+  {
+    label: "Anbieterfragen",
+    text:
+      "Leistungsumfang, Spezialisierung, Zielgruppen, Methodik, Referenzen und Kontaktwege eindeutig machen.",
+  },
+  {
+    label: "Kauffragen",
+    text:
+      "Kostenlogik, Prozess, Risiken, Ergebnisse, Zeitrahmen und nächste Schritte so erklären, dass Unsicherheit sinkt.",
+  },
+];
+
+const checklist = [
+  "Marken-, Leistungs- und Personeninformationen auf zentralen Seiten konsistent formulieren",
+  "Für jedes wichtige Thema eine direkte Kurzantwort oberhalb der Vertiefung einbauen",
+  "Ratgeber, Leistungsseiten und Methodenseiten zu echten Themenclustern verlinken",
+  "Vergleichs- und Entscheidungskriterien statt reiner Werbeaussagen veröffentlichen",
+  "Schema.org für Organization, Article, FAQ, Breadcrumbs und relevante Leistungen prüfen",
+  "Erfahrung, Methodik, Beispiele und Grenzen dort zeigen, wo Nutzer Entscheidungen treffen",
+  "Wichtige Inhalte in einer sauberen llms.txt kuratieren, ohne die Website zu duplizieren",
+  "Prompts und Antwortmuster regelmäßig monitoren, um Erwähnungen und Themenlücken zu erkennen",
+];
+
+const mistakes = [
+  {
+    title: "Nur Keywords ersetzen",
+    text:
+      "ChatGPT SEO ist kein neues Label für Keyword-Stuffing. Ohne klare Antworten, Entitäten und Proof bleibt der Inhalt austauschbar.",
+  },
+  {
+    title: "Zu werblich schreiben",
+    text:
+      "Generative Antworten brauchen belastbare Einordnung. Reine Superlative sind schwächer als nachvollziehbare Kriterien und Beispiele.",
+  },
+  {
+    title: "Quellenlogik ignorieren",
+    text:
+      "Wenn Aussagen nicht durch Erfahrung, Methodik, Autorenschaft oder strukturierte Daten gestützt werden, sinkt die Zitierfähigkeit.",
+  },
+  {
+    title: "Monitoring vergessen",
+    text:
+      "Ohne regelmäßige Prompt-Sets sieht man nicht, ob eine Marke in Antworten auftaucht, falsch eingeordnet wird oder gegen Wettbewerber verliert.",
+  },
+];
+
+const workflow = [
+  {
+    step: "01 Such- und Antwortmomente sammeln",
+    text:
+      "Welche Fragen stellen Kunden vor dem Kauf, im Vergleich, bei Einwänden oder bei der Anbieterwahl? Diese Fragen bilden das Prompt-Set.",
+  },
+  {
+    step: "02 Website gegen Antworten spiegeln",
+    text:
+      "Für jede Frage wird geprüft, ob die Website eine klare, belegbare und intern verlinkte Antwort liefert.",
+  },
+  {
+    step: "03 Content in Module umbauen",
+    text:
+      "Kurzantworten, Kriterien, Beispiele, FAQ, Tabellen, Proof-Abschnitte und CTAs werden dort ergänzt, wo sie die Entscheidung verbessern.",
+  },
+  {
+    step: "04 Entitäten technisch absichern",
+    text:
+      "Schema.org, interne Links, semantische Überschriften, Meta-Daten, llms.txt und konsistente Namensgebung werden zusammengeführt.",
+  },
+  {
+    step: "05 Antwortpräsenz messen",
+    text:
+      "Erwähnungen, Quellenmuster, Wettbewerber, Sentiment und Themenabdeckung werden regelmäßig erfasst und in neue Maßnahmen übersetzt.",
+  },
+];
+
+const relatedArticles = [
+  {
+    title: "KI-SEO Checkliste",
+    text:
+      "Die operative Liste für alle Maßnahmen, die klassische SEO, GEO und Antwortmaschinen zusammenbringen.",
+    href: "/ratgeber/ki-seo-checkliste/",
+  },
+  {
+    title: "Schema Markup für KI-Suche",
+    text:
+      "Wie strukturierte Daten Entitäten, Inhalte und Vertrauenssignale maschinenlesbarer machen.",
+    href: "/ratgeber/schema-markup-ki-suche/",
+  },
+  {
+    title: "KI-Sichtbarkeit messen",
+    text:
+      "Welche KPIs zeigen, ob ChatGPT SEO und GEO-Maßnahmen wirklich Antwortpräsenz erzeugen.",
+    href: "/ratgeber/ki-sichtbarkeit-messen/",
+  },
+];
+
+const faqs = [
+  {
+    question: "Was bedeutet ChatGPT SEO?",
+    answer:
+      "ChatGPT SEO beschreibt Maßnahmen, mit denen eine Marke, ihre Inhalte und ihre Entitäten so klar werden, dass sie in KI-Antworten besser verstanden, eingeordnet und als Quelle berücksichtigt werden können.",
+  },
+  {
+    question: "Ist ChatGPT SEO dasselbe wie GEO?",
+    answer:
+      "ChatGPT SEO ist ein Teilbereich von GEO. GEO betrachtet generative Suchsysteme insgesamt, während ChatGPT SEO den Fokus auf Antwortmomente, Prompts und Sichtbarkeit in ChatGPT-ähnlichen Dialogen legt.",
+  },
+  {
+    question: "Kann man Sichtbarkeit in ChatGPT garantieren?",
+    answer:
+      "Nein. Man kann keine Aufnahme in KI-Antworten garantieren. Man kann aber die Signale verbessern: klare Inhalte, starke Entitäten, technische Lesbarkeit, Belege, interne Links und systematisches Monitoring.",
+  },
+];
+---
+
+<PageLayout
+  title="ChatGPT SEO | In KI-Antworten sichtbar werden"
+  description="ChatGPT SEO: So optimieren Unternehmen Inhalte, Entitäten, Belege und Technik, um in KI-Antworten sichtbarer und zitierfähiger zu werden."
+  canonicalPath="/ratgeber/chatgpt-seo/"
+  eyebrow="Ratgeber"
+  headline="ChatGPT SEO: Wie Marken in KI-Antworten sichtbar werden."
+  intro="ChatGPT SEO verbindet klassische Suchmaschinenoptimierung mit GEO, Antwortfähigkeit und klaren Entitäten. Dieser Ratgeber zeigt, wie Unternehmen für KI-Dialoge verständlicher, vertrauenswürdiger und zitierfähiger werden."
+  schema={[
+    {
+      "@type": "Article",
+      "@id": `${siteUrl}/ratgeber/chatgpt-seo/#article`,
+      headline: "ChatGPT SEO: Wie Marken in KI-Antworten sichtbar werden",
+      description:
+        "Praxisleitfaden für ChatGPT SEO mit Antwortfähigkeit, Entitäten, Proof, strukturierten Daten, Themenclustern und Monitoring.",
+      author: { "@id": `${siteUrl}/#organization` },
+      publisher: { "@id": `${siteUrl}/#organization` },
+      mainEntityOfPage: `${siteUrl}/ratgeber/chatgpt-seo/`,
+      inLanguage: "de-DE",
+      about: ["ChatGPT SEO", "Generative Engine Optimization", "KI-Antworten", "KI-Suche"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/ratgeber/chatgpt-seo/#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: `${siteUrl}/ratgeber/` },
+        { "@type": "ListItem", position: 2, name: "ChatGPT SEO", item: `${siteUrl}/ratgeber/chatgpt-seo/` },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/ratgeber/chatgpt-seo/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ]}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#kurzantwort">Kurzantwort</a>
+        <a href="#bedeutung">Warum es wichtig ist</a>
+        <a href="#signale">Sichtbarkeitssignale</a>
+        <a href="#bereiche">Optimierungsbereiche</a>
+        <a href="#checkliste">Checkliste</a>
+        <a href="#fehler">Fehler</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>KI-Suche</li>
+          <li>12 Minuten</li>
+          <li>Für SEO, Content & Geschäftsführung</li>
+        </ul>
+
+        <div class="answer-box" id="kurzantwort">
+          <p>
+            ChatGPT SEO bedeutet, Inhalte, Entitäten, technische Signale und Belege so aufzubauen, dass
+            KI-Systeme eine Marke in relevanten Antwortmomenten verstehen, korrekt einordnen und als
+            hilfreiche Quelle berücksichtigen können.
+          </p>
+        </div>
+
+        <h2 id="bedeutung">Warum ChatGPT SEO wichtig wird</h2>
+        <p>
+          Nutzer suchen nicht mehr nur mit kurzen Keywords. Sie stellen komplexe Fragen, lassen Anbieter
+          vergleichen, fragen nach Risiken, Kriterien, Empfehlungen und nächsten Schritten. In diesen
+          Dialogen entsteht Sichtbarkeit anders als in einer klassischen Ergebnisliste: Nicht nur der Klick
+          zählt, sondern ob eine Marke überhaupt in der Antwort vorkommt und wie sie dort beschrieben wird.
+        </p>
+        <p>
+          Genau deshalb reicht es nicht, bestehende SEO-Texte einfach länger zu machen. ChatGPT SEO braucht
+          Inhalte, die wie ein belastbares Wissenssystem funktionieren: klare Definitionen, direkte Antworten,
+          konsistente Entitäten, nachvollziehbare Expertise und interne Links, die Zusammenhänge erklären.
+          Damit ist ChatGPT SEO eng mit <a class="text-link" href="/ratgeber/was-ist-geo/">GEO</a> und
+          <a class="text-link" href="/ratgeber/antwortmaschinen-optimierung/">Antwortmaschinen-Optimierung</a>
+          verbunden.
+        </p>
+
+        <h2 id="signale">Die wichtigsten Sichtbarkeitssignale</h2>
+        <p>
+          Es gibt keinen einzelnen Schalter für Sichtbarkeit in KI-Antworten. Wirkung entsteht, wenn mehrere
+          Signale zusammenpassen und ein System ohne Rätselraten versteht, wer spricht, wofür die Marke steht
+          und welche Aussagen belastbar sind.
+        </p>
+        <div class="article-panels">
+          {visibilitySignals.map((signal) => (
+            <section class="article-panel">
+              <h3>{signal.title}</h3>
+              <p>{signal.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="bereiche">Welche Inhalte sollte man für ChatGPT SEO optimieren?</h2>
+        <p>
+          Besonders wertvoll sind Seiten, die vor einer Entscheidung gelesen werden: Leistungsseiten,
+          Ratgeber, Vergleichsseiten, Methoden, Preis- und Prozessseiten. Sie beantworten nicht nur eine
+          Informationsfrage, sondern helfen Nutzern, Vertrauen aufzubauen und Optionen einzuordnen.
+        </p>
+        <div class="feature-table">
+          {optimizationAreas.map((area) => (
+            <div>
+              <strong>{area.label}</strong>
+              <span>{area.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="checkliste">ChatGPT SEO Checkliste</h2>
+        <p>
+          Die folgenden Maßnahmen bringen klassische SEO, GEO und Antwortfähigkeit zusammen. Wichtig ist,
+          sie nicht isoliert abzuarbeiten, sondern als System aus Inhalt, Technik und Vertrauen zu behandeln.
+        </p>
+        <ul>
+          {checklist.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="fehler">Typische Fehler bei ChatGPT SEO</h2>
+        <div class="decision-grid">
+          {mistakes.map((mistake) => (
+            <section class="decision-card">
+              <h3>{mistake.title}</h3>
+              <p>{mistake.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="workflow">Praxis-Workflow für Unternehmen</h2>
+        <p>
+          Der beste Einstieg ist eine Diagnose. Erst wenn klar ist, welche Fragen im Markt relevant sind und
+          welche Antworten die eigene Website bereits liefert, lassen sich Inhalte gezielt umbauen.
+        </p>
+        <div class="process-list">
+          {workflow.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="vertiefung">Was sollte man danach vertiefen?</h2>
+        <div class="article-panels">
+          {relatedArticles.map((article) => (
+            <section class="article-panel">
+              <h3>{article.title}</h3>
+              <p>{article.text}</p>
+              <a class="text-link" href={article.href}>Weiterlesen</a>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="faq">Häufige Fragen</h2>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Gute Faustregel: Wenn ein Vertriebsgespräch ohne Ihre Website besser erklärt als Ihre Website
+            selbst, fehlt ChatGPT SEO nicht an Magie, sondern an klaren Antwortbausteinen.
+          </p>
+        </div>
+        <a class="button button-primary" href="/leistungen/geo-audit/">ChatGPT-Sichtbarkeit prüfen →</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>

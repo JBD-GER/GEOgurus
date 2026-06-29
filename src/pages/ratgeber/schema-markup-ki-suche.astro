@@ -1,0 +1,327 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const siteUrl = "https://www.geogurus.de";
+
+const schemaTypes = [
+  {
+    title: "Organization",
+    text:
+      "Macht Marke, Name, Logo, Kontakt, Adresse, Profile und zentrale Beschreibung maschinenlesbar.",
+  },
+  {
+    title: "Article",
+    text:
+      "Ordnet Ratgeberartikel mit Headline, Beschreibung, Autor, Publisher, Sprache und Hauptseite ein.",
+  },
+  {
+    title: "FAQPage",
+    text:
+      "Strukturiert häufige Fragen und kurze Antworten, wenn diese sichtbar und hilfreich auf der Seite stehen.",
+  },
+  {
+    title: "BreadcrumbList",
+    text:
+      "Erklärt die Position einer Seite innerhalb der Informationsarchitektur und stärkt interne Kontextsignale.",
+  },
+];
+
+const implementationRules = [
+  "Schema.org nur für Inhalte einsetzen, die auf der Seite auch sichtbar und korrekt sind",
+  "Organization-, WebSite- und Breadcrumb-Daten auf der ganzen Website konsistent halten",
+  "Article-Daten für Ratgeber mit klarer Headline, Beschreibung, Autor und Publisher versehen",
+  "FAQ-Markup nur nutzen, wenn Fragen und Antworten real im sichtbaren Inhalt vorkommen",
+  "Service- oder Offer-Daten nicht übertreiben und nur für echte Leistungen verwenden",
+  "JSON-LD validieren und nach Relaunches, Content-Updates oder Template-Änderungen erneut prüfen",
+];
+
+const entityBenefits = [
+  {
+    label: "Wer spricht?",
+    text:
+      "Organization, Person und Publisher helfen, Anbieter, Autorenschaft und Verantwortlichkeit einzuordnen.",
+  },
+  {
+    label: "Worum geht es?",
+    text:
+      "Article, Service, FAQ und Breadcrumbs verbinden Thema, Seite, Leistung und Suchintention deutlicher.",
+  },
+  {
+    label: "Wie hängt es zusammen?",
+    text:
+      "Interne Links, Breadcrumbs, konsistente URLs und Schema-IDs schaffen Beziehungen zwischen Wissensbausteinen.",
+  },
+  {
+    label: "Was ist belastbar?",
+    text:
+      "Schema ersetzt keine Expertise, kann aber Autor, Organisation, Inhaltstyp und Kontext sauber auszeichnen.",
+  },
+];
+
+const mistakes = [
+  {
+    title: "Markup als Trick behandeln",
+    text:
+      "Strukturierte Daten sind kein Sichtbarkeits-Hack. Sie verstärken gute Inhalte, reparieren aber keine dünnen oder widersprüchlichen Aussagen.",
+  },
+  {
+    title: "Unsichtbare Inhalte auszeichnen",
+    text:
+      "Wenn FAQ, Leistungen oder Bewertungen nur im JSON-LD stehen, aber nicht sichtbar sind, entsteht ein Qualitäts- und Vertrauensproblem.",
+  },
+  {
+    title: "IDs wild mischen",
+    text:
+      "Ohne stabile @id-Logik werden Organisation, Website, Artikel und Breadcrumbs schlechter miteinander verknüpft.",
+  },
+  {
+    title: "Nach dem Launch nie prüfen",
+    text:
+      "Templates ändern sich, URLs wandern, Inhalte werden aktualisiert. Schema-Markup muss deshalb regelmäßig validiert werden.",
+  },
+];
+
+const auditSteps = [
+  {
+    step: "01 Vorhandenes Markup inventarisieren",
+    text:
+      "Welche Typen sind auf Startseite, Leistungsseiten, Ratgebern, Kontaktseite und FAQ bereits vorhanden?",
+  },
+  {
+    step: "02 Entitäten abgleichen",
+    text:
+      "Stimmen Name, Logo, Adresse, Kontakt, Leistungsbezeichnungen, Autoren und URLs überall überein?",
+  },
+  {
+    step: "03 Seitentypen priorisieren",
+    text:
+      "Geschäftskritische Seiten bekommen zuerst sauberes Organization-, Service-, Article-, FAQ- und Breadcrumb-Markup.",
+  },
+  {
+    step: "04 Validieren",
+    text:
+      "JSON-LD wird technisch geprüft und mit sichtbaren Inhalten, Meta-Daten, internen Links und llms.txt abgeglichen.",
+  },
+  {
+    step: "05 Monitoring anschließen",
+    text:
+      "Strukturierte Daten werden nicht isoliert bewertet, sondern mit Rankings, KI-Antworten, Crawling und Lead-Qualität verbunden.",
+  },
+];
+
+const relatedArticles = [
+  {
+    title: "llms.txt und KI-Suche",
+    text:
+      "Wie eine Kontextdatei strukturierte Daten ergänzt und zentrale Seiten kuratiert.",
+    href: "/ratgeber/llms-txt-ki-suche/",
+  },
+  {
+    title: "Antwortmaschinen-Optimierung",
+    text:
+      "Warum Schema.org nur ein Baustein ist und die eigentliche Antwortqualität im sichtbaren Inhalt entsteht.",
+    href: "/ratgeber/antwortmaschinen-optimierung/",
+  },
+  {
+    title: "Technische GEO-Optimierung",
+    text:
+      "Der Leistungsbereich für Crawling, Indexierung, Schema.org, Performance und maschinenlesbare Struktur.",
+    href: "/leistungen/technische-geo-optimierung/",
+  },
+];
+
+const faqs = [
+  {
+    question: "Hilft Schema Markup bei KI-Suche?",
+    answer:
+      "Schema Markup kann KI-Suche unterstützen, weil es Entitäten, Seitentypen, Breadcrumbs, Artikel, Fragen und Organisationen maschinenlesbarer macht. Es ersetzt aber keine hochwertigen Inhalte und keine klare Website-Struktur.",
+  },
+  {
+    question: "Welche strukturierten Daten sind für GEO besonders wichtig?",
+    answer:
+      "Häufig wichtig sind Organization, WebSite, BreadcrumbList, Article, FAQPage und je nach Website Service, Product, LocalBusiness oder Person. Entscheidend ist, dass die Daten korrekt, sichtbar gedeckt und konsistent sind.",
+  },
+  {
+    question: "Reicht Schema.org allein für bessere KI-Sichtbarkeit?",
+    answer:
+      "Nein. Strukturierte Daten sind ein technisches Signal. Für bessere KI-Sichtbarkeit braucht es zusätzlich antwortfähige Inhalte, Entitäten, Belege, interne Links, technische SEO und Monitoring.",
+  },
+];
+---
+
+<PageLayout
+  title="Schema Markup für KI-Suche | Strukturierte Daten für GEO"
+  description="Schema Markup für KI-Suche und GEO: Welche strukturierten Daten wichtig sind, wie sie Entitäten stärken und welche Fehler Unternehmen vermeiden sollten."
+  canonicalPath="/ratgeber/schema-markup-ki-suche/"
+  eyebrow="Ratgeber"
+  headline="Schema Markup für KI-Suche: Struktur, die Maschinen wirklich hilft."
+  intro="Strukturierte Daten machen Inhalte nicht automatisch gut. Aber sie helfen Suchmaschinen und KI-Systemen, Entitäten, Seitentypen, Breadcrumbs und Antworten sauberer einzuordnen."
+  schema={[
+    {
+      "@type": "Article",
+      "@id": `${siteUrl}/ratgeber/schema-markup-ki-suche/#article`,
+      headline: "Schema Markup für KI-Suche: Strukturierte Daten für GEO",
+      description:
+        "Leitfaden zu Schema Markup, strukturierten Daten, Entitäten, FAQ, Article, Organization und technischer GEO-Optimierung.",
+      author: { "@id": `${siteUrl}/#organization` },
+      publisher: { "@id": `${siteUrl}/#organization` },
+      mainEntityOfPage: `${siteUrl}/ratgeber/schema-markup-ki-suche/`,
+      inLanguage: "de-DE",
+      about: ["Schema Markup", "strukturierte Daten", "GEO", "KI-Suche", "Schema.org"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/ratgeber/schema-markup-ki-suche/#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ratgeber", item: `${siteUrl}/ratgeber/` },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Schema Markup für KI-Suche",
+          item: `${siteUrl}/ratgeber/schema-markup-ki-suche/`,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/ratgeber/schema-markup-ki-suche/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ]}
+>
+  <section class="content-band light">
+    <div class="container article-grid">
+      <aside class="article-toc" data-reveal>
+        <strong>Inhalt</strong>
+        <a href="#kurzantwort">Kurzantwort</a>
+        <a href="#rolle">Rolle für GEO</a>
+        <a href="#typen">Schema-Typen</a>
+        <a href="#regeln">Umsetzung</a>
+        <a href="#entitaeten">Entitäten</a>
+        <a href="#fehler">Fehler</a>
+        <a href="#audit">Audit</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <article class="article-body" data-reveal>
+        <ul class="article-meta" aria-label="Artikeldetails">
+          <li>Technik</li>
+          <li>10 Minuten</li>
+          <li>Für SEO, Entwicklung & Content</li>
+        </ul>
+
+        <div class="answer-box" id="kurzantwort">
+          <p>
+            Schema Markup hilft Suchmaschinen und KI-Systemen, Inhalte maschinenlesbar einzuordnen:
+            Organisation, Artikel, Fragen, Breadcrumbs, Leistungen und Beziehungen werden klarer. Für GEO
+            ist es ein wichtiger technischer Baustein, aber kein Ersatz für gute Antworten.
+          </p>
+        </div>
+
+        <h2 id="rolle">Welche Rolle spielt Schema Markup in der KI-Suche?</h2>
+        <p>
+          Generative Systeme brauchen Kontext. Sie müssen erkennen, ob eine Seite eine Leistung erklärt,
+          einen Ratgeberartikel liefert, Fragen beantwortet oder eine Organisation beschreibt. Schema.org
+          kann diese Einordnung unterstützen, indem es strukturierte Aussagen im JSON-LD-Format bereitstellt.
+        </p>
+        <p>
+          Entscheidend ist dabei die Kombination: Strukturierte Daten, sichtbarer Inhalt, interne Links,
+          Meta-Daten und eine saubere Informationsarchitektur müssen dasselbe Bild zeichnen. Wenn diese
+          Signale auseinanderlaufen, entsteht kein Vertrauen, sondern Rauschen.
+        </p>
+
+        <h2 id="typen">Wichtige Schema-Typen für GEO</h2>
+        <div class="article-panels">
+          {schemaTypes.map((item) => (
+            <section class="article-panel">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="regeln">Regeln für saubere Umsetzung</h2>
+        <p>
+          Gutes Schema Markup ist präzise, wahr und sparsam. Es zeichnet nicht jeden Wunsch aus, sondern
+          die wirklich relevanten Informationen, die auf der Website vorhanden und für Nutzer hilfreich sind.
+        </p>
+        <ul>
+          {implementationRules.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2 id="entitaeten">Wie Schema Markup Entitäten stärkt</h2>
+        <p>
+          Für GEO ist Entity-Klarheit zentral. Strukturierte Daten helfen, Beziehungen explizit zu machen:
+          Wer ist die Organisation, welche Inhalte gehören zu ihr, welche Seite beschreibt welches Thema und
+          welche Fragen werden beantwortet?
+        </p>
+        <div class="feature-table">
+          {entityBenefits.map((item) => (
+            <div>
+              <strong>{item.label}</strong>
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="fehler">Typische Fehler bei strukturierten Daten</h2>
+        <div class="decision-grid">
+          {mistakes.map((mistake) => (
+            <section class="decision-card">
+              <h3>{mistake.title}</h3>
+              <p>{mistake.text}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="audit">Schema-Audit: So gehen Sie vor</h2>
+        <p>
+          Ein Schema-Audit sollte nicht nur technische Validität prüfen. Es muss beantworten, ob die Daten
+          die Website wirklich erklären und ob sie mit Content, Navigation, llms.txt und Geschäftsmodell
+          zusammenpassen.
+        </p>
+        <div class="process-list">
+          {auditSteps.map((item) => (
+            <div class="process-step">
+              <strong>{item.step}</strong>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 id="vertiefung">Passende Vertiefungen</h2>
+        <div class="article-panels">
+          {relatedArticles.map((article) => (
+            <section class="article-panel">
+              <h3>{article.title}</h3>
+              <p>{article.text}</p>
+              <a class="text-link" href={article.href}>Weiterlesen</a>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="faq">Häufige Fragen</h2>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="answer-box">
+          <p>
+            Merksatz: Schema Markup erklärt Maschinen, was Menschen auf der Seite bereits sehen sollten.
+            Wenn der sichtbare Inhalt schwach ist, wird JSON-LD ihn nicht retten.
+          </p>
+        </div>
+        <a class="button button-primary" href="/leistungen/technische-geo-optimierung/">Technische GEO prüfen →</a>
+      </article>
+    </div>
+  </section>
+</PageLayout>
