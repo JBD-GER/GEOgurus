@@ -42,7 +42,12 @@ import PageLayout from "../../layouts/PageLayout.astro";
           Worum geht es?
           <textarea name="message" rows="5" placeholder="GEO-Audit, Relaunch, Content-Struktur, technische SEO, KI-Sichtbarkeit ..."></textarea>
         </label>
+        <label class="form-hp" aria-hidden="true">
+          Firma
+          <input name="company" autocomplete="off" tabindex="-1" />
+        </label>
         <button class="button button-primary" type="submit">Sichtbarkeits-Check starten →</button>
+        <p class="form-status" data-form-status aria-live="polite"></p>
         <p>Oder direkt per E-Mail an <a href="mailto:kontakt@geogurus.de">kontakt@geogurus.de</a></p>
       </form>
     </div>

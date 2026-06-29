@@ -1940,16 +1940,48 @@ details p {
   resize: vertical;
 }
 
+.contact-form .form-hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: var(--teal);
   box-shadow: 0 0 0 3px rgba(19, 200, 181, 0.16);
 }
 
+.contact-form button[disabled] {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
 .contact-form p {
   margin: 0;
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.9rem;
+}
+
+.contact-form .form-status {
+  min-height: 1.35em;
+  font-weight: 850;
+}
+
+.contact-form .form-status:empty {
+  display: none;
+}
+
+.contact-form .form-status.is-success {
+  color: var(--teal);
+}
+
+.contact-form .form-status.is-error {
+  color: #ffb4a8;
 }
 
 .contact-form a {
@@ -1982,6 +2014,14 @@ details p {
 
 .content-band.light .contact-form p {
   color: var(--muted);
+}
+
+.content-band.light .contact-form .form-status.is-success {
+  color: var(--teal-dark);
+}
+
+.content-band.light .contact-form .form-status.is-error {
+  color: var(--coral);
 }
 
 .content-band.light .contact-form a {

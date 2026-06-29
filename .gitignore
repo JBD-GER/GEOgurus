@@ -2,4 +2,7 @@
 node_modules/
 dist/
 .astro/
+.vercel/
 tmp/
+.env*
+!.env.example

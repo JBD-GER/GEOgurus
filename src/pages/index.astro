@@ -963,10 +963,15 @@ const schema = {
               Worum geht es?
               <textarea name="message" rows="4" placeholder="SEO-Relaunch, GEO-Audit, KI-Sichtbarkeit, Content-Struktur ..."></textarea>
             </label>
+            <label class="form-hp" aria-hidden="true">
+              Firma
+              <input name="company" autocomplete="off" tabindex="-1" />
+            </label>
             <button class="button button-primary" type="submit">
               Sichtbarkeits-Check starten
               <span aria-hidden="true">→</span>
             </button>
+            <p class="form-status" data-form-status aria-live="polite"></p>
             <p>
               Oder direkt per E-Mail an <a href="mailto:kontakt@geogurus.de">kontakt@geogurus.de</a>
             </p>
@@ -1159,21 +1164,54 @@ const schema = {
       contactForm?.addEventListener("submit", (event) => {
         event.preventDefault();
         const data = new FormData(contactForm);
-        const lines = [
-          "Hallo GEOgurus,",
-          "",
-          "ich möchte einen Sichtbarkeits-Check anfragen.",
-          "",
-          `Name: ${data.get("name") || ""}`,
-          `E-Mail: ${data.get("email") || ""}`,
-          `Website: ${data.get("website") || ""}`,
-          "",
-          "Kontext:",
-          String(data.get("message") || ""),
-        ];
-        const subject = encodeURIComponent("GEO-Audit anfragen");
-        const body = encodeURIComponent(lines.join("\n"));
-        window.location.href = `mailto:kontakt@geogurus.de?subject=${subject}&body=${body}`;
+        const status = contactForm.querySelector("[data-form-status]");
+        const button = contactForm.querySelector("button[type='submit']");
+        const originalButtonText = button?.textContent || "Sichtbarkeits-Check starten";
+
+        if (status) {
+          status.textContent = "";
+          status.classList.remove("is-error", "is-success");
+        }
+
+        button?.setAttribute("disabled", "true");
+        if (button) button.textContent = "Wird gesendet ...";
+
+        fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: data.get("name"),
+            email: data.get("email"),
+            website: data.get("website"),
+            message: data.get("message"),
+            company: data.get("company"),
+            source: window.location.pathname,
+          }),
+        })
+          .then(async (response) => {
+            const result = await response.json().catch(() => ({}));
+            if (!response.ok || result.ok === false) {
+              throw new Error(result.message || "Der Versand hat nicht geklappt.");
+            }
+            contactForm.reset();
+            if (status) {
+              status.textContent = result.message || "Danke, Ihre Anfrage wurde versendet.";
+              status.classList.add("is-success");
+            }
+          })
+          .catch((error) => {
+            if (status) {
+              status.textContent =
+                error instanceof Error
+                  ? error.message
+                  : "Der Versand hat nicht geklappt. Bitte schreiben Sie direkt an kontakt@geogurus.de.";
+              status.classList.add("is-error");
+            }
+          })
+          .finally(() => {
+            button?.removeAttribute("disabled");
+            if (button) button.textContent = originalButtonText;
+          });
       });
 
       if (heroCanvas && !prefersReducedMotion) {
